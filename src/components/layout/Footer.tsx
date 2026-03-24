@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Layers, Linkedin, Github, Twitter, ArrowUpRight } from 'lucide-react';
+import { Linkedin, Github, Twitter, ArrowUpRight } from 'lucide-react';
 
 const quickLinks = [
   { name: 'Home', path: '/' },
@@ -22,13 +22,12 @@ export default function Footer() {
       <div className="section-container pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-12 border-b border-white/10">
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2.5 mb-5">
-              <div className="w-9 h-9 rounded-lg bg-harvest-gold-200 flex items-center justify-center">
-                <Layers className="w-5 h-5 text-deep-space-800" />
-              </div>
-              <span className="text-lg font-bold text-warm-sand-100 tracking-tight">
-                Sthwalo
-              </span>
+            <Link to="/" className="flex items-center mb-5">
+              <img
+                src="/STHWALO.png"
+                alt="Sthwalo Holdings"
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-sm leading-relaxed text-warm-sand-400 mb-6 max-w-xs">
               Building foundations with code. We craft intelligent software solutions

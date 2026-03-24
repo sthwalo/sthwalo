@@ -55,9 +55,9 @@ export default function Hero() {
 
           <div className="mt-16 pt-10 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in-up animate-delay-400">
             {[
-              { value: '10+', label: 'Years Experience' },
+              { value: '3+', label: 'Years Experience' },
               { value: '7+', label: 'Production Systems' },
-              { value: '7,156+', label: 'Transactions Processed' },
+              { value: '10,000+', label: 'Transactions Processed' },
               { value: '2021', label: 'CIPC Registered' },
             ].map((stat) => (
               <div key={stat.label}>

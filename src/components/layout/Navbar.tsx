@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Layers } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Button from '../ui/Button';
 
 const navLinks = [
@@ -38,15 +38,12 @@ export default function Navbar() {
       }`}
     >
       <nav className="section-container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-lg bg-harvest-gold-200 flex items-center justify-center group-hover:scale-105 transition-transform">
-            <Layers className="w-5 h-5 text-deep-space-800" />
-          </div>
-          <span className={`text-lg font-bold tracking-tight transition-colors ${
-            showSolid ? 'text-warm-sand-100' : 'text-warm-sand-100'
-          }`}>
-            Sthwalo
-          </span>
+        <Link to="/" className="flex items-center group">
+          <img
+            src="/STHWALO.png"
+            alt="Sthwalo Holdings"
+            className="h-10 w-auto group-hover:scale-105 transition-transform"
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-1">

@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /app/
+
+  # Don't rewrite actual files or directories
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Send everything else to /app/index.html for React Router
+  RewriteRule . /app/index.html [L]
+</IfModule>

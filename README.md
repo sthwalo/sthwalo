@@ -530,7 +530,7 @@ For context when maintaining both projects side by side:
 
 ```
 FIN Backend (Spring Boot 3.3.0 + Java 17)
-├── 194 Java source files
+├── 194+ Java source files
 ├── 25+ business services
 ├── 24 REST controllers
 ├── Flyway database migrations
