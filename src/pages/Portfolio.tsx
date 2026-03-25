@@ -4,7 +4,6 @@ import {
   Shield,
   Zap,
   FileText,
-  ExternalLink,
   Eye,
   Lock,
   Globe,
