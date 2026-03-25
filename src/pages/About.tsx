@@ -108,14 +108,14 @@ export default function About() {
                   controlled processes that enable scalable, compliant growth.
                 </p>
                 <p>
-                  Her journey started in financial record management -- processing
+                  His journey started in financial record management -- processing
                   1,000+ monthly transactions, managing SARS compliance for 10+
                   organisations, and achieving zero-error audit records. That discipline
-                  now drives every system she builds.
+                  now drives every system he builds.
                 </p>
                 <p>
                   Attended IU for Computer Science, then resumed self-directed learning
-                  through hands-on projects and certifications. Today she delivers
+                  through hands-on projects and certifications. Today he delivers
                   production systems in Java, React, PHP, and PostgreSQL -- deployed
                   on AWS with Docker and enterprise-grade security.
                 </p>
