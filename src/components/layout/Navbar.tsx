@@ -68,7 +68,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:block">
-          <Button to="/portfolio" variant="primary" size="sm">
+          <Button href="/app/" variant="primary" size="sm">
             Access FIN
           </Button>
         </div>
@@ -102,7 +102,7 @@ export default function Navbar() {
               );
             })}
             <div className="mt-3 pt-3 border-t border-white/10">
-              <Button to="/portfolio" variant="primary" size="md" className="w-full">
+              <Button href="/app/" variant="primary" size="md" className="w-full">
                 Access FIN
               </Button>
             </div>

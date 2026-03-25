@@ -150,7 +150,7 @@ export default function Portfolio() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button to="/contact" variant="primary" size="md">
+                  <Button href="/app/" variant="primary" size="md">
                     <Lock className="w-4 h-4" />
                     Sign In to FIN
                   </Button>
