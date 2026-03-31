@@ -35,21 +35,22 @@ The official marketing website for Sthwalo Holdings -- a software company founde
 This website follows a **static-first architecture**:
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                         SAME DOMAIN                             │
-│                                                                 │
-│  ┌──────────────────────┐    ┌──────────────────────────────┐   │
-│  │   Marketing Site     │    │   FIN Dashboard (React 19)   │   │
-│  │   (This Repo)        │    │   (Separate Build)           │   │
-│  │                      │    │                              │   │
-│  │   React 18 + Vite    │    │   React 19 + Vite 6          │   │
-│  │   Tailwind CSS       │    │   TypeScript 5.9             │   │
-│  │   Supabase (contact) │    │   Axios HTTP Client          │   │
-│  │                      │    │   Context State Management   │   │
-│  │   Hosted: cPanel     │    │   Hosted: cPanel (subdir)    │   │
-│  └──────────┬───────────┘    └──────────────┬───────────────┘   │
-│             │                               │                   │
-└─────────────┼───────────────────────────────┼───────────────────┘
+┌───────────────────────────────────────────────────────────────────┐
+│                         SAME DOMAIN                               │
+│                                                                   │
+│  ┌──────────────────────┐    ┌──────────────────────────────┐     │
+│  │   Marketing Site     │    │   FIN Dashboard (React 19)   │     │
+│  │   (This Repo)        │    │   (Separate Build)           │     │
+│  │                      │    │                              │     │
+│  │   React 18 + Vite    │    │   React 19 + Vite 6          │     │
+│  │   Tailwind CSS       │    │   TypeScript 5.9             │     │
+│  │   Express + MySQL    │    │   Axios HTTP Client          │     │
+│  │   (contact form)     │    │   Context State Management   │     │
+│  │                      │    │                              │     │
+│  │   Hosted: cPanel     │    │   Hosted: cPanel (subdir)    │     │
+│  └──────────┬───────────┘    └──────────────┬───────────────┘     │
+│             │                               │                     │
+└─────────────┼───────────────────────────────┼─────────────────────┘
               │                               │
               │         HTTPS / REST          │
               │                               │
@@ -68,6 +69,7 @@ This website follows a **static-first architecture**:
 ```
 
 - **Static pages** (Home, About, Services, Contact) serve the marketing site
+- **Contact form backend** runs on Express.js with MySQL for storing submissions and Nodemailer for email notifications
 - **Portfolio page** acts as a portal/launchpad to the FIN app
 - **FIN backend** lives on AWS EC2/RDS (Spring Boot + PostgreSQL)
 - **FIN frontend** is a separate React 19 build, hosted alongside this site on cPanel
@@ -82,11 +84,13 @@ This website follows a **static-first architecture**:
 |:------------|:-----------------------------------|
 | Framework   | React 18.3.1                       |
 | Language    | TypeScript 5.5                     |
-| Build Tool  | Vite 5.4.2                         |
+| Build Tool  | Vite 7.3.1                         |
 | Styling     | Tailwind CSS 3.4.1                 |
 | Routing     | React Router 7.13                  |
 | Icons       | Lucide React 0.344                 |
-| Database    | Supabase (contact form only)       |
+| Backend     | Express 4 + Node.js (contact API)  |
+| Database    | MySQL (contact form submissions)   |
+| Email       | Nodemailer (sendmail transport)    |
 | Font        | Inter (Google Fonts)               |
 
 ### FIN Financial Management System
@@ -114,16 +118,20 @@ sthwalo-holdings/
 ├── tailwind.config.js                  # Brand colors, animations, fonts
 ├── tsconfig.app.json                   # TypeScript strict config
 ├── postcss.config.js                   # PostCSS + Autoprefixer
-├── .env                                # Supabase credentials (gitignored)
+├── .htaccess                           # SPA routing for cPanel
+├── app.htaccess                        # SPA routing for FIN subdirectory
+│
+├── server/
+│   ├── index.js                        # Express API (contact form + email)
+│   ├── schema.sql                      # MySQL table definition
+│   ├── package.json                    # Server dependencies (express, mysql2, nodemailer)
+│   └── .env.example                    # Server environment variables template
 │
 ├── src/
 │   ├── main.tsx                        # React DOM entry point
 │   ├── App.tsx                         # Router + layout shell
 │   ├── index.css                       # Tailwind directives + custom utilities
 │   ├── vite-env.d.ts                   # Vite type declarations
-│   │
-│   ├── lib/
-│   │   └── supabase.ts                 # Supabase client singleton
 │   │
 │   ├── hooks/
 │   │   └── useScrollAnimation.ts       # Intersection Observer for scroll FX
@@ -135,7 +143,7 @@ sthwalo-holdings/
 │   │   │
 │   │   ├── home/
 │   │   │   ├── Hero.tsx                # Full-screen hero with stats
-│   │   │   ├── FeaturedWork.tsx        # FIN spotlight with tech badges
+│   │   │   ├── FeaturedWork.tsx         # FIN spotlight with tech badges
 │   │   │   ├── ServicesOverview.tsx     # 4-card service grid
 │   │   │   └── TrustSignals.tsx        # Delivered projects + CTA banner
 │   │   │
@@ -150,11 +158,11 @@ sthwalo-holdings/
 │       ├── About.tsx                   # Founder story, values, timeline
 │       ├── Services.tsx                # 4 service categories + process section
 │       ├── Portfolio.tsx               # FIN deep dive + delivered sites grid
-│       └── Contact.tsx                 # Form (Supabase) + sidebar contact info
+│       └── Contact.tsx                 # Form (Express API) + sidebar contact info
 │
-└── supabase/
-    └── migrations/
-        └── 20260309144401_create_contact_submissions.sql
+└── public/
+    ├── STHWALO.png                     # Logo / favicon
+    └── Immaculate Low.png              # Founder photo
 ```
 
 ---
@@ -193,44 +201,63 @@ Usage examples:
 | `/about`     | About          | Immaculate's story, values, career timeline (2011-2025)  |
 | `/services`  | Services       | Full-stack dev, cloud/DevOps, security, financial systems|
 | `/portfolio` | Portfolio      | FIN deep dive, case study, 6 delivered client websites   |
-| `/contact`   | Contact        | Form (saves to Supabase), email, location, LinkedIn      |
+| `/contact`   | Contact        | Form (Express API), email, location, LinkedIn            |
 
 ---
 
 ## Environment Variables
 
+### Frontend
+
 Create a `.env` file in the project root:
 
 ```env
-VITE_SUPABASE_URL=your_supabase_project_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+VITE_API_URL=http://localhost:4000
 ```
 
-These are used by `src/lib/supabase.ts` for the contact form submission. The Supabase instance only handles contact form data -- all FIN data lives on AWS RDS.
+This is used by `src/pages/Contact.tsx` to POST contact form submissions to the Express backend.
+
+### Server
+
+Create a `.env` file inside the `server/` directory (see `server/.env.example`):
+
+```env
+PORT=4000
+FRONTEND_URL=http://localhost:5173
+
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+DB_NAME=sthwalo
+
+SMTP_USER=noreply@yourdomain.com
+NOTIFY_TO=hello@sthwalo.com
+```
 
 ---
 
 ## Database
 
-### Supabase (Contact Form Only)
+### MySQL (Contact Form)
 
-The `contact_submissions` table stores inquiries from the website contact form:
+The `contact_submissions` table stores inquiries from the website contact form. Create it using `server/schema.sql`:
 
-| Column       | Type         | Default             | Notes            |
-|:-------------|:-------------|:--------------------|:-----------------|
-| `id`         | uuid         | `gen_random_uuid()` | Primary key      |
-| `name`       | text         | --                  | Required         |
-| `email`      | text         | --                  | Required         |
-| `company`    | text         | `''`                | Optional         |
-| `service`    | text         | `''`                | Optional         |
-| `message`    | text         | --                  | Required         |
-| `created_at` | timestamptz  | `now()`             | Auto-generated   |
+| Column       | Type              | Default             | Notes            |
+|:-------------|:------------------|:--------------------|:-----------------|
+| `id`         | INT UNSIGNED      | AUTO_INCREMENT      | Primary key      |
+| `name`       | VARCHAR(255)      | --                  | Required         |
+| `email`      | VARCHAR(255)      | --                  | Required         |
+| `company`    | VARCHAR(255)      | `NULL`              | Optional         |
+| `service`    | VARCHAR(255)      | `NULL`              | Optional         |
+| `message`    | TEXT              | --                  | Required         |
+| `created_at` | TIMESTAMP         | `CURRENT_TIMESTAMP` | Auto-generated   |
 
-Row Level Security is enabled. Only anonymous `INSERT` is allowed (write-only from the frontend). No `SELECT`/`UPDATE`/`DELETE` for anonymous users.
+The Express backend at `server/index.js` handles `POST /contact` (and `/api/contact`) by inserting into MySQL and sending an email notification via Nodemailer.
 
 ### FIN Database (AWS RDS -- Separate)
 
-The FIN app uses its own PostgreSQL 17 instance on AWS RDS with 30+ tables, Flyway migrations, and HikariCP connection pooling. That database is entirely independent of this Supabase instance.
+The FIN app uses its own PostgreSQL 17 instance on AWS RDS with 30+ tables, Flyway migrations, and HikariCP connection pooling. That database is entirely independent of the marketing site's MySQL instance.
 
 ---
 
@@ -240,15 +267,22 @@ The FIN app uses its own PostgreSQL 17 instance on AWS RDS with 30+ tables, Flyw
 
 - Node.js 18+
 - npm 9+
+- MySQL 8+ (for the contact form backend)
 
 ### Install & Run
 
 ```bash
-# Install dependencies
+# Install frontend dependencies
 npm install
 
-# Start development server
+# Install server dependencies
+cd server && npm install && cd ..
+
+# Start development server (frontend)
 npm run dev
+
+# Start API server (in a separate terminal)
+cd server && npm run dev
 
 # Type-check
 npm run typecheck
@@ -301,7 +335,7 @@ This ensures all routes (`/about`, `/services`, etc.) resolve to `index.html` fo
 
 ## Plugging In the FIN Dashboard
 
-The FIN frontend (React 19 + TypeScript 5.9 + Vite 6) is a **separate build** from this marketing site. Both share the same core technologies (React, TypeScript, Vite, Tailwind) which makes integration straightforward. Below are three approaches, ordered by recommendation for your cost-reduction goal of hosting everything on cPanel.
+The FIN frontend (React 19 + TypeScript 5.9 + Vite 6) is a **separate build** from this marketing site. Both share the same core technologies (React, TypeScript, Vite, Tailwind) which makes integration straightforward.
 
 ### Option A: Same Domain (Subdirectory) -- Recommended
 
@@ -371,10 +405,10 @@ export default defineConfig({
 
 #### Linking from the Marketing Site
 
-The "Access FIN" button in the Navbar (`src/components/layout/Navbar.tsx`) currently links to `/portfolio`. Update it to point to the dashboard:
+The "Access FIN" button in the Navbar (`src/components/layout/Navbar.tsx`) links to `/app/`:
 
 ```tsx
-// In Navbar.tsx, change the "Access FIN" button href:
+// In Navbar.tsx:
 <Button href="/app/" variant="primary" size="sm">
   Access FIN
 </Button>
@@ -437,7 +471,7 @@ Both projects use overlapping technology. Here's a compatibility matrix:
 |:---------------|:----------------|:----------------|:------------|
 | React          | 18.3.1          | 19              | Yes (separate builds) |
 | TypeScript     | 5.5             | 5.9             | Yes (separate builds) |
-| Vite           | 5.4             | 6               | Yes (separate builds) |
+| Vite           | 7.3.1           | 6               | Yes (separate builds) |
 | Tailwind CSS   | 3.4.1           | Check FIN       | Share color tokens |
 | Axios          | Not used        | Used            | N/A         |
 | React Router   | 7.13            | Check FIN       | Yes         |
@@ -469,7 +503,7 @@ To keep both UIs visually consistent, copy the color tokens from this project's 
 When a user clicks "Access FIN" from the marketing site and arrives at the FIN dashboard:
 
 1. **FIN handles its own auth** -- The Spring Boot backend manages JWT sessions
-2. **No shared auth with the marketing site** -- The marketing site is public/static; Supabase auth is only for the contact form
+2. **No shared auth with the marketing site** -- The marketing site is public/static; the Express backend only handles contact form submissions
 3. **Same-domain cookies** -- If using Option A (subdirectory), cookies set on `yourdomain.com` by the FIN backend are accessible at both `/` and `/app/`, making session persistence seamless
 
 #### Recommended Flow
@@ -499,7 +533,7 @@ FIN Dashboard (/app/)
 
 ### CORS Configuration
 
-If the FIN frontend is hosted on the same domain as the marketing site (Option A), CORS is not an issue for requests to the Spring Boot backend on AWS -- the browser sees a different origin (your domain vs. the EC2 IP/domain).
+If the FIN frontend is hosted on the same domain as the marketing site (Option A), CORS is not an issue for requests to the Spring Boot backend on AWS -- the browser sees a different origin (your domain vs. the EC2 IP/domain), so CORS must still be configured on the backend.
 
 In your Spring Boot application, ensure CORS allows your cPanel domain:
 
