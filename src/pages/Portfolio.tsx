@@ -153,9 +153,9 @@ export default function Portfolio() {
                     <Lock className="w-4 h-4" />
                     Sign In to FIN
                   </Button>
-                  <Button to="/contact" variant="outline" size="md">
+                  <Button to="/demo" variant="outline" size="md">
                     <Eye className="w-4 h-4" />
-                    Request Demo
+                    Watch Demo
                   </Button>
                 </div>
               </div>

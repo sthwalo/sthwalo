@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
-import { Linkedin, Github, Twitter, ArrowUpRight } from 'lucide-react';
+import { Linkedin, Github, Twitter, ArrowUpRight, Youtube, Instagram, Facebook } from 'lucide-react';
 
 const quickLinks = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Services', path: '/services' },
+  { name: 'Demo', path: '/demo' },
+  { name: 'Blog', path: '/blog' },
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'Contact', path: '/contact' },
 ];
@@ -36,8 +38,11 @@ export default function Footer() {
             <div className="flex gap-3">
               {[
                 { icon: Linkedin, href: 'https://www.linkedin.com/in/inyoni/' },
-                { icon: Github, href: 'https://github.com/sthwalo' },
                 { icon: Twitter, href: 'https://x.com/nyoniimma' },
+                { icon: Youtube, href: 'https://youtube.com/@sthwalo' },
+                { icon: Instagram, href: 'https://instagram.com/sthwalo' },
+                { icon: Facebook, href: 'https://facebook.com/sthwalo' },
+                { icon: Github, href: 'https://github.com/sthwalo' },
               ].map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}

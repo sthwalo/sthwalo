@@ -9,6 +9,7 @@ import {
   Loader2,
 } from 'lucide-react';
 import AnimatedSection from '../components/ui/AnimatedSection';
+import Button from '../components/ui/Button';
 
 type FormData = {
   name: string;
@@ -31,7 +32,6 @@ const serviceOptions = [
   'Cloud Solutions',
   'AI Integration',
   'Legacy Modernization',
-  'FIN Demo Request',
   'General Inquiry',
 ];
 
@@ -299,15 +299,20 @@ export default function Contact() {
                     </h3>
                     <p className="text-sm text-warm-sand-400 leading-relaxed mb-4">
                       Existing FIN users can sign in directly. New users can
-                      request a demo through the form.
+                      watch our product demo to see FIN in action.
                     </p>
-                    <div className="flex gap-3">
-                      <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 text-warm-sand-300 border border-white/10">
-                        SSO Enabled
-                      </span>
-                      <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 text-warm-sand-300 border border-white/10">
-                        Demo Available
-                      </span>
+                    <div className="flex flex-col gap-3">
+                      <Button to="/demo" variant="outline" size="sm" className="border-warm-sand-400/30 text-warm-sand-200 hover:bg-white/5 hover:text-warm-sand-100 hover:border-warm-sand-300/50">
+                        Watch Demo
+                      </Button>
+                      <div className="flex gap-3">
+                        <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 text-warm-sand-300 border border-white/10">
+                          SSO Enabled
+                        </span>
+                        <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 text-warm-sand-300 border border-white/10">
+                          Demo Available
+                        </span>
+                      </div>
                     </div>
                   </div>
 

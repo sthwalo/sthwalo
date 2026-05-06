@@ -6,11 +6,16 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import Demo from './pages/Demo';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import ScrollToTop from './components/ui/ScrollToTop';
+import Analytics from './components/ui/Analytics';
 
 export default function App() {
   return (
     <BrowserRouter>
+      <Analytics />
       <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -21,6 +26,9 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/demo" element={<Demo />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </main>
         <Footer />
