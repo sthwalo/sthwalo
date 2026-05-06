@@ -41,7 +41,7 @@ export default function Footer() {
                 { icon: Twitter, href: 'https://x.com/nyoniimma' },
                 { icon: Youtube, href: 'https://youtube.com/@sthwalo' },
                 { icon: Instagram, href: 'https://www.instagram.com/sthwalos/' },
-                { icon: Facebook, href: 'https://facebook.com/sthwalo' },
+                { icon: Facebook, href: 'https://web.facebook.com/sthwalosenkosi/' },
                 { icon: Github, href: 'https://github.com/sthwalo' },
               ].map(({ icon: Icon, href }, i) => (
                 <a

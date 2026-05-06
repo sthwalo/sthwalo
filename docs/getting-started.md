@@ -62,7 +62,7 @@ Update social media links in `src/components/layout/Footer.tsx`:
 - Twitter: https://x.com/nyoniimma
 - YouTube: https://youtube.com/@sthwalo
 - Instagram: https://www.instagram.com/sthwalos/
-- Facebook: https://facebook.com/sthwalo
+- Facebook: https://web.facebook.com/sthwalosenkosi/
 - GitHub: https://github.com/sthwalo
 
 ### RSS Feed Configuration
