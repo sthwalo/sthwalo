@@ -90,15 +90,15 @@ export default function Hero() {
                     <div className="w-3 h-3 rounded-full bg-green-500/60" />
                   </div>
                   <div className="flex-1 bg-white/5 rounded-md px-3 py-1 text-xs text-warm-sand-500">
-                    sthwalo.com/app/dashboard
+                    sthwalo.com/app/management-report
                   </div>
                 </div>
 
                 {/* Dashboard header */}
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <p className="text-xs text-warm-sand-500">Good morning,</p>
-                    <p className="text-sm font-semibold text-warm-sand-100">Sthwalo Holdings</p>
+                    <p className="text-xs text-warm-sand-500">Sthwalo Holdings · FY 2027</p>
+                    <p className="text-sm font-semibold text-warm-sand-100">Management Report</p>
                   </div>
                   <span className="text-xs px-2 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
                     Live
@@ -108,10 +108,10 @@ export default function Hero() {
                 {/* KPI cards row */}
                 <div className="grid grid-cols-2 gap-2 mb-3">
                   {[
-                    { icon: TrendingUp, label: 'Revenue', value: 'R 84,320', change: '+12%', color: 'text-green-400' },
-                    { icon: CreditCard, label: 'Expenses', value: 'R 31,540', change: '-4%', color: 'text-harvest-gold-200' },
-                    { icon: FileText, label: 'Invoices Sent', value: '24', change: '3 pending', color: 'text-blue-400' },
-                    { icon: Users, label: 'Payroll Due', value: 'R 18,600', change: 'In 3 days', color: 'text-ember-400' },
+                    { icon: TrendingUp, label: 'Total Revenue', value: 'R 12 750', change: 'Net Profit: R 10 750', color: 'text-green-400' },
+                    { icon: CreditCard, label: 'Profit Margin', value: '84.31%', change: 'Total Expenses: R 2 000', color: 'text-harvest-gold-200' },
+                    { icon: FileText, label: 'Cash Balance', value: 'R 5 000', change: '869 days of cash', color: 'text-blue-400' },
+                    { icon: Users, label: 'Aged Receivables', value: 'R 5 750', change: 'Avg 15 days', color: 'text-ember-400' },
                   ].map(({ icon: Icon, label, value, change, color }) => (
                     <div key={label} className="bg-white/5 rounded-xl p-3 border border-white/5">
                       <div className="flex items-center justify-between mb-2">
@@ -127,11 +127,11 @@ export default function Hero() {
                 {/* Mini bar chart */}
                 <div className="bg-white/5 rounded-xl p-3 border border-white/5 mb-3">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs text-warm-sand-400 font-medium">Monthly Cash Flow</span>
-                    <span className="text-xs text-warm-sand-500">Jan – May 2026</span>
+                    <span className="text-xs text-warm-sand-400 font-medium">Profitability Ratios</span>
+                    <span className="text-xs text-warm-sand-500">FY 2027</span>
                   </div>
                   <div className="flex items-end gap-1.5 h-12">
-                    {[40, 65, 50, 80, 100].map((h, i) => (
+                    {[100, 84, 84, 100, 0].map((h, i) => (
                       <div key={i} className="flex-1 flex flex-col justify-end gap-0.5">
                         <div
                           className="rounded-sm bg-harvest-gold-200/70"
@@ -141,19 +141,19 @@ export default function Hero() {
                     ))}
                   </div>
                   <div className="flex justify-between mt-1">
-                    {['Jan', 'Feb', 'Mar', 'Apr', 'May'].map((m) => (
+                    {['ROA', 'GPM', 'NPM', 'AT', 'ROE'].map((m) => (
                       <span key={m} className="text-[10px] text-warm-sand-600">{m}</span>
                     ))}
                   </div>
                 </div>
 
-                {/* Recent transactions */}
+                {/* Budget variance */}
                 <div className="bg-white/5 rounded-xl p-3 border border-white/5">
-                  <p className="text-xs text-warm-sand-400 font-medium mb-2">Recent Transactions</p>
+                  <p className="text-xs text-warm-sand-400 font-medium mb-2">Budget Variance</p>
                   {[
-                    { name: 'Vodacom', category: 'Communication', amount: '-R 899', color: 'text-red-400' },
-                    { name: 'Client Payment', category: 'Revenue', amount: '+R 12,500', color: 'text-green-400' },
-                    { name: 'AWS Services', category: 'Technology', amount: '-R 1,240', color: 'text-red-400' },
+                    { name: 'Total Revenue', category: 'Actual vs Budget', amount: 'R 12 750', color: 'text-green-400' },
+                    { name: 'Total Expenses', category: 'Actual vs Budget', amount: 'R 2 000', color: 'text-red-400' },
+                    { name: 'Cash Closing Balance', category: 'Cash Flow Forecast', amount: 'R 4 833', color: 'text-blue-400' },
                   ].map((tx) => (
                     <div key={tx.name} className="flex items-center justify-between py-1.5 border-b border-white/5 last:border-0">
                       <div>
@@ -166,7 +166,7 @@ export default function Hero() {
                 </div>
               </div>
               <p className="text-sm text-warm-sand-500 mt-4 text-center">
-                Live dashboard showing real-time financial operations and automated reporting
+                Real management report data — generated automatically from your transactions
               </p>
             </div>
           </div>
