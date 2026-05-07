@@ -102,22 +102,16 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-deep-space-600 leading-relaxed">
                 <p>
-                  A systems entrepreneur and tech leader who applies accounting and
-                  control principles to software and operations. With 10+ years across
-                  product, IT, and finance, Immaculate builds reliable platforms and
-                  controlled processes that enable scalable, compliant growth.
+                  A backend engineer and systems builder focused on designing secure, automation-driven platforms that solve real operational problems. With a foundation in accounting, finance, and software engineering, Immaculate combines systems thinking with production-focused development to build scalable applications that emphasize accuracy, reliability, and long-term maintainability.
                 </p>
                 <p>
-                  His journey started in financial record management -- processing
-                  1,000+ monthly transactions, managing SARS compliance for 10+
-                  organisations, and achieving zero-error audit records. That discipline
-                  now drives every system he builds.
+                  His journey began in financial operations — managing high-volume transactions, tax compliance, payroll, and reporting for businesses operating under real-world constraints. That experience shaped a practical engineering mindset centered around traceability, control, and operational resilience.
                 </p>
                 <p>
-                  Attended IU for Computer Science, then resumed self-directed learning
-                  through hands-on projects and certifications. Today he delivers
-                  production systems in Java, React, PHP, and PostgreSQL -- deployed
-                  on AWS with Docker and enterprise-grade security.
+                  Today, he architects and operates production systems across Java, Spring Boot, React, PostgreSQL, Docker, and AWS. His flagship platform, FIN, is a multi-tenant financial management system built to automate accounting, payroll, VAT, reconciliation, and reporting workflows into audit-ready outputs for growing businesses.
+                </p>
+                <p>
+                  Immaculate approaches software as infrastructure for decision-making — where secure architecture, automation, and clean system design work together to reduce manual effort, lower operational risk, and create scalable business processes.
                 </p>
               </div>
               <div className="mt-6 flex flex-wrap gap-2">
