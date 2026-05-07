@@ -43,7 +43,7 @@ export default function Navbar() {
         <Link to="/" className="flex items-center group">
           <div className="bg-white rounded-xl px-3 py-2 group-hover:scale-105 transition-transform shadow-sm">
             <img
-              src="/sthwalo.png"
+              src="/sthwalo.webp"
               alt="Sthwalo Holdings"
               className="h-12 w-auto"
             />

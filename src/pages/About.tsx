@@ -82,7 +82,7 @@ export default function About() {
             <AnimatedSection animation="slide-in-left">
               <div className="relative">
                 <img
-                  src="/Immaculate Low.png"
+                  src="/Immaculate Low.webp"
                   alt="Immaculate Nyoni"
                   className="rounded-2xl w-full object-cover aspect-[4/5] shadow-xl"
                 />

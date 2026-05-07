@@ -1,11 +1,11 @@
 // Analytics utility functions for Google Analytics 4
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
+    gtag: (...args: unknown[]) => void;
   }
 }
 
-export const trackEvent = (eventName: string, parameters: Record<string, any> = {}) => {
+export const trackEvent = (eventName: string, parameters: Record<string, unknown> = {}) => {
   if (window.gtag) {
     window.gtag('event', eventName, parameters);
   }

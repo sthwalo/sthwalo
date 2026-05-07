@@ -10,7 +10,7 @@ const demoSequence = [
     title: '1. Create Your FIN Account',
     description: 'See how users sign up, access the platform, and begin their 14-day trial.',
     videoUrl: '/videos/fin-demo-01-signup.mp4',
-    thumbnail: '/images/demo-thumbnails/signup.png',
+    thumbnail: '/images/demo-thumbnails/signup.webp',
   },
   {
     id: 2,

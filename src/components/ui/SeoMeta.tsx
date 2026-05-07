@@ -16,7 +16,7 @@ interface SeoMetaProps {
 export default function SeoMeta({
   title = 'Sthwalo Holdings | Building Foundations with Code',
   description = 'Sthwalo Holdings is a software company building intelligent solutions. Explore our portfolio of dynamic web applications and enterprise-grade systems.',
-  image = '/sthwalo.png',
+  image = '/sthwalo.webp',
   url,
   type = 'website',
   publishedTime,

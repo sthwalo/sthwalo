@@ -7,7 +7,7 @@ import { trackBlogView } from '../utils/analytics';
 
 // Mock blog post data - in a real implementation, this would come from a CMS or markdown files
 const getBlogPost = (slug: string) => {
-  const posts: Record<string, any> = {
+  const posts: Record<string, Record<string, unknown>> = {
     'why-i-built-fin': {
       title: 'Why I Built FIN: The Gap Nobody Was Filling for Small Businesses in South Africa',
       excerpt: 'Most small businesses don\'t start with a bookkeeper. They start with a PDF bank statement and the quiet anxiety of not really knowing whether the business is profitable or just busy.',
@@ -15,7 +15,7 @@ const getBlogPost = (slug: string) => {
       author: 'Immaculate Nyoni',
       date: '2026-05-07',
       slug: 'why-i-built-fin',
-      featuredImage: '/images/demo-thumbnails/1.png',
+      featuredImage: '/images/demo-thumbnails/1.webp',
       readTime: '6 min read',
       content: `
         <p class="text-lg text-deep-space-600 leading-relaxed mb-6">
@@ -116,7 +116,7 @@ const getBlogPost = (slug: string) => {
       author: 'Immaculate Nyoni',
       date: '2026-05-07',
       slug: 'you-already-have-your-financial-data',
-      featuredImage: '/images/demo-thumbnails/1.png',
+      featuredImage: '/images/demo-thumbnails/1.webp',
       readTime: '5 min read',
       content: `
         <p class="text-lg text-deep-space-600 leading-relaxed mb-6">

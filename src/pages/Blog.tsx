@@ -14,7 +14,7 @@ const blogPosts = [
     author: 'Immaculate Nyoni',
     date: '2026-05-07',
     slug: 'why-i-built-fin',
-    featuredImage: '/images/demo-thumbnails/1.png',
+    featuredImage: '/images/demo-thumbnails/1.webp',
     readTime: '6 min read',
   },
   {
@@ -25,7 +25,7 @@ const blogPosts = [
     author: 'Immaculate Nyoni',
     date: '2026-05-07',
     slug: 'you-already-have-your-financial-data',
-    featuredImage: '/images/demo-thumbnails/1.png',
+    featuredImage: '/images/demo-thumbnails/1.webp',
     readTime: '5 min read',
   },
 ];

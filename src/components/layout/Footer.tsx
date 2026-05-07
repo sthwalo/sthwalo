@@ -27,7 +27,7 @@ export default function Footer() {
             <Link to="/" className="inline-flex items-center mb-5">
               <div className="bg-white rounded-xl px-2 py-1 hover:opacity-90 transition-opacity shadow-sm">
                 <img
-                  src="/sthwalo.png"
+                  src="/sthwalo.webp"
                   alt="Sthwalo Holdings"
                   className="h-8 w-auto"
                 />
