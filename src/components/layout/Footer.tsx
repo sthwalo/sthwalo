@@ -24,12 +24,14 @@ export default function Footer() {
       <div className="section-container pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-12 border-b border-white/10">
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center mb-5">
-              <img
-                src="/sthwalo.png"
-                alt="Sthwalo Holdings"
-                className="h-10 w-auto"
-              />
+            <Link to="/" className="inline-flex items-center mb-5">
+              <div className="bg-white rounded-xl px-2 py-1 hover:opacity-90 transition-opacity shadow-sm">
+                <img
+                  src="/sthwalo.png"
+                  alt="Sthwalo Holdings"
+                  className="h-8 w-auto"
+                />
+              </div>
             </Link>
             <p className="text-sm leading-relaxed text-warm-sand-400 mb-6 max-w-xs">
               Building foundations with code. We craft intelligent software solutions

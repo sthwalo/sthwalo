@@ -35,17 +35,19 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         showSolid
-          ? 'bg-deep-space-800/95 backdrop-blur-md shadow-lg'
+          ? 'bg-deep-space-900/95 backdrop-blur-md shadow-lg border-b border-white/5'
           : 'bg-transparent'
       }`}
     >
       <nav className="section-container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center group">
-          <img
-            src="/sthwalo.png"
-            alt="Sthwalo Holdings"
-            className="h-10 w-auto group-hover:scale-105 transition-transform"
-          />
+          <div className="bg-white rounded-xl px-2 py-1 group-hover:scale-105 transition-transform shadow-sm">
+            <img
+              src="/sthwalo.png"
+              alt="Sthwalo Holdings"
+              className="h-8 w-auto"
+            />
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-1">
