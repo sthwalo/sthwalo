@@ -8,207 +8,190 @@ import { trackBlogView } from '../utils/analytics';
 // Mock blog post data - in a real implementation, this would come from a CMS or markdown files
 const getBlogPost = (slug: string) => {
   const posts: Record<string, any> = {
-    'how-fin-automates-financial-operations': {
-      title: 'How FIN Automates Financial Operations for SMEs',
-      excerpt: 'A comprehensive guide to how FIN transforms manual accounting workflows into automated financial visibility, saving SMEs time and reducing errors.',
-      category: 'Product Updates',
-      author: 'Immaculate Nyoni',
-      date: '2025-05-06',
-      slug: 'how-fin-automates-financial-operations',
-      featuredImage: '/images/blog/fin-dashboard.jpg',
-      readTime: '5 min read',
-      content: `
-        <p class="text-lg text-deep-space-600 leading-relaxed mb-6">
-          In today's fast-paced business environment, small and medium enterprises (SMEs) are increasingly recognizing the need for efficient financial management systems. Manual accounting processes are not only time-consuming but also prone to errors that can have significant consequences for business operations and compliance.
-        </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">The Challenge of Manual Financial Operations</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          Traditional accounting methods often involve:
-        </p>
-
-        <ul class="list-disc pl-6 text-deep-space-600 leading-relaxed mb-6">
-          <li>Manual data entry from bank statements</li>
-          <li>Time-consuming transaction categorization</li>
-          <li>Error-prone reconciliation processes</li>
-          <li>Delayed financial reporting</li>
-          <li>Compliance risks from manual oversight</li>
-        </ul>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          These challenges not only consume valuable time but also increase the risk of financial errors that can impact business decisions and regulatory compliance.
-        </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">How FIN Transforms Financial Operations</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          FIN addresses these challenges through intelligent automation that combines accounting expertise with modern software engineering. Here's how:
-        </p>
-
-        <h3 class="text-xl font-semibold text-deep-space-800 mt-6 mb-3">1. Automated Transaction Processing</h3>
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          FIN automatically imports transactions from bank feeds and applies intelligent classification algorithms to categorize expenses and income according to standard accounting practices.
-        </p>
-
-        <h3 class="text-xl font-semibold text-deep-space-800 mt-6 mb-3">2. Real-Time Financial Dashboard</h3>
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          Business owners get instant visibility into their financial position with interactive dashboards showing cash flow, profitability, and key performance indicators.
-        </p>
-
-        <h3 class="text-xl font-semibold text-deep-space-800 mt-6 mb-3">3. Automated Reporting</h3>
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          Generate professional financial statements, tax reports, and management reports automatically, ensuring compliance and reducing manual reporting efforts.
-        </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">Built by Finance Experts</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          Unlike generic accounting software, FIN was built by someone with deep experience in both accounting and software development. This unique perspective ensures that the platform not only automates processes but does so in compliance with accounting standards and business best practices.
-        </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">Getting Started with FIN</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          Ready to transform your financial operations? Start with a free 14-day trial and experience the difference automated financial management can make for your business.
-        </p>
-      `,
-    },
-    'bookkeeper-to-software-engineer-journey': {
-      title: 'From Bookkeeper to Software Engineer: A Journey in Fintech',
-      excerpt: 'The story of how accounting discipline and software engineering principles combined to create FIN, a platform built by someone who understands both worlds.',
+    'why-i-built-fin': {
+      title: 'Why I Built FIN: The Gap Nobody Was Filling for Small Businesses in South Africa',
+      excerpt: 'Most small businesses don\'t start with a bookkeeper. They start with a PDF bank statement and the quiet anxiety of not really knowing whether the business is profitable or just busy.',
       category: 'Founder Notes',
       author: 'Immaculate Nyoni',
-      date: '2025-04-15',
-      slug: 'bookkeeper-to-software-engineer-journey',
-      featuredImage: '/images/blog/founder-story.jpg',
-      readTime: '8 min read',
-      content: `
-        <p class="text-lg text-deep-space-600 leading-relaxed mb-6">
-          The journey from maintaining physical ledger books to building automated financial systems represents more than a career transition—it's a fundamental shift in how we think about financial data management and business operations.
-        </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">The Foundation: Accounting Discipline</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          My journey began with the meticulous world of bookkeeping. For over a decade, I managed financial records for businesses, ensuring every transaction was recorded accurately and every report complied with regulatory requirements. This experience taught me something invaluable: the importance of precision, auditability, and control in financial systems.
-        </p>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          Working with spreadsheets, ledger books, and accounting software, I witnessed firsthand the pain points that businesses face when managing their finances manually. The repetitive tasks, the risk of human error, and the time spent on compliance reporting—all of these challenges became opportunities for innovation.
-        </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">The Transition: Learning to Code</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          The decision to learn software engineering wasn't driven by a desire to change careers, but by a need to solve real problems. I started with the fundamentals—HTML, CSS, and JavaScript—and gradually moved into more complex technologies.
-        </p>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          What surprised me most was how the discipline of accounting translated directly to software development. Both fields require:
-        </p>
-
-        <ul class="list-disc pl-6 text-deep-space-600 leading-relaxed mb-6">
-          <li>Attention to detail and precision</li>
-          <li>Systematic approaches to complex problems</li>
-          <li>Rigorous testing and validation</li>
-          <li>Clear documentation and audit trails</li>
-          <li>Compliance with standards and regulations</li>
-        </ul>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">Building FIN: The Synthesis</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          FIN represents the perfect synthesis of accounting expertise and software engineering. Every feature, every workflow, and every user interface decision is informed by real-world accounting experience.
-        </p>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          When we designed the transaction processing system, we didn't just think about technology—we thought about double-entry bookkeeping principles. When we built the reporting engine, we considered not just data visualization, but financial statement accuracy and regulatory compliance.
-        </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">The Unique FIN Advantage</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          This background gives FIN a unique advantage in the fintech space. We're not just another accounting software—we're a platform built by someone who understands the nuances of financial operations from both the business and technical perspectives.
-        </p>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          Every SME deserves financial management tools that are as reliable and trustworthy as the systems used by large corporations. FIN bridges that gap by combining enterprise-grade technology with deep financial expertise.
-        </p>
-      `,
-    },
-    'transaction-classification-automated-accounting': {
-      title: 'Transaction Classification: The Foundation of Automated Accounting',
-      excerpt: 'How FIN uses intelligent algorithms to classify transactions automatically, reducing manual data entry by up to 80% for small businesses.',
-      category: 'Accounting Automation',
-      author: 'Immaculate Nyoni',
-      date: '2025-03-22',
-      slug: 'transaction-classification-automated-accounting',
-      featuredImage: '/images/blog/transactions.jpg',
+      date: '2026-05-07',
+      slug: 'why-i-built-fin',
+      featuredImage: '/images/demo-thumbnails/1.png',
       readTime: '6 min read',
       content: `
         <p class="text-lg text-deep-space-600 leading-relaxed mb-6">
-          Transaction classification is the cornerstone of automated accounting. It's the process that transforms raw financial data into meaningful business insights, and it's where FIN's accounting expertise shines brightest.
-        </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">The Challenge of Manual Classification</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          For most small businesses, transaction classification is a manual, time-consuming process. Bank statements arrive, and someone—often the business owner—must review each transaction and assign it to the appropriate accounting category.
+          Most small businesses don't start with a bookkeeper.
         </p>
 
         <p class="text-deep-space-600 leading-relaxed mb-6">
-          This process is not only tedious but also prone to errors. Inconsistent categorization can lead to inaccurate financial reports, compliance issues, and poor business decisions.
-        </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">How FIN Automates Classification</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          FIN uses a multi-layered approach to transaction classification that combines machine learning with accounting expertise:
-        </p>
-
-        <h3 class="text-xl font-semibold text-deep-space-800 mt-6 mb-3">Pattern Recognition</h3>
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          Our algorithms analyze transaction descriptions, amounts, and frequencies to identify patterns. A coffee shop purchase at the same location every morning? That's likely "Office Supplies" or "Meals & Entertainment."
-        </p>
-
-        <h3 class="text-xl font-semibold text-deep-space-800 mt-6 mb-3">Merchant Database</h3>
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          We maintain a comprehensive database of merchants and their typical business categories. When a transaction from "Amazon Web Services" appears, the system knows this is likely "Technology" or "Cloud Services."
-        </p>
-
-        <h3 class="text-xl font-semibold text-deep-space-800 mt-6 mb-3">Rule-Based Classification</h3>
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          For complex scenarios, FIN applies accounting rules. Recurring payments, tax-related transactions, and inter-company transfers are classified according to standard accounting principles.
-        </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">The Human Touch</h2>
-
-        <p class="text-deep-space-600 leading-relaxed mb-6">
-          While automation handles the majority of transactions, FIN includes human oversight capabilities. Users can review classifications, correct errors, and teach the system to improve over time.
+          They start with a dream, a hustle, and a PDF bank statement they downloaded from their bank's app at the end of the month.
         </p>
 
         <p class="text-deep-space-600 leading-relaxed mb-6">
-          This hybrid approach ensures accuracy while maintaining the flexibility that businesses need for unique or unusual transactions.
+          That's the reality. Not Xero. Not QuickBooks. Not Sage. A PDF. Maybe a handful of receipts stuffed in a folder — physical or WhatsApp — and the quiet anxiety of not really knowing whether the business is profitable or just busy.
         </p>
-
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">The Impact on Business Operations</h2>
 
         <p class="text-deep-space-600 leading-relaxed mb-6">
-          Automated transaction classification doesn't just save time—it transforms how businesses operate:
+          I've seen this up close. Business owners who are brilliant at what they do — hair salons, contractors, spaza shops, small retailers, freelancers — completely in the dark about their own finances. Not because they don't care. But because the tools that exist were not built for them.
         </p>
 
-        <ul class="list-disc pl-6 text-deep-space-600 leading-relaxed mb-6">
-          <li><strong>Real-time financial visibility:</strong> Transactions are classified and reflected in reports immediately</li>
-          <li><strong>Reduced errors:</strong> Consistent classification eliminates human mistakes</li>
-          <li><strong>Compliance assurance:</strong> Proper categorization ensures regulatory compliance</li>
-          <li><strong>Scalability:</strong> Businesses can handle more transactions without increasing headcount</li>
+        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">Sage is powerful. QuickBooks is capable. But both assume you already think like an accountant.</h2>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          They assume you know what a chart of accounts is. They assume you understand the difference between a debit and a credit. They assume you have time to sit down, open the software, and capture every transaction — one by one — into the right category, the right journal, the right ledger.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          For a business owner who is also the salesperson, the delivery driver, the customer service rep, and the HR department? That's not realistic.
+        </p>
+
+        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">So what actually happens?</h2>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          The bank statement arrives. It sits in the inbox. The business owner either ignores it — or hands it to a bookkeeper they're paying R3,000–R8,000 a month for a service that still takes 3 to 5 days to produce a report they don't fully understand.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          Or worse — they try to do it themselves in Excel. Columns get misaligned. Formulas break. And by the time month three arrives, the spreadsheet is a disaster and the owner has no idea what the numbers mean.
+        </p>
+
+        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">This is exactly why I built FIN.</h2>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          The insight was simple: most small businesses already have their financial data. It lives in their bank statement. The bank captured every transaction — date, amount, description. The raw data exists.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          The problem is processing it.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          FIN lets you upload that PDF bank statement directly. The system reads it, extracts every transaction, and then asks you one question per transaction type: <em>"What is this?"</em>
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          You answer once. You create a rule. And that rule runs forever.
+        </p>
+
+        <ul class="list-none pl-0 text-deep-space-600 leading-relaxed mb-6 space-y-2">
+          <li>→ <em>"Shoprite"</em> always maps to Cost of Sales — Groceries.</li>
+          <li>→ <em>"Vodacom"</em> always maps to Communication Expenses.</li>
+          <li>→ <em>"Rental deposit"</em> always maps to Deposit Liability.</li>
         </ul>
 
-        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">Getting Started</h2>
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          The first time takes a few minutes. The second month? Done in minutes. By month three, FIN knows your business better than most bookkeepers do after six months.
+        </p>
 
         <p class="text-deep-space-600 leading-relaxed mb-6">
-          Ready to experience the power of automated transaction classification? Start your free trial today and see how FIN can transform your financial operations.
+          Those rules classify every transaction into the correct account in your chart of accounts. They post to your ledgers. They feed your journals. And at the end of it all — FIN generates your Income Statement, Balance Sheet, and Cash Flow Statement automatically.
+        </p>
+
+        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">What used to take a bookkeeper five days now takes one.</h2>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          What used to cost a business R5,000 a month now costs a fraction of that.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          And the business owner — for the first time — actually understands their own numbers.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          That's not a feature. That's a shift in power.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          Small businesses deserve financial clarity. Not when they can afford an accountant. Not when they learn to use complex software. <strong>Now. From day one.</strong>
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          That's what FIN is for.
+        </p>
+      `,
+    },
+    'you-already-have-your-financial-data': {
+      title: 'You Already Have Your Financial Data — You Just Don\'t Know It',
+      excerpt: 'Every business that has a bank account has financial data. The problem has never been the data — it\'s been turning it into something useful.',
+      category: 'Accounting Automation',
+      author: 'Immaculate Nyoni',
+      date: '2026-05-07',
+      slug: 'you-already-have-your-financial-data',
+      featuredImage: '/images/demo-thumbnails/1.png',
+      readTime: '5 min read',
+      content: `
+        <p class="text-lg text-deep-space-600 leading-relaxed mb-6">
+          Every business that has a bank account has financial data.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          It's in that PDF statement you download at the end of every month. Every transaction your business made — every payment received, every expense paid — is sitting right there. Date. Amount. Description.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          The problem has never been the data. The problem has been turning that data into something useful.
+        </p>
+
+        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">The Old Way: One Entry at a Time</h2>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          Traditional accounting software like Sage and QuickBooks require you to sit down and capture every transaction manually. Select the date. Choose the account. Enter the amount. Assign a category. Repeat — for every single line item on your statement.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          For a business doing 200 transactions a month, that's hours of work. For a business doing 500? That's a full day. Every month. Without fail.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          And for most small business owners, that time simply doesn't exist. So the statements pile up. The books fall behind. And by the time the accountant or bookkeeper is called in, there are months of backlog to untangle — at significant cost.
+        </p>
+
+        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">FIN Takes a Different Approach</h2>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          Upload your bank statement. FIN reads it and presents your transactions in a clean, simple interface. The first time you see a transaction from a supplier, you create a rule:
+        </p>
+
+        <blockquote class="border-l-4 border-harvest-gold-200 pl-6 italic text-deep-space-600 my-6">
+          "Any transaction containing 'ABSA BANK FEES' → classify as Bank Charges"
+        </blockquote>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          Done. That rule runs on every future statement you upload. You never categorise that transaction again.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          Over time your rules build up. They get smarter. And your monthly processing time drops from days to hours — then from hours to minutes.
+        </p>
+
+        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">What FIN Does Behind the Scenes</h2>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          Behind the scenes, FIN is doing what an accountant does manually:
+        </p>
+
+        <ul class="list-disc pl-6 text-deep-space-600 leading-relaxed mb-6 space-y-2">
+          <li>Posting to the correct accounts in your chart of accounts</li>
+          <li>Recording entries in your journals</li>
+          <li>Updating your ledgers</li>
+          <li>Preparing your trial balance</li>
+        </ul>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          So when you open your reports, the numbers are right. The Income Statement reflects reality. The Cash Flow shows you exactly where your money went.
+        </p>
+
+        <h2 class="text-2xl font-bold text-deep-space-800 mt-8 mb-4">No Accounting Degree Required</h2>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          No accounting degree required. No bookkeeper needed for the basics.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          What took 5 days now takes one. What cost thousands in bookkeeper fees is now in your control — from your phone, on your schedule.
+        </p>
+
+        <p class="text-deep-space-600 leading-relaxed mb-6">
+          <strong>The gap between "I have a bank statement" and "I understand my business finances" just got a lot smaller.</strong>
         </p>
       `,
     },
