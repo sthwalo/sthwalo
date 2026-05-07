@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Play } from 'lucide-react';
+import { ArrowRight, Sparkles, Play, TrendingUp, CreditCard, FileText, Users } from 'lucide-react';
 import Button from '../ui/Button';
 import { trackCTAClick } from '../../utils/analytics';
 
@@ -81,22 +81,87 @@ export default function Hero() {
 
             {/* Right Column - Product Visual */}
             <div className="animate-fade-in-up animate-delay-300">
-              <div className="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 p-1">
-                <div className="rounded-xl overflow-hidden">
-                  <img
-                    src="/fin-dashboard-preview.jpg"
-                    alt="FIN Financial Dashboard - Transaction processing and financial reports"
-                    className="w-full h-auto object-cover aspect-[4/3]"
-                  />
+              <div className="relative rounded-2xl overflow-hidden bg-deep-space-900/80 border border-white/10 p-4">
+                {/* Mock browser bar */}
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-oxblood-400/60" />
+                    <div className="w-3 h-3 rounded-full bg-harvest-gold-400/60" />
+                    <div className="w-3 h-3 rounded-full bg-green-500/60" />
+                  </div>
+                  <div className="flex-1 bg-white/5 rounded-md px-3 py-1 text-xs text-warm-sand-500">
+                    sthwalo.com/app/dashboard
+                  </div>
                 </div>
-                <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                  {['Dashboard Analytics', 'Transaction Processing', 'Financial Reports', 'Payroll Automation'].map((feature) => (
-                    <span
-                      key={feature}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-deep-space-800/90 text-warm-sand-200 border border-white/10 backdrop-blur-sm"
-                    >
-                      {feature}
-                    </span>
+
+                {/* Dashboard header */}
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <p className="text-xs text-warm-sand-500">Good morning,</p>
+                    <p className="text-sm font-semibold text-warm-sand-100">Sthwalo Holdings</p>
+                  </div>
+                  <span className="text-xs px-2 py-1 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
+                    Live
+                  </span>
+                </div>
+
+                {/* KPI cards row */}
+                <div className="grid grid-cols-2 gap-2 mb-3">
+                  {[
+                    { icon: TrendingUp, label: 'Revenue', value: 'R 84,320', change: '+12%', color: 'text-green-400' },
+                    { icon: CreditCard, label: 'Expenses', value: 'R 31,540', change: '-4%', color: 'text-harvest-gold-200' },
+                    { icon: FileText, label: 'Invoices Sent', value: '24', change: '3 pending', color: 'text-blue-400' },
+                    { icon: Users, label: 'Payroll Due', value: 'R 18,600', change: 'In 3 days', color: 'text-ember-400' },
+                  ].map(({ icon: Icon, label, value, change, color }) => (
+                    <div key={label} className="bg-white/5 rounded-xl p-3 border border-white/5">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-xs text-warm-sand-500">{label}</span>
+                        <Icon className={`w-3.5 h-3.5 ${color}`} />
+                      </div>
+                      <p className="text-sm font-bold text-warm-sand-100">{value}</p>
+                      <p className={`text-xs mt-0.5 ${color}`}>{change}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Mini bar chart */}
+                <div className="bg-white/5 rounded-xl p-3 border border-white/5 mb-3">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs text-warm-sand-400 font-medium">Monthly Cash Flow</span>
+                    <span className="text-xs text-warm-sand-500">Jan – May 2026</span>
+                  </div>
+                  <div className="flex items-end gap-1.5 h-12">
+                    {[40, 65, 50, 80, 100].map((h, i) => (
+                      <div key={i} className="flex-1 flex flex-col justify-end gap-0.5">
+                        <div
+                          className="rounded-sm bg-harvest-gold-200/70"
+                          style={{ height: `${h * 0.48}px` }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex justify-between mt-1">
+                    {['Jan', 'Feb', 'Mar', 'Apr', 'May'].map((m) => (
+                      <span key={m} className="text-[10px] text-warm-sand-600">{m}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Recent transactions */}
+                <div className="bg-white/5 rounded-xl p-3 border border-white/5">
+                  <p className="text-xs text-warm-sand-400 font-medium mb-2">Recent Transactions</p>
+                  {[
+                    { name: 'Vodacom', category: 'Communication', amount: '-R 899', color: 'text-red-400' },
+                    { name: 'Client Payment', category: 'Revenue', amount: '+R 12,500', color: 'text-green-400' },
+                    { name: 'AWS Services', category: 'Technology', amount: '-R 1,240', color: 'text-red-400' },
+                  ].map((tx) => (
+                    <div key={tx.name} className="flex items-center justify-between py-1.5 border-b border-white/5 last:border-0">
+                      <div>
+                        <p className="text-xs text-warm-sand-200">{tx.name}</p>
+                        <p className="text-[10px] text-warm-sand-600">{tx.category}</p>
+                      </div>
+                      <span className={`text-xs font-medium ${tx.color}`}>{tx.amount}</span>
+                    </div>
                   ))}
                 </div>
               </div>
