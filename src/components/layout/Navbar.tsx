@@ -42,7 +42,7 @@ export default function Navbar() {
       <nav className="section-container flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="flex items-center group">
           <img
-            src="/STHWALO.png"
+            src="/sthwalo.png"
             alt="Sthwalo Holdings"
             className="h-10 w-auto group-hover:scale-105 transition-transform"
           />

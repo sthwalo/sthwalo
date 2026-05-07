@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center mb-5">
               <img
-                src="/STHWALO.png"
+                src="/sthwalo.png"
                 alt="Sthwalo Holdings"
                 className="h-10 w-auto"
               />
