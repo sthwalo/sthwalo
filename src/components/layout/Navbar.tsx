@@ -39,13 +39,13 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <nav className="section-container flex items-center justify-between h-16 md:h-20">
+      <nav className="section-container flex items-center justify-between h-18 md:h-24">
         <Link to="/" className="flex items-center group">
-          <div className="bg-white rounded-xl px-2 py-1 group-hover:scale-105 transition-transform shadow-sm">
+          <div className="bg-white rounded-xl px-3 py-2 group-hover:scale-105 transition-transform shadow-sm">
             <img
               src="/sthwalo.png"
               alt="Sthwalo Holdings"
-              className="h-8 w-auto"
+              className="h-12 w-auto"
             />
           </div>
         </Link>
