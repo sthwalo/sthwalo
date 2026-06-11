@@ -1,4 +1,4 @@
-import { BookOpen, Briefcase, Calculator, ExternalLink, Landmark, ShieldCheck } from 'lucide-react';
+import { BookOpen, Briefcase, Calculator, Download, ExternalLink, Landmark, ShieldCheck } from 'lucide-react';
 import Button from '../components/ui/Button';
 import SeoMeta from '../components/ui/SeoMeta';
 import { trackResourceView, trackSocialDemoClick } from '../utils/analytics';
@@ -42,7 +42,7 @@ export default function Resources() {
             <p className="text-warm-sand-400 mt-3 max-w-3xl">FIN helps South African finance teams turn everyday financial records into reviewable accounting workflows and decision-ready reports. It uses controlled automation without hiding the accounting result.</p>
           </div>
           <div className="mt-14 text-center"><h2 className="text-2xl font-bold text-deep-space-800">Watch separately published demonstrations</h2><p className="text-deep-space-600 mt-3 mb-6">Follow the platform you use. Every demonstration should link back to the relevant written guide.</p><div className="flex flex-wrap justify-center gap-3">{socials.map(([name, href]) => <a key={name} href={href} target="_blank" rel="noreferrer" onClick={() => trackSocialDemoClick(name)} className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-warm-sand-300/50 font-semibold text-deep-space-800">{name}<ExternalLink className="w-4 h-4" /></a>)}</div></div>
-          <div className="mt-12 text-center"><a href="/resources/FIN_Public_Handbook.pdf" className="inline-flex items-center gap-2 font-semibold text-deep-space-800 underline">Download the public FIN handbook (PDF)<ExternalLink className="w-4 h-4" /></a></div>
+          <div className="mt-12 text-center"><a href="/downloads/FIN_Public_Handbook.pdf" download="FIN_Public_Handbook.pdf" onClick={() => trackResourceView('handbook-pdf')} className="inline-flex items-center gap-2 font-semibold text-deep-space-800 underline"><Download className="w-4 h-4" />Download the public FIN handbook (PDF)</a></div>
         </div>
       </section>
     </>

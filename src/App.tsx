@@ -10,6 +10,8 @@ import Demo from './pages/Demo';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Resources from './pages/Resources';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 import ScrollToTop from './components/ui/ScrollToTop';
 import Analytics from './components/ui/Analytics';
 
@@ -31,6 +33,8 @@ export default function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
         </main>
         <Footer />

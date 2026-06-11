@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { ArrowLeft, Calendar, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Calendar } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import SeoMeta from '../components/ui/SeoMeta';
@@ -39,7 +39,8 @@ export default function BlogPost() {
           </div>
           <aside className="mt-12 p-6 rounded-xl bg-white border border-warm-sand-300/40">
             <p className="text-xs uppercase tracking-widest text-harvest-gold-600 font-bold">Documentation source</p>
-            <a href={post.sourceHref} className="inline-flex items-center gap-2 mt-2 font-semibold text-deep-space-800">{post.sourceLabel}<ExternalLink className="w-4 h-4" /></a>
+            <p className="text-deep-space-600 mt-2 mb-4">This article is based on the {post.sourceLabel}. Request the full document and we'll send it through.</p>
+            <Button to={`/contact?doc=${encodeURIComponent(post.sourceLabel)}`} variant="secondary" size="sm" onClick={() => trackCTAClick('doc_request', `blog-${post.slug}`)}>Request the {post.sourceLabel}</Button>
           </aside>
           <div className="mt-12 p-8 rounded-2xl bg-deep-space-800 text-center">
             <h2 className="text-2xl font-bold text-warm-sand-100">Explore FIN with the boundaries visible</h2>

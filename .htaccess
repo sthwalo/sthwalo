@@ -1,3 +1,6 @@
+# Never expose directory listings (e.g. /downloads/)
+Options -Indexes
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /

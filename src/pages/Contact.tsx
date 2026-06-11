@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   Send,
   Mail,
@@ -36,7 +37,17 @@ const serviceOptions = [
 ];
 
 export default function Contact() {
-  const [form, setForm] = useState<FormData>(initialForm);
+  const [searchParams] = useSearchParams();
+  const requestedDoc = searchParams.get('doc');
+  const [form, setForm] = useState<FormData>(() =>
+    requestedDoc
+      ? {
+          ...initialForm,
+          service: 'General Inquiry',
+          message: `I'd like to request the ${requestedDoc}. Please send it through.`,
+        }
+      : initialForm
+  );
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
   const handleChange = (

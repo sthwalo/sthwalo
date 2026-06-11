@@ -117,12 +117,12 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Sthwalo Holdings. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-xs text-warm-sand-500 hover:text-warm-sand-300 transition-colors">
+            <Link to="/privacy" className="text-xs text-warm-sand-500 hover:text-warm-sand-300 transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-xs text-warm-sand-500 hover:text-warm-sand-300 transition-colors">
+            </Link>
+            <Link to="/terms" className="text-xs text-warm-sand-500 hover:text-warm-sand-300 transition-colors">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>
