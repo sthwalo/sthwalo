@@ -2,8 +2,8 @@
   RewriteEngine On
   RewriteBase /
 
-  # Don't rewrite requests to the /app/ subdirectory (FIN dashboard)
-  RewriteRule ^app(/|$) - [L]
+  # Don't rewrite requests to the /fin/ subdirectory (FIN dashboard)
+  RewriteRule ^fin(/|$) - [L]
 
   # Don't rewrite requests to the /api/ (Node.js contact API)
   RewriteRule ^api(/|$) - [L]

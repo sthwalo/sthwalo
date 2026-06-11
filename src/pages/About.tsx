@@ -19,7 +19,7 @@ const values = [
   {
     icon: Target,
     title: 'Finance-First Engineering',
-    description: 'We apply accounting and control principles to software and operations -- building platforms that are audit-ready from day one.',
+    description: 'We apply accounting and control principles to software and operations, building systems with traceability and review in mind.',
   },
   {
     icon: Heart,
@@ -70,7 +70,7 @@ export default function About() {
             <p className="text-lg text-warm-sand-400 leading-relaxed max-w-2xl animate-fade-in-up animate-delay-200">
               Sthwalo Holdings blends a decade of accounting discipline with
               hands-on software engineering. We build systems the way we audit
-              books -- with precision, control, and zero tolerance for errors.
+              books -- with precision, visible controls, and responsible review.
             </p>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function About() {
                   His journey began in financial operations — managing high-volume transactions, tax compliance, payroll, and reporting for businesses operating under real-world constraints. That experience shaped a practical engineering mindset centered around traceability, control, and operational resilience.
                 </p>
                 <p>
-                  Today, he architects and operates production systems across Java, Spring Boot, React, PostgreSQL, Docker, and AWS. His flagship platform, FIN, is a multi-tenant financial management system built to automate accounting, payroll, VAT, reconciliation, and reporting workflows into audit-ready outputs for growing businesses.
+                  Today, he architects and operates production systems across Java, Spring Boot, React, PostgreSQL, Docker, and AWS. His flagship platform, FIN, is a company-scoped financial operations system supporting controlled accounting, payroll, VAT, reconciliation, and reporting workflows.
                 </p>
                 <p>
                   Immaculate approaches software as infrastructure for decision-making — where secure architecture, automation, and clean system design work together to reduce manual effort, lower operational risk, and create scalable business processes.

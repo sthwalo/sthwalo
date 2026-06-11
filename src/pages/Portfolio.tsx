@@ -16,17 +16,17 @@ import SectionHeading from '../components/ui/SectionHeading';
 import Button from '../components/ui/Button';
 
 const finFeatures = [
-  { icon: BarChart3, title: 'Transaction Processing', text: '7,156+ transactions parsed, classified, and processed with automated double-entry journal generation and full ACID compliance.' },
+  { icon: BarChart3, title: 'Transaction Processing', text: 'Supported statement imports, reviewable classifications, reusable rules, reconciliation, and double-entry journal workflows.' },
   { icon: Shield, title: 'Enterprise Security', text: 'JWT authentication, role-based access control, encryption-at-rest, HTTPS/TLS transport, and comprehensive security hardening.' },
-  { icon: Zap, title: 'Payroll & Tax Automation', text: 'Automated payroll processing with EMP201/SDL reporting, SARS compliance, and reduced manual processing time by 50%.' },
-  { icon: FileText, title: 'Financial Reporting', text: '24 REST controllers powering dashboards, financial statements, reconciliation reports, and compliance documentation.' },
+  { icon: Zap, title: 'Payroll & SARS-Facing Preparation', text: 'Payroll processing and EMP201, EMP501, and IRP5-style preparation outputs for review and manual submission.' },
+  { icon: FileText, title: 'Financial Reporting', text: 'Ledger-backed financial, management, VAT, payroll, reconciliation, and audit-trail outputs.' },
 ];
 
 const finMetrics = [
-  { value: '194', label: 'Java source files' },
-  { value: '25+', label: 'Business services' },
-  { value: '30+', label: 'Database tables' },
-  { value: '118+', label: 'Unit tests' },
+  { value: 'Production', label: 'Deployed workflow' },
+  { value: 'Reviewable', label: 'Automation model' },
+  { value: 'Company', label: 'Scoped access' },
+  { value: 'Manual', label: 'SARS submission' },
 ];
 
 const techStack = ['Spring Boot 3', 'Java 17', 'React 19', 'TypeScript', 'PostgreSQL 17', 'Docker', 'AWS'];
@@ -133,10 +133,9 @@ export default function Portfolio() {
                   FIN Financial Management System
                 </h2>
                 <p className="text-deep-space-500 leading-relaxed mb-6">
-                  A production financial management backend built on Spring Boot 3 and
-                  Java 17, deployed on AWS EC2/RDS with Docker. Processes 7,156+ transactions
-                  with double-entry journals, payroll automation, and EMP/SDL reporting.
-                  Frontend dashboard built with React 19 and TypeScript.
+                  A production-deployed financial operations platform for South African
+                  businesses and finance teams. FIN connects supported source-record workflows
+                  to reviewable journals, ledgers, payroll, VAT, and management reports.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 mb-8">
@@ -149,13 +148,13 @@ export default function Portfolio() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button href="/app/" variant="primary" size="md">
+                  <Button href="/fin/" variant="primary" size="md">
                     <Lock className="w-4 h-4" />
                     Sign In to FIN
                   </Button>
-                  <Button to="/demo" variant="outline" size="md">
+                  <Button to="/resources" variant="outline" size="md">
                     <Eye className="w-4 h-4" />
-                    Watch Demo
+                    Read FIN Guides
                   </Button>
                 </div>
               </div>
@@ -170,7 +169,7 @@ export default function Portfolio() {
             <SectionHeading
               label="Deep Dive"
               title="Inside FIN"
-              description="A closer look at the capabilities powering a production financial management platform with 194 Java source files and 30+ database tables."
+              description="A closer look at the current production capabilities, controls, and clearly documented operating boundaries."
             />
           </AnimatedSection>
 
@@ -222,13 +221,13 @@ export default function Portfolio() {
                     phase: 'Solution',
                     icon: CheckCircle2,
                     content:
-                      'Built FIN as a Spring Boot 3 / Java 17 backend with 25+ business services, Flyway-managed PostgreSQL migrations, HikariCP connection pooling, and a React 19 dashboard. Deployed on AWS EC2/RDS with Docker Compose and automated daily backups.',
+                      'Built FIN as a company-scoped platform with a Spring Boot backend, PostgreSQL persistence, a React dashboard, controlled financial workflows, and production deployment operations.',
                   },
                   {
                     phase: 'Result',
                     icon: BarChart3,
                     content:
-                      'Processed 7,156+ transactions with automated classification and double-entry journal generation. Reduced manual processing by 50% through ingestion pipeline automation. 118+ unit tests ensure reliability across deployments.',
+                      'FIN supports a repeatable path from supported source records through reviewable classification, double-entry journals, ledger-backed reports, and audit-supporting history.',
                   },
                 ].map(({ phase, icon: Icon, content }) => (
                   <div key={phase} className="flex gap-5">

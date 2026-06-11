@@ -5,7 +5,7 @@ const quickLinks = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Services', path: '/services' },
-  { name: 'Demo', path: '/demo' },
+  { name: 'Resources', path: '/resources' },
   { name: 'Blog', path: '/blog' },
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'Contact', path: '/contact' },
@@ -34,8 +34,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-warm-sand-400 mb-6 max-w-xs">
-              Building foundations with code. We craft intelligent software solutions
-              that transform how businesses operate.
+              FIN helps South African finance teams turn everyday financial records into reviewable workflows and decision-ready reports.
             </p>
             <div className="flex gap-3">
               {[

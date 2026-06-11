@@ -10,8 +10,8 @@ const steps = [
   },
   {
     icon: Zap,
-    title: 'Automate Classification',
-    description: 'FIN helps organize transactions, update accounting workflows, and reduce manual processing.',
+    title: 'Review Classification',
+    description: 'Review classifications, correct exceptions, and reuse mapping rules for recurring transaction descriptions.',
   },
   {
     icon: FileText,
@@ -27,8 +27,8 @@ export default function HowFinWorks() {
         <AnimatedSection>
           <SectionHeading
             label="How FIN Works"
-            title="From Transactions to Reports in Minutes"
-            description="See how FIN transforms raw financial data into organized, compliant business insights."
+            title="From Source Records to Reviewable Reports"
+            description="See the controlled workflow from imported records through classification, journals, ledgers, and reporting."
           />
         </AnimatedSection>
 
@@ -55,10 +55,10 @@ export default function HowFinWorks() {
 
         <AnimatedSection className="mt-16 text-center">
           <p className="text-lg text-deep-space-600 mb-8">
-            Ready to see FIN in action?
+            Ready to explore the documented workflow?
           </p>
           <a
-            href="https://sthwalo.com/app"
+            href="https://sthwalo.com/fin"
             className="inline-flex items-center gap-2 px-6 py-3 bg-harvest-gold-200 text-deep-space-800 font-semibold rounded-lg hover:bg-harvest-gold-300 transition-colors"
           >
             Start Free Trial

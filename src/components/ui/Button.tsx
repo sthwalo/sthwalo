@@ -43,7 +43,7 @@ export default function Button({
 
   if (to) {
     return (
-      <Link to={to} className={baseClasses}>
+      <Link to={to} className={baseClasses} onClick={onClick}>
         {children}
       </Link>
     );
@@ -51,7 +51,7 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={baseClasses}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={baseClasses} onClick={onClick}>
         {children}
       </a>
     );

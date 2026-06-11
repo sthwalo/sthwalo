@@ -302,8 +302,8 @@ export default function Contact() {
                       watch our product demo to see FIN in action.
                     </p>
                     <div className="flex flex-col gap-3">
-                      <Button to="/demo" variant="outline" size="sm" className="border-warm-sand-400/30 text-warm-sand-200 hover:bg-white/5 hover:text-warm-sand-100 hover:border-warm-sand-300/50">
-                        Watch Demo
+                      <Button to="/resources" variant="outline" size="sm" className="border-warm-sand-400/30 text-warm-sand-200 hover:bg-white/5 hover:text-warm-sand-100 hover:border-warm-sand-300/50">
+                        Explore FIN Resources
                       </Button>
                       <div className="flex gap-3">
                         <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 text-warm-sand-300 border border-white/10">

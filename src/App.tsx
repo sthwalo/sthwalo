@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Demo from './pages/Demo';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import Resources from './pages/Resources';
 import ScrollToTop from './components/ui/ScrollToTop';
 import Analytics from './components/ui/Analytics';
 
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/demo" element={<Demo />} />
+            <Route path="/resources" element={<Resources />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>

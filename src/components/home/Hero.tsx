@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Play, TrendingUp, CreditCard, FileText, Users } from 'lucide-react';
+import { ArrowRight, Sparkles, BookOpen, TrendingUp, CreditCard, FileText, Users } from 'lucide-react';
 import Button from '../ui/Button';
 import { trackCTAClick } from '../../utils/analytics';
 
@@ -42,7 +42,7 @@ export default function Hero() {
 
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-300">
                 <Button
-                  href="https://sthwalo.com/app"
+                  href="https://sthwalo.com/fin"
                   variant="primary"
                   size="lg"
                   onClick={() => trackCTAClick('trial_signup', 'hero')}
@@ -51,26 +51,25 @@ export default function Hero() {
                   <ArrowRight className="w-4 h-4" />
                 </Button>
                 <Button
-                  to="/demo"
+                  to="/resources"
                   variant="outline"
                   size="lg"
                   className="border-warm-sand-400/30 text-warm-sand-200 hover:bg-white/5 hover:text-warm-sand-100 hover:border-warm-sand-300/50"
-                  onClick={() => trackCTAClick('watch_demo', 'hero')}
+                  onClick={() => trackCTAClick('explore_resources', 'hero')}
                 >
-                  <Play className="w-4 h-4" />
-                  Watch Demo
+                  <BookOpen className="w-4 h-4" />
+                  Explore Guides
                 </Button>
               </div>
 
-              <div className="mt-16 pt-10 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in-up animate-delay-400">
+              <div className="mt-16 pt-10 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in-up animate-delay-400">
                 {[
-                  { value: '7,156+', label: 'Transactions Processed' },
-                  { value: '25+', label: 'Business Services' },
-                  { value: '24', label: 'REST Controllers' },
-                  { value: '2021', label: 'CIPC Registered' },
+                  { value: 'Reviewable', label: 'Classification and corrections' },
+                  { value: 'Company-scoped', label: 'Workspace access' },
+                  { value: 'Ledger-backed', label: 'Financial reports' },
                 ].map((stat) => (
                   <div key={stat.label}>
-                    <div className="text-2xl md:text-3xl font-bold text-harvest-gold-200 mb-1">
+                    <div className="text-lg md:text-xl font-bold text-harvest-gold-200 mb-1">
                       {stat.value}
                     </div>
                     <div className="text-sm text-warm-sand-500">{stat.label}</div>
@@ -90,7 +89,7 @@ export default function Hero() {
                     <div className="w-3 h-3 rounded-full bg-green-500/60" />
                   </div>
                   <div className="flex-1 bg-white/5 rounded-md px-3 py-1 text-xs text-warm-sand-500">
-                    sthwalo.com/app/management-report
+                    sthwalo.com/fin/management-report
                   </div>
                 </div>
 
@@ -166,7 +165,7 @@ export default function Hero() {
                 </div>
               </div>
               <p className="text-sm text-warm-sand-500 mt-4 text-center">
-                Real management report data — generated automatically from your transactions
+                Illustrative management-report view. Users review source records, classifications, journals, and outputs.
               </p>
             </div>
           </div>

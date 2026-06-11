@@ -13,12 +13,16 @@ export const trackEvent = (eventName: string, parameters: Record<string, unknown
 
 export const trackConversion = (conversionType: string, value?: number) => {
   trackEvent('conversion', {
-    send_to: 'G-XXXXXXXXXX', // Replace with your GA4 ID
+    send_to: import.meta.env.VITE_GA_MEASUREMENT_ID,
     value: value,
-    currency: 'USD',
+    currency: 'ZAR',
     conversion_type: conversionType,
   });
 };
+
+export const trackResourceView = (resource: string) => trackEvent('resource_view', { resource });
+export const trackSocialDemoClick = (channel: string) => trackEvent('social_demo_click', { channel });
+export const trackTrustMetricsLoad = (source: string) => trackEvent('trust_metrics_load', { source });
 
 export const trackCTAClick = (ctaType: string, location: string) => {
   trackEvent('cta_click', {

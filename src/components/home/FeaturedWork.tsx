@@ -7,22 +7,22 @@ const features = [
   {
     icon: BarChart3,
     title: 'Transaction Classification',
-    description: 'Parsed and processed 7,156+ transactions with automated classification and double-entry journal generation.',
+    description: 'Import supported statements, review classifications, reuse mapping rules, and inspect resulting double-entry journals.',
   },
   {
     icon: Shield,
     title: 'Enterprise Security',
-    description: 'JWT authentication, role-based access, encryption-at-rest, and comprehensive security hardening.',
+    description: 'HttpOnly cookie authentication, company-scoped access, explicit permissions, and audit-supporting records.',
   },
   {
     icon: Zap,
     title: 'Payroll Automation',
-    description: 'Automated payroll processing with EMP201/SDL reporting and SARS compliance built in.',
+    description: 'Process payroll and prepare EMP201, EMP501, and IRP5-style outputs for review and manual external submission.',
   },
   {
     icon: FileText,
     title: 'Financial Reporting',
-    description: '24 REST controllers powering real-time dashboards, financial statements, and compliance reports.',
+    description: 'Generate ledger-backed financial, management, VAT, payroll, and audit-trail outputs for responsible review.',
   },
 ];
 
@@ -34,7 +34,7 @@ export default function FeaturedWork() {
           <SectionHeading
             label="Featured Project"
             title="FIN Financial Management System"
-            description="A production financial management backend built on Spring Boot 3 and Java 17, processing 7,156+ transactions with 194 source files, 25+ business services, and full ACID compliance."
+            description="A production-deployed financial operations platform with controlled workflows from source records to reviewable, ledger-backed reports."
           />
         </AnimatedSection>
 
@@ -79,8 +79,8 @@ export default function FeaturedWork() {
               ))}
 
               <div className="pt-4">
-                <Button to="/portfolio" variant="secondary">
-                  View Full Case Study
+                <Button to="/resources" variant="secondary">
+                  Explore FIN Resources
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>
