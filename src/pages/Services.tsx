@@ -79,7 +79,7 @@ const services = [
     features: [
       'Transaction classification and double-entry journal generation',
       'Payroll automation with EMP201/SDL reporting',
-      'SARS e-filing integration and tax compliance',
+      'SARS-aligned tax calculations and preparation reports for manual submission',
       'Financial statement generation and KPI dashboards',
       'Automated reconciliation and ingestion pipelines',
     ],
