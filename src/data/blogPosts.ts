@@ -183,6 +183,30 @@ export const blogPosts: BlogPost[] = [
       { type: 'paragraph', text: 'These changes deepen the same principle FIN started with: a repeatable path from source record to reviewed accounting output, with corrections and audit-supporting records available when something needs attention.' },
     ],
   },
+  {
+    id: 8,
+    title: 'Your Source Documents Now Stay Safe in FIN',
+    excerpt: 'Uploaded invoices, receipts, bank statements, and CSVs are now kept as their original files in private, encrypted storage hosted in South Africa — and you can download them whenever you need them.',
+    category: 'Trust and Boundaries',
+    audience: 'All FIN users',
+    author: 'Immaculate Nyoni',
+    date: '2026-06-21',
+    reviewedDate: '2026-06-21',
+    slug: 'your-source-documents-stay-safe',
+    featuredImage: sharedImage,
+    readTime: '4 min read',
+    sourceLabel: 'FIN value proposition',
+    sourceHref: '/resources#trust-boundaries',
+    blocks: [
+      { type: 'paragraph', text: 'Until recently, FIN read your uploaded files — invoice scans, receipts, bank statements, transaction CSVs — extracted the data, and then discarded the original. The records lived on, but the source file did not. That has changed: FIN now retains the original of every supported upload.' },
+      { type: 'heading', text: 'Where your documents live' },
+      { type: 'list', items: ['Originals are stored in a private, encrypted, versioned document vault.', 'The storage is hosted in the South African (Cape Town) region, which supports data-residency expectations for local businesses.', 'Files are reached only through short-lived, access-checked links — there are no public document URLs.'] },
+      { type: 'heading', text: 'You can download them back' },
+      { type: 'paragraph', text: 'Authorised users can download the original file from the imported-documents list and from the transactions view, so the source record sits alongside the transactions and reports it produced. That makes review, reconciliation, and audit easier — the paper trail is one click away.' },
+      { type: 'heading', text: 'An honest boundary' },
+      { type: 'paragraph', text: 'Keeping documents private, encrypted, and in-region is about good custody of your records and data residency. It is not a legal or regulatory compliance guarantee, and it does not replace your own backups or responsible review. As always, FIN supports your work and keeps it visible — it does not replace it.' },
+    ],
+  },
 ];
 
 export const blogCategories = ['All', ...Array.from(new Set(blogPosts.map(post => post.category)))];
