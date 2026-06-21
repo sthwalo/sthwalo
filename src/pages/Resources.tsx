@@ -1,13 +1,15 @@
-import { BookOpen, Briefcase, Calculator, Download, ExternalLink, Landmark, ShieldCheck } from 'lucide-react';
+import { BookOpen, Briefcase, Calculator, Download, ExternalLink, Landmark, Lock, ShieldCheck, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
 import SeoMeta from '../components/ui/SeoMeta';
 import { trackResourceView, trackSocialDemoClick } from '../utils/analytics';
 import { useEffect } from 'react';
 
 const guides = [
+  { id: 'whats-new', icon: Sparkles, title: "What's new in FIN", text: 'Supplier invoices and purchase orders, audit-linked journal reversals, clearer bank reconciliation, stricter fiscal-period checks, and secure document storage.', article: '/blog/recent-fin-improvements-payables-corrections-residency' },
+  { id: 'document-vault', icon: Lock, title: 'Your documents, kept safe', text: 'Uploaded invoices, receipts, statements, and CSVs are retained as originals in private, encrypted, South African storage you can download from.', article: '/blog/your-source-documents-stay-safe' },
   { id: 'business-owners', icon: Briefcase, title: 'Business-owner guide', text: 'Company setup, dashboards, reports, plans, users, and support.', article: '/blog/why-i-built-fin' },
-  { id: 'bookkeepers', icon: BookOpen, title: 'Bookkeeper guide', text: 'Bank imports, classification, invoices, payroll capture, and housekeeping.', article: '/blog/practical-fin-workflow-for-bookkeepers' },
-  { id: 'accountants', icon: Calculator, title: 'Accountant guide', text: 'Chart of accounts, journals, general ledger, VAT, reports, assets, and year-end.', article: '/blog/ledger-backed-reporting-for-accountants' },
+  { id: 'bookkeepers', icon: BookOpen, title: 'Bookkeeper guide', text: 'Bank and document imports, classification, customer and supplier invoices, payroll capture, retained source files you can download, and housekeeping.', article: '/blog/practical-fin-workflow-for-bookkeepers' },
+  { id: 'accountants', icon: Calculator, title: 'Accountant guide', text: 'Chart of accounts, journals and audit-linked reversals, general ledger, VAT, reports, assets, and year-end.', article: '/blog/ledger-backed-reporting-for-accountants' },
   { id: 'trust-boundaries', icon: ShieldCheck, title: 'Trust and operating boundaries', text: 'What FIN automates, what requires review, and which promises are not made.', article: '/blog/what-fin-automates-and-what-remains-manual' },
   { id: 'regulatory-reporting', icon: Landmark, title: 'Regulatory reporting boundary', text: 'FIN prepares SARS-facing reports for review, export, print, and manual submission.', article: '/blog/what-fin-automates-and-what-remains-manual' },
 ];
