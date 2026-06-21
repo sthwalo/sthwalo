@@ -41,7 +41,12 @@ sthwalo-holdings/
 │   ├── vite-env.d.ts                   # Vite type declarations
 │   │
 │   ├── hooks/
-│   │   └── useScrollAnimation.ts       # Intersection Observer for scroll FX
+│   │   ├── useScrollAnimation.ts       # Intersection Observer for scroll FX
+│   │   └── useTrustMetrics.ts          # Fetches live FIN trust-metrics, snapshot fallback
+│   │
+│   ├── data/
+│   │   ├── blogPosts.ts                # Blog post content + categories (typed)
+│   │   └── publicMetricsSnapshot.ts    # Reviewed trust-metrics fallback values
 │   │
 │   ├── components/
 │   │   ├── layout/
@@ -51,8 +56,13 @@ sthwalo-holdings/
 │   │   ├── home/
 │   │   │   ├── Hero.tsx                # SaaS hero with FIN messaging and CTAs
 │   │   │   ├── FeaturedWork.tsx         # FIN spotlight with tech badges
+│   │   │   ├── HowFinWorks.tsx          # FIN workflow explainer section
 │   │   │   ├── ServicesOverview.tsx     # 4-card service grid (now key features)
+│   │   │   ├── TrustMetrics.tsx         # Live/snapshot FIN usage metrics
 │   │   │   └── TrustSignals.tsx        # Delivered projects + CTA banner
+│   │   │
+│   │   ├── legal/
+│   │   │   └── LegalPageLayout.tsx      # Shared layout for Privacy/Terms pages
 │   │   │
 │   │   └── ui/
 │   │       ├── Analytics.tsx           # Google Analytics 4 integration
@@ -62,15 +72,18 @@ sthwalo-holdings/
 │   │       ├── SectionHeading.tsx       # Reusable section header (label + title + desc)
 │   │       └── SeoMeta.tsx              # Dynamic SEO metadata component
 │   │
-│   └── pages/
-│       ├── Home.tsx                    # Hero + FeaturedWork + Services + Trust
-│       ├── About.tsx                   # Founder story, values, timeline
-│       ├── Services.tsx                # 4 service categories + process section
-│       ├── Portfolio.tsx               # FIN deep dive + delivered sites grid
-│       ├── Contact.tsx                 # Form (Express API) + sidebar contact info
-│       ├── Demo.tsx                    # FIN product walkthrough (8-step video sequence)
-│       ├── Blog.tsx                    # Content hub with posts, categories, and social sharing
-│       └── BlogPost.tsx                # Individual blog post with SEO metadata and sharing
+│   ├── pages/
+│   │   ├── Home.tsx                    # Hero + FeaturedWork + Services + Trust
+│   │   ├── About.tsx                   # Founder story, values, timeline
+│   │   ├── Services.tsx                # 4 service categories + process section
+│   │   ├── Portfolio.tsx               # FIN deep dive + delivered sites grid
+│   │   ├── Contact.tsx                 # Form (Express API) + sidebar contact info
+│   │   ├── Demo.tsx                    # FIN product walkthrough (8-step video sequence)
+│   │   ├── Resources.tsx               # FIN manuals/guides, trust boundaries, handbook PDF
+│   │   ├── Blog.tsx                    # Content hub with posts, categories, and social sharing
+│   │   ├── BlogPost.tsx                # Individual blog post with SEO metadata and sharing
+│   │   ├── Privacy.tsx                 # Privacy policy (legal page layout)
+│   │   └── Terms.tsx                   # Terms of use (legal page layout)
 │   │
 │   └── utils/
 │       ├── analytics.ts                # Google Analytics 4 event tracking utilities
@@ -78,11 +91,13 @@ sthwalo-holdings/
 │       └── rssFeed.ts                  # RSS feed generation for content automation
 │
 ├── public/
-│   ├── STHWALO.png                     # Logo / favicon
-│   ├── Immaculate Low.png              # Founder photo
+│   ├── sthwalo.png / sthwalo.webp      # Logo / favicon
+│   ├── Immaculate Low.webp             # Founder photo
+│   ├── downloads/                      # Public downloads (FIN_Public_Handbook.pdf)
+│   ├── resources/                      # Resource assets
 │   ├── videos/                         # Demo video storage directory
 │   │   └── README.md                   # Video asset specifications
 │   └── images/
-│       ├── demo-thumbnails/            # Video thumbnail storage
+│       ├── demo-thumbnails/            # Video thumbnail + blog images (WebP)
 │       └── [other images...]
 ```
