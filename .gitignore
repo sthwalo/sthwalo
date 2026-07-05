@@ -4,3 +4,4 @@ dist
 .env
 server/.env
 docs/marketing.md
+working.md
