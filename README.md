@@ -11,20 +11,27 @@ financial management platform.
 
 FIN is a company-scoped (multi-tenant) financial management platform for South African businesses
 and finance teams. It runs the full accounting operating flow in one React + Spring Boot
-application:
+application. The workspace is organised into a grouped command sidebar:
 
-- **Accounting** — double-entry journals, chart of accounts, general ledger, cashbook, and
-  fiscal-period management.
-- **Bank statements** — statement import, automatic transaction classification, a reconciliation
-  workbench, and a period-scoped source-document vault.
-- **Invoices & documents** — customer and supplier invoices plus OCR / scanned-document workflows.
-- **Payroll** — employees and payslips with PAYE / UIF / SDL on SARS tables, IRP5 / EMP501
-  preparation, an effective-dated **salary-history audit**, **Time & Attendance** (clock events →
-  daily summaries → approval → payroll), and **employer-defined earnings & deductions**.
-- **Compliance & reporting** — VAT periods, assets and depreciation, budgets, and SARS-facing
-  report preparation, exported as PDF / CSV / XLSX.
-- **Commercial** — database-driven tenant plans, modular add-ons, metered usage, and
-  integration-marketplace foundations.
+- **Command** — *Business Overview* (portfolio metrics) and *Entity & Period Setup* (companies,
+  fiscal periods, access).
+- **Accounting Flow**
+  - *Accounting Workbench* — the source-to-ledger pipeline: bank-statement / document import,
+    automatic transaction classification, cashbook, bank reconciliation, general ledger, and a
+    period-scoped source-document vault.
+  - *Inventory Management* — items, multi-location stock with weighted-average / FIFO / standard
+    costing, purchase-order → goods-receipt → invoice 3-way matching, sales documents, and
+    customer / supplier ledgers (AR / AP) — wired into the same ledger and VAT engine.
+  - *Tax & Compliance* — VAT periods, review, and submission working papers.
+  - *Fixed Assets* — asset register, depreciation, and disposals.
+  - *Budgets & Forecasts* — planning, targets, and variance.
+  - *Reports & AFS* — financial statements, management packs, and SARS-facing working papers,
+    exported as PDF / CSV / XLSX.
+- **People** — *Payroll*: employees and payslips with PAYE / UIF / SDL on SARS tables, IRP5 /
+  EMP501 preparation, an effective-dated **salary-history audit**, **Time & Attendance** (clock
+  events → daily summaries → approval → payroll), and **employer-defined earnings & deductions**.
+- **System** — *Account, Billing & Access*: database-driven tenant plans, modular add-ons, metered
+  usage, users / permissions, and integration-marketplace foundations.
 
 FIN performs the regulatory calculations and report generation internally. It is **not** wired to a
 SARS / eFiling / bank-feed API — users export or print reports for manual submission. SARS,
@@ -51,6 +58,32 @@ The marketing site is a Vite + React single-page app. Developer documentation li
 - **[Tech Stack](docs/tech-stack.md)** · **[Brand Colors](docs/brand-colors.md)** ·
   **[Pages](docs/pages.md)** · **[Environment](docs/environment.md)** ·
   **[Deployment](docs/deployment.md)**
+
+## Demo assets
+
+The hero and Blog walkthrough thumbnails are animated GIFs of the **current** FIN UI, rendered
+from a reproducible generator (Playwright + sharp) whose mockup mirrors the live navigation,
+pipeline stepper, and brand tokens. They live in [`public/images/`](public/images/):
+
+| GIF | Module | Walkthrough |
+|---|---|---|
+| `grand-tour.gif` | *all modules* | Full FIN demo touring every module end to end |
+| `pipeline.gif` | Accounting Workbench | The core flow: import → classify → ledger → inventory → Reports & AFS |
+| `overview.gif` | Business Overview | Portfolio KPIs, companies, and payroll readiness |
+| `setup.gif` | Entity & Period Setup | Companies, fiscal periods, RBAC, and Row-Level Security |
+| `bank-to-ledger.gif` | Accounting Workbench | import → classify → cashbook → reconcile → ledger |
+| `document-vault.gif` | Accounting Workbench | Document capture → OCR extraction → retained source-document vault |
+| `inventory.gif` | Inventory Management | Stock on hand, PO → GRN → invoice 3-way match, and reports |
+| `tax-compliance.gif` | Tax & Compliance | VAT period review (output vs input) → VAT201 working paper |
+| `fixed-assets.gif` | Fixed Assets | Asset register + depreciation schedule posting to the ledger |
+| `budgets` *(in reporting.gif)* | Budgets & Forecasts | Budget-vs-actual variance |
+| `reporting.gif` | Reports & AFS | Ledger → budgets → AFS + compliance pack |
+| `payroll.gif` | Payroll | Pay run, Time & Attendance, EMP201 |
+| `billing.gif` | Account, Billing & Access | Plans, add-ons, metered usage, and RBAC |
+
+Regenerate after a UI change (the generator lives in the FIN repo so it can read the live UI):
+`node scripts/build-fin-demo-gifs.mjs` (all) or `… <name>` (one). Keep this table and the Blog
+`featuredImage` mappings in `src/data/blogPosts.ts` in step with the generated set.
 
 ## Links
 
