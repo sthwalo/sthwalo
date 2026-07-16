@@ -20,7 +20,10 @@ const sections: LegalSection[] = [
       <p>
         We process account details, contact details, authentication and session information, company records,
         accounting records, invoices, customers, suppliers, assets, VAT records, payroll information where enabled,
-        support tickets, audit logs, payment status and subscription information.
+        support tickets, audit logs, payment status and subscription information. We also store the source documents
+        you upload (such as bank statements, supplier invoices and payroll documents), and, where your employer
+        enables time and attendance with location verification, clock-in and clock-out records including GPS
+        coordinates, device and network identifiers.
       </p>
     ),
   },
@@ -48,9 +51,24 @@ const sections: LegalSection[] = [
     heading: 'Sharing and Operators',
     body: (
       <p>
-        We share information with service providers only where needed to operate FIN, including payment processing
-        through PayFast, hosting, email delivery, support, backups, analytics where enabled and security monitoring.
-        Operators must process information only on our instructions and protect it appropriately.
+        We share personal information with service providers (&ldquo;operators&rdquo;) only where needed to operate
+        FIN: Amazon Web Services for cloud hosting, database and backup storage in the AWS Africa (Cape Town)
+        region, and our email service provider for delivery of transactional email such as payslips, notifications
+        and password resets. Operators may process personal information only on our instructions and must protect
+        it appropriately. We do not currently use analytics or advertising services, we do not sell your personal
+        information, and we do not use it to train machine-learning models. If we enable a payment provider or any
+        new operator, we will update this policy before doing so.
+      </p>
+    ),
+  },
+  {
+    heading: 'Where Your Information Is Stored',
+    body: (
+      <p>
+        FIN is hosted in South Africa: our application, database, backups and your uploaded documents are located
+        in the Amazon Web Services Africa (Cape Town) region, and your accounting, payroll and banking records stay
+        there. The email we send you (including payslips) is delivered by our email service provider on servers
+        located in the European Union.
       </p>
     ),
   },

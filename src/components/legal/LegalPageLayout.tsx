@@ -41,7 +41,7 @@ export default function LegalPageLayout({ title, seoDescription, url, intro, sec
               {intro}
             </p>
             <p className="text-sm text-warm-sand-500 mt-4 animate-fade-in-up animate-delay-300">
-              Effective date: 3 June 2026 &middot; Applies to FIN Financial Management by Sthwalo Holdings (Pty) Ltd.
+              Effective date: 16 July 2026 &middot; Applies to FIN Financial Management by Sthwalo Holdings (Pty) Ltd.
             </p>
           </div>
         </div>

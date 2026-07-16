@@ -12,6 +12,9 @@ import BlogPost from './pages/BlogPost';
 import Resources from './pages/Resources';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import Cookies from './pages/Cookies';
+import Paia from './pages/Paia';
+import Refunds from './pages/Refunds';
 import ScrollToTop from './components/ui/ScrollToTop';
 import Analytics from './components/ui/Analytics';
 
@@ -35,6 +38,9 @@ export default function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/cookies" element={<Cookies />} />
+            <Route path="/paia" element={<Paia />} />
+            <Route path="/refunds" element={<Refunds />} />
           </Routes>
         </main>
         <Footer />

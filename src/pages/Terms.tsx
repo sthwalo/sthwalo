@@ -24,9 +24,10 @@ const sections: LegalSection[] = [
     heading: 'Subscriptions and Payments',
     body: (
       <p>
-        Paid plans are billed in South African Rand through the configured payment provider. Upgrades may take effect
-        immediately after payment confirmation. Downgrades, cancellations and access expiry follow the rules shown in
-        the app and payment flow.
+        Paid plans are priced in South African Rand. We currently invoice subscriptions and accept payment by
+        electronic funds transfer; we do not take card payments in the app. Once we receive payment, we activate
+        your plan. Cancellations, downgrades, refunds and what happens to your access are set out in our Refund
+        and Cancellation Policy.
       </p>
     ),
   },
@@ -67,7 +68,7 @@ const sections: LegalSection[] = [
 export default function Terms() {
   return (
     <LegalPageLayout
-      title="Terms of Service"
+      title="Terms of Use"
       seoDescription="Terms of use for FIN by Sthwalo Holdings (Pty) Ltd — accounts, subscriptions and payments, acceptable use, liability and governing law under South African law."
       url="/terms"
       intro="These terms govern your use of FIN Financial Management. By using the service you agree to them."

@@ -121,8 +121,20 @@ export default function Footer() {
               Privacy Policy
             </Link>
             <Link to="/terms" className="text-xs text-warm-sand-500 hover:text-warm-sand-300 transition-colors">
-              Terms of Service
+              Terms of Use
             </Link>
+            <Link to="/cookies" className="text-xs text-warm-sand-500 hover:text-warm-sand-300 transition-colors">
+              Cookies
+            </Link>
+            <Link to="/paia" className="text-xs text-warm-sand-500 hover:text-warm-sand-300 transition-colors">
+              PAIA
+            </Link>
+            <Link to="/refunds" className="text-xs text-warm-sand-500 hover:text-warm-sand-300 transition-colors">
+              Refunds
+            </Link>
+            <a href="mailto:sthwaloe@gmail.com" className="text-xs text-warm-sand-500 hover:text-warm-sand-300 transition-colors">
+              Privacy Requests
+            </a>
           </div>
         </div>
       </div>
