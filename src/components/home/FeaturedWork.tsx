@@ -22,7 +22,7 @@ const features = [
   {
     icon: FileText,
     title: 'Financial Reporting',
-    description: 'Generate ledger-backed financial, management, VAT, payroll, and audit-trail outputs for responsible review.',
+    description: 'Generate ledger-backed financial, management, VAT, payroll, and audit-trail outputs for responsible review — as PDF or Excel, in one consistent presentation.',
   },
 ];
 

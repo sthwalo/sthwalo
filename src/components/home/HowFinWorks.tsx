@@ -16,7 +16,7 @@ const steps = [
   {
     icon: FileText,
     title: 'Generate Reports',
-    description: 'Create trial balances, financial statements, payroll summaries, and operational reports from one platform.',
+    description: 'Create trial balances, financial statements, payroll summaries, and management packs for any month, quarter or year — as PDF or Excel.',
   },
 ];
 
