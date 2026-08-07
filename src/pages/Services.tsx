@@ -81,6 +81,7 @@ const services = [
       'Payroll automation with EMP201/SDL reporting',
       'SARS-aligned tax calculations and preparation reports for manual submission',
       'Financial statement generation and KPI dashboards',
+      'Management packs scoped to a month, quarter or year, exported as PDF or Excel',
       'Automated reconciliation and ingestion pipelines',
     ],
     technologies: [
