@@ -133,9 +133,11 @@ export default function Portfolio() {
                   FIN Financial Management System
                 </h2>
                 <p className="text-deep-space-500 leading-relaxed mb-6">
-                  A production-deployed financial operations platform for South African
-                  businesses and finance teams. FIN connects supported source-record workflows
-                  to reviewable journals, ledgers, payroll, VAT, and management reports.
+                  A production-deployed financial operations platform, headquartered in South
+                  Africa where it was conceived and built. FIN connects supported source-record
+                  workflows to reviewable journals, ledgers, payroll, VAT, and management reports.
+                  Its accounting core is jurisdiction-neutral; statutory reporting currently covers
+                  South African requirements, and that coverage extends as the team grows.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 mb-8">
