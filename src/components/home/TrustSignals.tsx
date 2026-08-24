@@ -4,11 +4,9 @@ import SectionHeading from '../ui/SectionHeading';
 import Button from '../ui/Button';
 
 const deliveredProjects = [
-  { name: 'HEOSA Africa', url: 'https://heosa.africa', description: 'Health Excellence Organisation of Southern Africa' },
+  { name: 'HEOSA Africa', url: 'https://heosa.africa', description: 'African Health Excellence Organisation' },
   { name: 'Dr. Mmako Practice', url: 'https://drmmako.co.za', description: 'Neurologist practice at Riverside Medical Center' },
   { name: 'ExecuHire', url: 'https://www.execuhire.co.za', description: 'Luxury vehicle rental platform' },
-  { name: 'Leolilly Care', url: 'https://leolilly.org', description: 'Caregiving and support services' },
-  { name: 'The Dermatology Diary', url: 'https://thedermatologydiary.com', description: '1.17K impressions, 5.4% CTR in 3 months' },
 ];
 
 export default function TrustSignals() {

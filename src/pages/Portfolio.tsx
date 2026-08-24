@@ -47,21 +47,6 @@ const deliveredSites = [
     url: 'https://www.execuhire.co.za',
     description: 'Luxury vehicle rental platform with booking system and fleet showcase.',
   },
-  {
-    title: 'Leolilly Care',
-    url: 'https://leolilly.org',
-    description: 'Non-profit caregiving and support services -- donation integration and service pages.',
-  },
-  {
-    title: 'The Dermatology Diary',
-    url: 'https://thedermatologydiary.com',
-    description: 'Medical content platform -- 1.17K impressions, 63 clicks, 5.4% CTR within 3 months.',
-  },
-  {
-    title: 'MP Business Hub',
-    url: '#',
-    description: 'Supporting local businesses in Mpumalanga -- directory and resource platform.',
-  },
 ];
 
 export default function Portfolio() {
@@ -254,7 +239,7 @@ export default function Portfolio() {
             <SectionHeading
               label="Delivered"
               title="Client Websites & Systems"
-              description="Production websites and backend systems delivered across healthcare, automotive, non-profit, and business services."
+              description="Selected production websites and backend systems, delivered across healthcare and automotive."
             />
           </AnimatedSection>
 
