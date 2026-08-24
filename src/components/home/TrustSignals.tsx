@@ -4,8 +4,8 @@ import SectionHeading from '../ui/SectionHeading';
 import Button from '../ui/Button';
 
 const deliveredProjects = [
-  { name: 'HEOSA Africa', url: 'https://heosa.africa', description: 'African Health Excellence Organisation' },
-  { name: 'Dr. Mmako Practice', url: 'https://drmmako.co.za', description: 'Neurologist practice at Riverside Medical Center' },
+  { name: 'African Health Excellence Organisation', url: 'https://heosa.africa', description: 'Public-facing website with content management' },
+  { name: 'Dr. Tracy Mmako', url: 'https://drmmako.co.za', description: 'Neurologist practice at Riverside Medical Center' },
   { name: 'ExecuHire', url: 'https://www.execuhire.co.za', description: 'Luxury vehicle rental platform' },
 ];
 

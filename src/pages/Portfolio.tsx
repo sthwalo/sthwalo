@@ -33,9 +33,9 @@ const techStack = ['Spring Boot 3', 'Java 17', 'React 19', 'TypeScript', 'Postgr
 
 const deliveredSites = [
   {
-    title: 'HEOSA Africa',
+    title: 'African Health Excellence Organisation',
     url: 'https://heosa.africa',
-    description: 'African Health Excellence Organisation -- public-facing website with CMS and content management.',
+    description: 'Public-facing website with CMS and content management.',
   },
   {
     title: 'Dr. Tracy Mmako',
