@@ -47,6 +47,11 @@ const deliveredSites = [
     url: 'https://www.execuhire.co.za',
     description: 'Luxury vehicle rental platform with booking system and fleet showcase.',
   },
+  {
+    title: 'Leolilian Care International',
+    url: 'https://leolilly.org',
+    description: 'Caregiver, hospitality, and professional chef training provider -- programme catalogue with online enrolment and automated email confirmation.',
+  },
 ];
 
 export default function Portfolio() {
@@ -239,7 +244,7 @@ export default function Portfolio() {
             <SectionHeading
               label="Delivered"
               title="Client Websites & Systems"
-              description="Selected production websites and backend systems, delivered across healthcare and automotive."
+              description="Selected production websites and backend systems, delivered across healthcare, automotive, and education."
             />
           </AnimatedSection>
 
