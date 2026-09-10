@@ -50,7 +50,7 @@ const deliveredSites = [
   {
     title: 'Leolilian Care International',
     url: 'https://leolilly.org',
-    description: 'Training provider site for three online programmes -- caregiver, cruise ship and professional chef -- with enrolment and WhatsApp enquiry.',
+    description: 'Caregiver, cruise-ship hospitality, and professional chef training provider -- programme catalogues with online enrolment and automated email confirmation.',
   },
 ];
 
@@ -244,7 +244,7 @@ export default function Portfolio() {
             <SectionHeading
               label="Delivered"
               title="Client Websites & Systems"
-              description="Selected production websites and backend systems, delivered across healthcare, training and automotive."
+              description="Selected production websites and backend systems, delivered across healthcare, automotive, and education."
             />
           </AnimatedSection>
 
