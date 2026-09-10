@@ -28,7 +28,7 @@ export default function BlogPost() {
         </div>
       </section>
       <section className="section-padding bg-warm-sand-50">
-        <article className="section-container max-w-4xl">
+        <article className="section-container max-w-[68ch]">
           <p className="text-xl text-deep-space-600 leading-relaxed mb-10">{post.excerpt}</p>
           <div className="space-y-6">
             {post.blocks.map((block, index) => {

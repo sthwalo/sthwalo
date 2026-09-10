@@ -47,6 +47,11 @@ const deliveredSites = [
     url: 'https://www.execuhire.co.za',
     description: 'Luxury vehicle rental platform with booking system and fleet showcase.',
   },
+  {
+    title: 'Leolilian Care International',
+    url: 'https://leolilly.org',
+    description: 'Training provider site for three online programmes -- caregiver, cruise ship and professional chef -- with enrolment and WhatsApp enquiry.',
+  },
 ];
 
 export default function Portfolio() {
@@ -91,24 +96,24 @@ export default function Portfolio() {
           <AnimatedSection>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 mt-6">
               <div className="lg:col-span-3">
-                <div className="relative rounded-2xl overflow-hidden bg-deep-space-800 p-1 shadow-2xl">
-                  <img
-                    src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                    alt="FIN Financial Management System dashboard"
-                    className="rounded-xl w-full object-cover aspect-[16/10]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-space-800/60 to-transparent rounded-xl" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex flex-wrap gap-2">
-                      {techStack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 text-xs font-medium rounded-full bg-deep-space-800/90 text-warm-sand-200 border border-white/10 backdrop-blur-sm"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                <div className="rounded-2xl overflow-hidden bg-deep-space-800 p-1 shadow-2xl">
+                  <div className="rounded-xl overflow-hidden bg-deep-space-900">
+                    <img
+                      src="/images/overview.gif"
+                      alt="FIN Business Overview — portfolio metrics across company workspaces, with payroll readiness"
+                      className="w-full h-auto block"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex flex-wrap gap-2 p-4">
+                    {techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-warm-sand-200 border border-white/10"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -167,7 +172,7 @@ export default function Portfolio() {
                 animation="fade-in-up"
                 delay={`animate-delay-${(index + 1) * 100}`}
               >
-                <div className="p-8 rounded-2xl bg-warm-sand-50 border border-warm-sand-300/30 hover:border-harvest-gold-200/40 hover:shadow-md transition-all duration-300 h-full">
+                <div className="p-8 rounded-2xl bg-warm-sand-50 border border-warm-sand-300/30 hover:border-harvest-gold-200/40 hover:shadow-md transition-[border-color,box-shadow] duration-300 ease-out h-full">
                   <div className="w-12 h-12 rounded-xl bg-deep-space-800 flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6 text-harvest-gold-200" />
                   </div>
@@ -239,11 +244,11 @@ export default function Portfolio() {
             <SectionHeading
               label="Delivered"
               title="Client Websites & Systems"
-              description="Selected production websites and backend systems, delivered across healthcare and automotive."
+              description="Selected production websites and backend systems, delivered across healthcare, training and automotive."
             />
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {deliveredSites.map(({ title, url, description }, index) => (
               <AnimatedSection
                 key={title}
@@ -254,7 +259,7 @@ export default function Portfolio() {
                   href={url}
                   target={url !== '#' ? '_blank' : undefined}
                   rel={url !== '#' ? 'noopener noreferrer' : undefined}
-                  className="block rounded-2xl bg-white border border-warm-sand-300/30 overflow-hidden hover:border-harvest-gold-200/40 hover:shadow-md transition-all duration-300 h-full group"
+                  className="block rounded-2xl bg-white border border-warm-sand-300/30 overflow-hidden hover:border-harvest-gold-200/40 hover:shadow-md transition-[border-color,box-shadow] duration-300 ease-out h-full group"
                 >
                   <div className="p-6 flex flex-col h-full">
                     <div className="flex items-start justify-between gap-3 mb-3">

@@ -49,7 +49,7 @@ export default function LegalPageLayout({ title, seoDescription, url, intro, sec
 
       <section className="section-padding bg-warm-sand-50">
         <div className="section-container">
-          <div className="max-w-3xl mx-auto space-y-10">
+          <div className="max-w-[62ch] mx-auto space-y-10">
             {sections.map((section, index) => (
               <AnimatedSection
                 key={section.heading}

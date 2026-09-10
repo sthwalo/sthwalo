@@ -5,18 +5,18 @@ import SectionHeading from '../ui/SectionHeading';
 const steps = [
   {
     icon: Upload,
-    title: 'Import Transactions',
-    description: 'Bring financial activity into the system through bank statements, transaction records, and business data.',
+    title: 'Bring the records in',
+    description: 'Import bank statements, transaction records and business documents. The source file is retained, not just the numbers read off it.',
   },
   {
     icon: Zap,
-    title: 'Review Classification',
-    description: 'Review classifications, correct exceptions, and reuse mapping rules for recurring transaction descriptions.',
+    title: 'Confirm, don’t capture',
+    description: 'FIN proposes the classification and you confirm or correct it. Rules you set once handle the descriptions that repeat every month.',
   },
   {
     icon: FileText,
-    title: 'Generate Reports',
-    description: 'Create trial balances, financial statements, payroll summaries, and management packs for any month, quarter or year — as PDF or Excel.',
+    title: 'Report with the backup attached',
+    description: 'Trial balances, financial statements, payroll summaries and management packs for any period — each figure still linked to the entries and documents behind it.',
   },
 ];
 
@@ -27,8 +27,8 @@ export default function HowFinWorks() {
         <AnimatedSection>
           <SectionHeading
             label="How FIN Works"
-            title="From Source Records to Reviewable Reports"
-            description="See the controlled workflow from imported records through classification, journals, ledgers, and reporting."
+            title="From source records to sign-off"
+            description="Three steps, and the evidence travels with the transaction the whole way. That is the part that saves the review time."
           />
         </AnimatedSection>
 
@@ -55,7 +55,7 @@ export default function HowFinWorks() {
 
         <AnimatedSection className="mt-16 text-center">
           <p className="text-lg text-deep-space-600 mb-8">
-            Ready to explore the documented workflow?
+            Want to see it against your own books?
           </p>
           <a
             href="https://sthwalo.com/fin"

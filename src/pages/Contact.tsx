@@ -7,7 +7,6 @@ import {
   Linkedin,
   ArrowUpRight,
   CheckCircle2,
-  Loader2,
 } from 'lucide-react';
 import AnimatedSection from '../components/ui/AnimatedSection';
 import Button from '../components/ui/Button';
@@ -141,7 +140,7 @@ export default function Contact() {
                             required
                             value={form.name}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-warm-sand-300/50 bg-warm-sand-50/50 text-deep-space-800 placeholder-deep-space-300 focus:outline-none focus:ring-2 focus:ring-harvest-gold-200 focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 rounded-lg border border-warm-sand-300/50 bg-warm-sand-50/50 text-deep-space-800 placeholder-deep-space-300 focus:outline-none focus:ring-2 focus:ring-harvest-gold-200 focus:border-transparent transition-colors duration-150 ease-out"
                             placeholder="Your name"
                           />
                         </div>
@@ -159,7 +158,7 @@ export default function Contact() {
                             required
                             value={form.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-warm-sand-300/50 bg-warm-sand-50/50 text-deep-space-800 placeholder-deep-space-300 focus:outline-none focus:ring-2 focus:ring-harvest-gold-200 focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 rounded-lg border border-warm-sand-300/50 bg-warm-sand-50/50 text-deep-space-800 placeholder-deep-space-300 focus:outline-none focus:ring-2 focus:ring-harvest-gold-200 focus:border-transparent transition-colors duration-150 ease-out"
                             placeholder="you@company.com"
                           />
                         </div>
@@ -179,7 +178,7 @@ export default function Contact() {
                             type="text"
                             value={form.company}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-warm-sand-300/50 bg-warm-sand-50/50 text-deep-space-800 placeholder-deep-space-300 focus:outline-none focus:ring-2 focus:ring-harvest-gold-200 focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 rounded-lg border border-warm-sand-300/50 bg-warm-sand-50/50 text-deep-space-800 placeholder-deep-space-300 focus:outline-none focus:ring-2 focus:ring-harvest-gold-200 focus:border-transparent transition-colors duration-150 ease-out"
                             placeholder="Your company"
                           />
                         </div>
@@ -195,7 +194,7 @@ export default function Contact() {
                             name="service"
                             value={form.service}
                             onChange={handleChange}
-                            className="w-full px-4 py-3 rounded-lg border border-warm-sand-300/50 bg-warm-sand-50/50 text-deep-space-800 focus:outline-none focus:ring-2 focus:ring-harvest-gold-200 focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 rounded-lg border border-warm-sand-300/50 bg-warm-sand-50/50 text-deep-space-800 focus:outline-none focus:ring-2 focus:ring-harvest-gold-200 focus:border-transparent transition-colors duration-150 ease-out"
                           >
                             <option value="">Select a service</option>
                             {serviceOptions.map((opt) => (
@@ -221,7 +220,7 @@ export default function Contact() {
                           rows={5}
                           value={form.message}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-lg border border-warm-sand-300/50 bg-warm-sand-50/50 text-deep-space-800 placeholder-deep-space-300 focus:outline-none focus:ring-2 focus:ring-harvest-gold-200 focus:border-transparent transition-all resize-none"
+                          className="w-full px-4 py-3 rounded-lg border border-warm-sand-300/50 bg-warm-sand-50/50 text-deep-space-800 placeholder-deep-space-300 focus:outline-none focus:ring-2 focus:ring-harvest-gold-200 focus:border-transparent transition-colors duration-150 ease-out resize-none"
                           placeholder="Tell us about your project or inquiry..."
                         />
                       </div>
@@ -232,23 +231,15 @@ export default function Contact() {
                         </div>
                       )}
 
-                      <button
+                      <Button
                         type="submit"
-                        disabled={status === 'sending'}
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-lg bg-harvest-gold-200 text-deep-space-800 hover:bg-harvest-gold-300 shadow-md hover:shadow-lg active:scale-[0.98] transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+                        size="lg"
+                        loading={status === 'sending'}
+                        loadingLabel="Sending your message"
                       >
-                        {status === 'sending' ? (
-                          <>
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            Sending...
-                          </>
-                        ) : (
-                          <>
-                            <Send className="w-4 h-4" />
-                            Send Message
-                          </>
-                        )}
-                      </button>
+                        <Send className="w-4 h-4 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
+                        Send Message
+                      </Button>
                     </form>
                   )}
                 </div>
@@ -265,7 +256,7 @@ export default function Contact() {
                     <div className="space-y-4">
                       <a
                         href="mailto:hello@sthwalo.com"
-                        className="flex items-center gap-3 p-4 rounded-xl bg-white border border-warm-sand-300/30 hover:border-harvest-gold-200/40 hover:shadow-sm transition-all group"
+                        className="flex items-center gap-3 p-4 rounded-xl bg-white border border-warm-sand-300/30 hover:border-harvest-gold-200/40 hover:shadow-sm transition-[border-color,box-shadow] duration-200 ease-out group"
                       >
                         <div className="w-10 h-10 rounded-lg bg-harvest-gold-200/15 flex items-center justify-center">
                           <Mail className="w-5 h-5 text-harvest-gold-500" />
@@ -290,7 +281,7 @@ export default function Contact() {
                         href="https://www.linkedin.com/in/inyoni/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-3 p-4 rounded-xl bg-white border border-warm-sand-300/30 hover:border-harvest-gold-200/40 hover:shadow-sm transition-all group"
+                        className="flex items-center gap-3 p-4 rounded-xl bg-white border border-warm-sand-300/30 hover:border-harvest-gold-200/40 hover:shadow-sm transition-[border-color,box-shadow] duration-200 ease-out group"
                       >
                         <div className="w-10 h-10 rounded-lg bg-harvest-gold-200/15 flex items-center justify-center">
                           <Linkedin className="w-5 h-5 text-harvest-gold-500" />

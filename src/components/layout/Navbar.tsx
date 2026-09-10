@@ -33,7 +33,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow,border-color,backdrop-filter] duration-300 ease-out ${
         showSolid
           ? 'bg-deep-space-900/95 backdrop-blur-md shadow-lg border-b border-white/5'
           : 'bg-transparent'
@@ -57,7 +57,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors duration-200 ease-out ${
                   isActive
                     ? 'text-harvest-gold-200 bg-white/10'
                     : showSolid

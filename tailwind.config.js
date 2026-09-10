@@ -66,6 +66,12 @@ export default {
           900: '#350b01',
         },
       },
+      boxShadow: {
+        // Layered transparent elevation — principle 3: shadows for elevation,
+        // borders for structure.
+        btn: '0 1px 2px rgba(39,52,64,0.06), 0 2px 4px rgba(39,52,64,0.06), 0 4px 8px rgba(39,52,64,0.04)',
+        'btn-hover': '0 1px 2px rgba(39,52,64,0.08), 0 4px 8px rgba(39,52,64,0.08), 0 8px 16px rgba(39,52,64,0.06)',
+      },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['Georgia', 'serif'],

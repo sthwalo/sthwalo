@@ -29,7 +29,7 @@ export default function TrustMetrics() {
             {entries.map(([key, value]) => (
               <div key={key} className="rounded-xl bg-white/5 border border-white/10 p-5" title={trust.definitions[key]}>
                 <dt className="text-xs text-warm-sand-500">{labels[key] ?? key}</dt>
-                <dd className="text-3xl font-bold text-harvest-gold-200 mt-1">{value.toLocaleString()}+</dd>
+                <dd className="text-3xl font-bold text-harvest-gold-200 mt-1 tabular-nums">{value.toLocaleString()}+</dd>
               </div>
             ))}
           </dl>

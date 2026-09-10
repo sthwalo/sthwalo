@@ -50,7 +50,7 @@ export default function Footer() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-harvest-gold-200 hover:text-deep-space-800 transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center hover:bg-harvest-gold-200 hover:text-deep-space-800 transition-colors duration-200 ease-out"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -70,7 +70,7 @@ export default function Footer() {
                     className="text-sm hover:text-harvest-gold-200 transition-colors inline-flex items-center gap-1 group"
                   >
                     {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0 group-hover:opacity-100 transition-all" />
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-0.5 translate-x-0 group-hover:opacity-100 transition-[opacity,translate] duration-200 ease-out" />
                   </Link>
                 </li>
               ))}

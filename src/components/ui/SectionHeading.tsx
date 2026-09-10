@@ -23,7 +23,7 @@ export default function SectionHeading({
         </span>
       )}
       <h2
-        className={`text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight ${
+        className={`text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-balance ${
           light ? 'text-warm-sand-50' : 'text-deep-space-800'
         }`}
       >
@@ -31,7 +31,7 @@ export default function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`mt-4 text-lg leading-relaxed ${
+          className={`mt-4 text-lg leading-relaxed text-pretty ${
             light ? 'text-warm-sand-300' : 'text-deep-space-500'
           }`}
         >

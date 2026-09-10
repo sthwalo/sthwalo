@@ -7,6 +7,7 @@ const deliveredProjects = [
   { name: 'African Health Excellence Organisation', url: 'https://heosa.africa', description: 'Public-facing website with content management' },
   { name: 'Dr. Tracy Mmako', url: 'https://drmmako.co.za', description: 'Neurologist practice at Riverside Medical Center' },
   { name: 'ExecuHire', url: 'https://www.execuhire.co.za', description: 'Luxury vehicle rental platform' },
+  { name: 'Leolilian Care International', url: 'https://leolilly.org', description: 'Online caregiver, hospitality and chef training with enrolment' },
 ];
 
 export default function TrustSignals() {
@@ -21,7 +22,7 @@ export default function TrustSignals() {
           />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
           {deliveredProjects.map((project, index) => (
             <AnimatedSection
               key={index}
@@ -32,7 +33,7 @@ export default function TrustSignals() {
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-4 p-5 rounded-xl bg-white border border-warm-sand-300/30 hover:border-harvest-gold-200/40 hover:shadow-md transition-all duration-300 group h-full"
+                className="flex items-start gap-4 p-5 rounded-xl bg-white border border-warm-sand-300/30 hover:border-harvest-gold-200/40 hover:shadow-md transition-[border-color,box-shadow] duration-300 ease-out group h-full"
               >
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-deep-space-800 flex items-center justify-center">
                   <Globe className="w-5 h-5 text-harvest-gold-200" />

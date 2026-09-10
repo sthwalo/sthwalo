@@ -154,7 +154,7 @@ export default function About() {
                 animation="fade-in-up"
                 delay={`animate-delay-${(index + 1) * 100}`}
               >
-                <div className="p-8 rounded-2xl border border-warm-sand-300/30 hover:border-harvest-gold-200/40 hover:shadow-md transition-all duration-300 h-full">
+                <div className="p-8 rounded-2xl border border-warm-sand-300/30 hover:border-harvest-gold-200/40 hover:shadow-md transition-[border-color,box-shadow] duration-300 ease-out h-full">
                   <div className="w-12 h-12 rounded-xl bg-harvest-gold-200/15 flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6 text-harvest-gold-600" />
                   </div>

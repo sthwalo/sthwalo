@@ -3,12 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  * {
+  html {
+    /* Once on the root — covers all text (principle 17). */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
   }
@@ -22,6 +20,13 @@
   ::selection {
     background-color: #F2CF63;
     color: #273440;
+  }
+
+  /* Keyboard focus only. Uses outline (not ring) so it reads on both the
+     light warm-sand and dark deep-space surfaces without an offset colour. */
+  :focus-visible {
+    outline: 2px solid #d5a827;
+    outline-offset: 2px;
   }
 }
 
@@ -43,8 +48,29 @@
     background-image: linear-gradient(135deg, #F2CF63, #BF895A);
   }
 
+  /* Scoped per-property durations: colour/shadow at 150ms, press at 100ms.
+     Never `transition: all` (principle 11). */
+  .btn-transition {
+    transition-property: background-color, border-color, color, box-shadow, transform;
+    transition-duration: 150ms, 150ms, 150ms, 150ms, 100ms;
+    transition-timing-function: ease-out;
+  }
+
+  /* Contextual icon/label cross-fade (principle 7), CSS-only: no motion library. */
+  .btn-swap {
+    transition-property: opacity, scale, filter;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  .btn-swap-hidden {
+    opacity: 0;
+    scale: 0.25;
+    filter: blur(4px);
+  }
+
   .card-hover {
-    @apply transition-all duration-300 ease-out;
+    @apply transition-[transform,box-shadow] duration-300 ease-out;
   }
 
   .card-hover:hover {
@@ -68,5 +94,35 @@
   }
   .animate-delay-500 {
     animation-delay: 500ms;
+  }
+}
+
+/* Reduced motion: remove travel and scale, keep opacity and colour so every
+   state change stays visible. Loading spinners are deliberately exempt — a
+   frozen spinner reads as a hung interface. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-spin {
+    animation-duration: 1s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .btn-transition:active {
+    transform: none !important;
+  }
+
+  .card-hover:hover {
+    transform: none !important;
   }
 }

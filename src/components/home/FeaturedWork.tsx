@@ -1,28 +1,30 @@
-import { ArrowRight, BarChart3, Shield, Zap, FileText } from 'lucide-react';
+import { ArrowRight, Building2, ShieldCheck, Landmark, AlertCircle } from 'lucide-react';
 import AnimatedSection from '../ui/AnimatedSection';
 import SectionHeading from '../ui/SectionHeading';
 import Button from '../ui/Button';
 
-const features = [
+// Deliberately NOT another feature list — HowFinWorks covers the process and
+// AudienceSplit covers the benefit. This section answers "why trust it".
+const proofPoints = [
   {
-    icon: BarChart3,
-    title: 'Transaction Classification',
-    description: 'Import supported statements, review classifications, reuse mapping rules, and inspect resulting double-entry journals.',
+    icon: Building2,
+    title: 'Running in production',
+    description: 'Live at sthwalo.com/fin with real company workspaces, not a prototype or a design mockup.',
   },
   {
-    icon: Shield,
-    title: 'Enterprise Security',
-    description: 'HttpOnly cookie authentication, company-scoped access, explicit permissions, and audit-supporting records.',
+    icon: ShieldCheck,
+    title: 'Isolation enforced at the database',
+    description: 'Role-based access and per-company scoping, with PostgreSQL Row-Level Security as a backstop beneath the application.',
   },
   {
-    icon: Zap,
-    title: 'Payroll Automation',
-    description: 'Process payroll and prepare EMP201, EMP501, and IRP5-style outputs for review and manual external submission.',
+    icon: Landmark,
+    title: 'Built for South African filing',
+    description: 'PAYE, UIF and SDL on SARS tables. VAT201, EMP201, EMP501 and IRP5-style working papers prepared for your review.',
   },
   {
-    icon: FileText,
-    title: 'Financial Reporting',
-    description: 'Generate ledger-backed financial, management, VAT, payroll, and audit-trail outputs for responsible review — as PDF or Excel, in one consistent presentation.',
+    icon: AlertCircle,
+    title: 'Clear about where it stops',
+    description: 'FIN prepares and exports — it does not submit to SARS or connect to bank feeds. You review and file. We would rather say so up front.',
   },
 ];
 
@@ -34,25 +36,26 @@ export default function FeaturedWork() {
           <SectionHeading
             label="Featured Project"
             title="FIN Financial Management System"
-            description="A production-deployed financial operations platform with controlled workflows from source records to reviewable, ledger-backed reports."
+            description="A production-deployed financial operations platform, built and maintained in-house by Sthwalo Holdings."
           />
         </AnimatedSection>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <AnimatedSection animation="slide-in-left">
-            <div className="relative rounded-2xl overflow-hidden bg-deep-space-800 p-1">
-              <div className="rounded-xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden bg-deep-space-800 p-1">
+              <div className="rounded-xl overflow-hidden bg-deep-space-900">
                 <img
-                  src="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Financial dashboard interface"
-                  className="w-full h-auto object-cover aspect-[4/3]"
+                  src="/images/pipeline.gif"
+                  alt="FIN's core flow — importing a bank statement, classifying the transactions, posting to the ledger, and generating a report"
+                  className="w-full h-auto block"
+                  loading="lazy"
                 />
               </div>
-              <div className="absolute bottom-4 left-4 right-4 flex gap-2">
+              <div className="flex flex-wrap gap-2 p-4">
                 {['Spring Boot', 'Java 17', 'React 19', 'PostgreSQL 17', 'Docker'].map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 text-xs font-medium rounded-full bg-deep-space-800/90 text-warm-sand-200 border border-white/10 backdrop-blur-sm"
+                    className="px-3 py-1 text-xs font-medium rounded-full bg-white/5 text-warm-sand-200 border border-white/10"
                   >
                     {tech}
                   </span>
@@ -63,7 +66,7 @@ export default function FeaturedWork() {
 
           <AnimatedSection animation="slide-in-right">
             <div className="space-y-6">
-              {features.map(({ icon: Icon, title, description }) => (
+              {proofPoints.map(({ icon: Icon, title, description }) => (
                 <div
                   key={title}
                   className="flex gap-4 p-4 rounded-xl hover:bg-warm-sand-200/30 transition-colors group"
