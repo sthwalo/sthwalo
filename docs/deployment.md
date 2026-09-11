@@ -39,6 +39,14 @@
 
 This architecture keeps frontend hosting costs low (cPanel) while maintaining the backend and database on AWS where they need to be for performance and reliability.
 
+## API Deployment (cPanel Node.js)
+
+The contact form and the blog run in one Node app at `sthwalo.com/api`
+(`/home1/sthwaloc/nodeapi`, managed by cPanel → Setup Node.js App).
+
+Step-by-step runbook, including the environment-variable trap that silently
+breaks admin login: **[server/DEPLOY.md](../server/DEPLOY.md)**.
+
 ## Marketing Site Deployment
 
 ### Build Process

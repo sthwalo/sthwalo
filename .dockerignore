@@ -1,0 +1,18 @@
+# Dependencies are installed inside the image, the same way cPanel's
+# "Run NPM Install" builds them on the server. Copying a macOS/arm64 tree in
+# would defeat the point of matching the server's runtime.
+node_modules
+server/node_modules
+
+# Build output is mounted at runtime, not baked into the API image.
+dist
+dist.zip
+
+# Secrets and local state never enter the build context.
+.env
+server/.env
+docker/certs
+
+.git
+.artifacts
+.DS_Store

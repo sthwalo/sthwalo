@@ -48,7 +48,7 @@ function parseArgs(argv) {
   const opts = {
     cmd: 'smoke', args: [], base: null, outDir: join(UNIT_DIR, '.artifacts'),
     dist: false, width: 1440, height: 900, stubApi: true, keepServer: false,
-    settle: 400,
+    settle: 400, insecure: false,
   };
   const rest = [];
   for (let i = 0; i < argv.length; i++) {
@@ -61,6 +61,7 @@ function parseArgs(argv) {
     else if (a === '--mobile') { opts.width = 390; opts.height = 844; }
     else if (a === '--no-stub-api') opts.stubApi = false;
     else if (a === '--settle') opts.settle = Number(argv[++i]);
+    else if (a === '--insecure') opts.insecure = true;
     else if (a === '--help' || a === '-h') opts.cmd = 'help';
     else rest.push(a);
   }
@@ -91,6 +92,7 @@ Options
   --width/--height Explicit viewport
   --no-stub-api    Let the contact form hit the REAL production API (don't)
   --settle <ms>    Extra wait after networkIdle (default 400)
+  --insecure       Accept self-signed certs (the Docker harness on :8443 only)
 `;
 
 // ------------------------------------------------------------- Vite server
@@ -161,6 +163,9 @@ async function launchChrome(opts) {
     '--no-first-run', '--no-default-browser-check', '--disable-gpu',
     '--hide-scrollbars', '--mute-audio', '--disable-dev-shm-usage',
     '--disable-background-timer-throttling', '--disable-renderer-backgrounding',
+    // Off unless asked for: only the local Docker harness, which serves a
+    // self-signed cert, has any business skipping certificate validation.
+    ...(opts.insecure ? ['--ignore-certificate-errors'] : []),
     'about:blank',
   ];
   // detached: Chrome forks gpu/network/renderer helpers; killing only the
@@ -464,8 +469,13 @@ async function cmdSmoke(page, base, opts) {
     // Fonts, GA) fail by design when offline / CORS-blocked; the app degrades
     // gracefully. Report them, don't fail on them.
     const isExternal = (f) => /https?:\/\/(?!localhost|127\.0\.0\.1)/.test(f);
-    const problems = [...page.errors, ...page.netFails.filter((f) => !/favicon/i.test(f) && !isExternal(f))];
-    const notes = page.netFails.filter(isExternal);
+    // /admin is signed out during a smoke run, so a 401 from the admin API is
+    // the guard doing its job — the sign-in form it produces is the correct
+    // render. Counting it as a failure would make a healthy stack report red.
+    const isExpectedGuard = (f) => route === '/admin' && /HTTP 401 .*\/api\/admin\//.test(f);
+    const problems = [...page.errors, ...page.netFails.filter(
+      (f) => !/favicon/i.test(f) && !isExternal(f) && !isExpectedGuard(f))];
+    const notes = [...page.netFails.filter(isExternal), ...page.netFails.filter(isExpectedGuard)];
     // 200 chars catches a blank <main>, which is what this check is for. A
     // sign-in form is legitimately short — real page, little prose — so it gets
     // a lower floor rather than an exemption, and still fails if it renders

@@ -8,7 +8,8 @@ sthwalo-holdings/
 ├── tailwind.config.js                  # Brand colors, animations, fonts
 ├── tsconfig.app.json                   # TypeScript strict config
 ├── postcss.config.js                   # PostCSS + Autoprefixer
-├── .htaccess                           # SPA routing for cPanel
+├── public/.htaccess                    # SPA routing for cPanel; Vite copies it
+│                                       #   into dist/, so the build ships it
 ├── app.htaccess                        # SPA routing for FIN subdirectory
 ├── ANALYTICS_README.md                 # Google Analytics 4 setup guide
 │

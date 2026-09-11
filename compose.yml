@@ -1,0 +1,91 @@
+# Production-parity harness for the Sthwalo API and site.
+#
+# Mirrors cPanel closely enough that "it works here" is evidence about
+# production: Node 19.9.0, Apache honouring the repo's real .htaccess, the API
+# on the same origin under /api, and configuration supplied only through the
+# process environment.
+#
+#   docker compose up -d --build
+#   docker compose exec api node seed-posts.js
+#   docker compose exec -it api node create-admin.js it@sthwalo.com
+#
+# See docker/README.md.
+name: sthwalo-parity
+
+services:
+  db:
+    # PIN THIS TO PRODUCTION. phpMyAdmin's home page prints "Server type" and
+    # "Server version"; set DB_IMAGE in docker/.env to match.
+    #
+    # It is not cosmetic: MariaDB's JSON column is an alias for LONGTEXT, so
+    # mysql2 hands back a *string* and the JSON.parse branch in posts.js:53 is
+    # the live path. MySQL 8 has a native JSON type and returns a parsed
+    # object, leaving that branch dead. Test the wrong engine and you exercise
+    # the wrong code.
+    image: ${DB_IMAGE:-mariadb:10.6}
+    environment:
+      MYSQL_ROOT_PASSWORD: parity-root
+      MYSQL_DATABASE: sthwaloc_sthwalo
+      MYSQL_USER: sthwaloc_sthwalo
+      MYSQL_PASSWORD: parity-local
+    volumes:
+      # Run the real schema the way phpMyAdmin ran it. Both the MySQL and
+      # MariaDB images execute this on first boot of an empty data volume.
+      - ./server/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - dbdata:/var/lib/mysql
+    healthcheck:
+      # mysqladmin on MySQL and older MariaDB; mariadb-admin on MariaDB 11+.
+      test: ["CMD-SHELL", "mysqladmin ping -h127.0.0.1 --silent || mariadb-admin ping -h127.0.0.1 --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    ports:
+      - "13306:3306"   # host-side access for inspection; prod is not exposed
+
+  api:
+    build:
+      context: ./server
+      dockerfile: ../docker/api.Dockerfile
+    environment:
+      # This block IS the cPanel "Environment variables" panel. There is
+      # deliberately no .env mounted: index.js never calls dotenv, so if the
+      # app works here it works there for the same reason.
+      NODE_ENV: production          # sets the Secure flag on the session cookie
+      PORT: 4000
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: sthwaloc_sthwalo
+      DB_PASSWORD: parity-local
+      DB_NAME: sthwaloc_sthwalo
+      FRONTEND_URL: https://localhost:8443
+      ADMIN_SESSION_SECRET: parity-only-secret-not-for-production-use-0123456789
+      SMTP_USER: no-reply@sthwalo.com
+      NOTIFY_TO: it@sthwalo.com
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "4000:4000"    # direct access, bypassing Apache, for isolating failures
+
+  web:
+    build:
+      context: ./docker
+      dockerfile: web.Dockerfile
+    volumes:
+      # Just the build output — which now carries its own .htaccess, because
+      # the file lives in public/ and Vite copies it. That is the same artifact
+      # uploaded to public_html, routing rules included, so what Apache honours
+      # here is exactly what production gets.
+      - ./dist:/usr/local/apache2/htdocs:ro
+      - ./docker/httpd/sthwalo.conf:/usr/local/apache2/conf/extra/sthwalo.conf:ro
+      - ./docker/certs:/usr/local/apache2/conf/certs:ro
+    depends_on:
+      - api
+    ports:
+      # 8080 is deliberately avoided — the fin-app-local container already
+      # publishes it on this machine.
+      - "8081:80"
+      - "8443:443"   # the entry point that matters: Secure cookies need TLS
+
+volumes:
+  dbdata:

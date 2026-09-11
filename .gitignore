@@ -7,3 +7,4 @@ server/.env
 docs/marketing.md
 working.md
 .artifacts
+docker/certs
