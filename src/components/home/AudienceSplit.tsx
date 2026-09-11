@@ -18,7 +18,7 @@ const audiences = [
       'When your accountant asks for backup, it is already attached — no inbox archaeology.',
       'Your books stay in a state someone else can pick up and review without a handover meeting.',
     ],
-    cta: { label: 'See how the workflow runs', to: '/resources', event: 'audience_business_detail' },
+    cta: { label: 'See how the workflow runs', to: '/blog', event: 'audience_business_detail' },
     className: 'bg-white/[0.03] border-white/10',
   },
   {

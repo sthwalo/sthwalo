@@ -82,8 +82,8 @@ export default function FeaturedWork() {
               ))}
 
               <div className="pt-4">
-                <Button to="/resources" variant="secondary">
-                  Explore FIN Resources
+                <Button to="/blog" variant="secondary">
+                  Read how FIN works
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </div>

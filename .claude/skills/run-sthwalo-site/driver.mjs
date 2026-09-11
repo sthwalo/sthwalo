@@ -22,8 +22,10 @@ const UNIT_DIR = resolve(SKILL_DIR, '../../..');
 
 // Every route in src/App.tsx, plus one real blog post for the :slug branch.
 const ROUTES = [
-  '/', '/about', '/services', '/portfolio', '/contact', '/demo',
-  '/resources', '/blog', '/privacy', '/terms', '/cookies', '/paia', '/refunds',
+  // /demo and /resources were removed; /admin is the blog editor and renders a
+  // sign-in form when the API is unreachable, which is what smoke sees.
+  '/', '/about', '/services', '/portfolio', '/contact', '/admin',
+  '/blog', '/privacy', '/terms', '/cookies', '/paia', '/refunds',
 ];
 
 const CHROME_CANDIDATES = [
@@ -464,7 +466,12 @@ async function cmdSmoke(page, base, opts) {
     const isExternal = (f) => /https?:\/\/(?!localhost|127\.0\.0\.1)/.test(f);
     const problems = [...page.errors, ...page.netFails.filter((f) => !/favicon/i.test(f) && !isExternal(f))];
     const notes = page.netFails.filter(isExternal);
-    const empty = bodyLen < 200;
+    // 200 chars catches a blank <main>, which is what this check is for. A
+    // sign-in form is legitimately short — real page, little prose — so it gets
+    // a lower floor rather than an exemption, and still fails if it renders
+    // nothing at all.
+    const floor = route === '/admin' ? 80 : 200;
+    const empty = bodyLen < floor;
     const ok = problems.length === 0 && !empty && hidden === 0;
     if (!ok) failed++;
 

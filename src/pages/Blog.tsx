@@ -3,11 +3,13 @@ import { ArrowRight, Calendar } from 'lucide-react';
 import AnimatedSection from '../components/ui/AnimatedSection';
 import Button from '../components/ui/Button';
 import SeoMeta from '../components/ui/SeoMeta';
-import { blogCategories, blogPosts } from '../data/blogPosts';
+import { blogCategories } from '../data/blogPosts';
+import { useBlogPosts } from '../hooks/useBlogPosts';
 
 export default function Blog() {
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const posts = selectedCategory === 'All' ? blogPosts : blogPosts.filter(post => post.category === selectedCategory);
+  const { posts: allPosts } = useBlogPosts();
+  const posts = selectedCategory === 'All' ? allPosts : allPosts.filter(post => post.category === selectedCategory);
 
   return (
     <>
@@ -47,7 +49,6 @@ export default function Blog() {
               </AnimatedSection>
             ))}
           </div>
-          <div className="mt-16 text-center"><Button to="/resources" variant="secondary">Explore FIN manuals and boundaries</Button></div>
         </div>
       </section>
     </>

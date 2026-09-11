@@ -144,9 +144,9 @@ export default function Portfolio() {
                     <Lock className="w-4 h-4" />
                     Sign In to FIN
                   </Button>
-                  <Button to="/resources" variant="outline" size="md">
+                  <Button to="/blog" variant="outline" size="md">
                     <Eye className="w-4 h-4" />
-                    Read FIN Guides
+                    Read the FIN writing
                   </Button>
                 </div>
               </div>

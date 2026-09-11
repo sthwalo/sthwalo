@@ -1,0 +1,582 @@
+[
+  {
+    "slug": "why-i-built-fin",
+    "title": "Why I Built FIN: Financial Records Should Stay Reviewable",
+    "excerpt": "FIN was built to help South African businesses move from scattered source records to controlled, reviewable financial workflows.",
+    "category": "Founder Notes",
+    "audience": "Business owners",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/pipeline.gif",
+    "read_time": "5 min read",
+    "source_label": "FIN value proposition",
+    "source_href": "/blog/why-i-built-fin",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Many businesses already have useful financial source records: bank statements, invoices, inventory and sales records, payroll information, receipts, and operational documents. The difficult part is turning those records into a current, understandable accounting workflow."
+      },
+      {
+        "type": "heading",
+        "text": "The aim is control, not invisible automation"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN imports supported bank statements and documents through Accounting Workbench, presents extracted records for review, and helps users classify transactions. Inventory Management now holds sales documents, customers, suppliers, AR/AP, stock, purchasing, and inventory reports. Reusable rules can reduce repeated work, while classifications, journals, corrections, and reports remain visible."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Upload supported financial records in Accounting Workbench.",
+          "Review extracted transactions and classifications.",
+          "Manage documents, customers, suppliers, and stock from Inventory Management.",
+          "Inspect journals and ledger-backed reports in Accounting Workbench, Management Accounts and Financial Statements.",
+          "Correct records when professional judgement is required."
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Built for work throughout the year"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN is designed to help owners and finance teams maintain better records before reporting and tax deadlines arrive. It supports the work; it does not replace responsible review by the business, bookkeeper, accountant, or tax practitioner."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-05-07",
+    "reviewed_at": "2026-07-04"
+  },
+  {
+    "slug": "you-already-have-your-financial-data",
+    "title": "Your Bank Statement Is a Starting Point, Not a Finished Set of Books",
+    "excerpt": "A bank statement contains useful transaction data, but it still needs classification, reconciliation, ledger posting, and review.",
+    "category": "Accounting Workflows",
+    "audience": "Business owners",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/bank-to-ledger.gif",
+    "read_time": "5 min read",
+    "source_label": "Business-owner manual",
+    "source_href": "/blog/why-i-built-fin",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Every bank transaction records a date, description, and amount. That is useful source data, but it does not explain the accounting treatment, supporting document, VAT position, or business purpose."
+      },
+      {
+        "type": "heading",
+        "text": "How FIN uses the source record"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Import supported PDF or CSV statements in Accounting Workbench.",
+          "Review duplicates and extracted transaction details.",
+          "Classify transactions and create reusable mapping rules.",
+          "Reconcile records before relying on reports.",
+          "Use Inventory Management for sales/supplier documents, AR/AP, and stock workflows."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Rules can make recurring classification more consistent, but users should still review the outcome. FIN does not guarantee extraction, classification, accounting, or tax accuracy."
+      },
+      {
+        "type": "heading",
+        "text": "The result is traceability"
+      },
+      {
+        "type": "paragraph",
+        "text": "The value is a repeatable path from source record to reviewed accounting output, with corrections and audit-supporting records available when something needs attention."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-05-07",
+    "reviewed_at": "2026-07-04"
+  },
+  {
+    "slug": "bank-statements-to-reviewable-workflows",
+    "title": "Turning Bank Statements Into Accounting Workbench Reviews",
+    "excerpt": "A practical walkthrough of importing, reviewing, classifying, reconciling, and reporting from supported bank statements in the refreshed FIN UI.",
+    "category": "Product Guides",
+    "audience": "Owners and finance teams",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/bank-to-ledger.gif",
+    "read_time": "6 min read",
+    "source_label": "Bookkeeper manual",
+    "source_href": "/blog/practical-fin-workflow-for-bookkeepers",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "A controlled bank-statement workflow separates ingestion from review. In the current UI, that workflow sits in Accounting Workbench so a user can see what was imported, what accounting treatment was applied, and how it reaches the cashbook, general ledger, audit trail, and reports."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Select the correct company and fiscal period.",
+          "Open Accounting Workbench → Upload and import a supported PDF or CSV statement.",
+          "Review extracted rows and possible duplicates.",
+          "Classify transactions and inspect reusable rules.",
+          "Use Accounting Workbench → Cashbook, Bank Reconciliation, General Ledger, and Operations to review the result before relying on Management Accounts and Financial Statements."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Supported formats and extraction quality vary. OCR fallback and mapping rules assist the workflow, but the responsible user remains accountable for review and correction."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-06-07",
+    "reviewed_at": "2026-07-04"
+  },
+  {
+    "slug": "practical-fin-workflow-for-bookkeepers",
+    "title": "A Practical FIN Workflow for Bookkeepers",
+    "excerpt": "Use FIN to keep Accounting Workbench capture, classification, Inventory Management documents, payroll, and housekeeping organised across companies.",
+    "category": "Product Guides",
+    "audience": "Bookkeepers",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/payroll.gif",
+    "read_time": "6 min read",
+    "source_label": "Bookkeeper manual",
+    "source_href": "/blog/practical-fin-workflow-for-bookkeepers",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Bookkeeping quality improves when recurring work follows a visible sequence and exceptions are handled before period-end reporting. The refreshed FIN UI separates source-to-ledger work from trading and stock operations so the workflow is easier to explain."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Confirm the active company and period.",
+          "Use Accounting Workbench to import source records, classify transactions, reconcile, inspect cashbook/general-ledger results, and run housekeeping operations.",
+          "Use Inventory Management for sales documents, supplier documents, customers, suppliers, AR/AP settlement, item master, stock control, purchases, and inventory reports.",
+          "Use Payroll for employees, pay runs, clocking, payslips, and payroll reports.",
+          "Resolve exceptions and keep supporting documents connected."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN supports multi-company work and reusable rules, while company-scoped access limits which workspaces and actions a user may reach."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-06-07",
+    "reviewed_at": "2026-07-04"
+  },
+  {
+    "slug": "ledger-backed-reporting-for-accountants",
+    "title": "Ledger-Backed Reporting for Accountants",
+    "excerpt": "FIN reports are built from operational records, journals, and the general ledger, with review still required.",
+    "category": "Accounting Workflows",
+    "audience": "Accountants",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/reporting.gif",
+    "read_time": "6 min read",
+    "source_label": "Accountant manual",
+    "source_href": "/blog/ledger-backed-reporting-for-accountants",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "A report is more useful when its numbers can be traced back through journals and supporting operational records. FIN provides that ledger-backed path across core reporting workflows while making the current UI locations explicit."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Review chart-of-accounts and fiscal-period context in Accounting Workbench.",
+          "Inspect manual and workflow-generated double-entry journals, including audit-linked reversals.",
+          "Use Accounting Workbench → General Ledger and Management Accounts → Trial Balance as review foundations.",
+          "Generate financial, VAT, payroll, inventory, management, AFS, and audit-trail outputs from the relevant current modules.",
+          "Export reviewed outputs in supported formats."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN reports support accounting work and stakeholder communication. They do not constitute an audit opinion and do not remove the need for professional review."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-06-07",
+    "reviewed_at": "2026-07-04"
+  },
+  {
+    "slug": "what-fin-automates-and-what-remains-manual",
+    "title": "What FIN Automates, What You Review, and What Remains Manual",
+    "excerpt": "An honest boundary guide covering what FIN automates, what you review, and what stays manual.",
+    "category": "Trust and Boundaries",
+    "audience": "All FIN users",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/bank-to-ledger.gif",
+    "read_time": "7 min read",
+    "source_label": "Trust and operating boundaries",
+    "source_href": "/blog/what-fin-automates-and-what-remains-manual",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "FIN automates parts of the internal workflow"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN supports extraction, classification rules, double-entry postings, calculations, report generation, document output, inventory and purchasing workflows, budget planning, and audit-supporting history across implemented workflows."
+      },
+      {
+        "type": "heading",
+        "text": "Users review the financial result"
+      },
+      {
+        "type": "paragraph",
+        "text": "OCR, classification, accounting treatment, payroll, VAT, and reports require responsible review. FIN does not guarantee accuracy, compliance, savings, or business outcomes."
+      },
+      {
+        "type": "heading",
+        "text": "External submission remains manual"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN is not connected to SARS APIs or eFiling. Users export or print reviewed SARS-facing preparation reports and submit or share them through the appropriate external process."
+      },
+      {
+        "type": "heading",
+        "text": "FIN holds no provider connections"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN does not connect to bank feeds, CIPC, or labour-service providers. Those records are captured in FIN directly, and the boundary above is the whole of the position — there is no pending connection to describe."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-06-07",
+    "reviewed_at": "2026-07-04"
+  },
+  {
+    "slug": "recent-fin-improvements-payables-corrections-residency",
+    "title": "Recent FIN Improvements: UI Refresh, Inventory, Budgets, and Handbook Updates",
+    "excerpt": "A round-up of recent platform updates — refreshed navigation, Accounting Workbench, Inventory Management, Budgets & Forecasts, Compliance, Management Accounts, Financial Statements, and in-app onboarding.",
+    "category": "Product Guides",
+    "audience": "Owners and finance teams",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/inventory.gif",
+    "read_time": "7 min read",
+    "source_label": "FIN user manuals",
+    "source_href": "/blog/why-i-built-fin",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "FIN continues to mature as a controlled, reviewable financial workflow for South African businesses. The July public handbook refresh aligns the manuals and marketing resources with the current UI, so users see the same language in the product and in the guides. FIN supports the work and keeps it visible; it does not replace responsible review and is not connected to SARS APIs or eFiling."
+      },
+      {
+        "type": "heading",
+        "text": "The sidebar now reflects how people work"
+      },
+      {
+        "type": "paragraph",
+        "text": "The current sidebar groups work into Command, Accounting Flow, and People. Current labels include Getting started, Business Overview, Entity & Period Setup, Inventory Management, Accounting Workbench, Management Accounts, Financial Statements, Compliance, Fixed Assets, Payroll, Budgets & Forecasts, and Account, Billing & Access."
+      },
+      {
+        "type": "heading",
+        "text": "Accounting Workbench is source-to-ledger"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Upload bank statements and documents.",
+          "Review imported transactions and documents.",
+          "Classify transactions and manage reusable rules.",
+          "Use cashbook, bank reconciliation, general ledger, chart of accounts, adjustment entry, operations, and audit trail from one workbench."
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Inventory Management now owns trading and stock workflows"
+      },
+      {
+        "type": "paragraph",
+        "text": "Sales documents, supplier documents, customers, suppliers, AR/AP ledgers, item master, stock control, purchasing, adjustments, costing/WIP, and inventory reports now sit under Inventory Management. Companies can enable inventory when they are ready to track stock and valuation workflows."
+      },
+      {
+        "type": "heading",
+        "text": "Reports, tax, assets, and budgets have clearer homes"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Management Accounts contains the General Ledger, Cashbook, Monthly accounts, Trial Balance, and the management report.",
+          "Financial Statements contains the Income Statement, Balance Sheet, Cash Flow Statement, and the Annual Financial Statements.",
+          "Compliance contains the SARS, CIPC and Labour preparation work.",
+          "Fixed Assets contains asset position, depreciation, and disposal workflows.",
+          "Budgets & Forecasts contains budget overview, line items, projections, assumptions, initiatives and milestones, monthly activities, strategic plan, and Strategic Plan PDF export."
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "The public handbook is current again"
+      },
+      {
+        "type": "paragraph",
+        "text": "The downloadable FIN Public Handbook now includes the general-user manual and reflects the July 2026 UI labels. It remains deliberately scoped to product use, role guidance, trust boundaries, and manual/reporting workflows — not internal architecture notes."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-06-20",
+    "reviewed_at": "2026-07-04"
+  },
+  {
+    "slug": "your-source-documents-stay-safe",
+    "title": "Your Source Documents Now Stay Safe in FIN",
+    "excerpt": "Uploaded invoices, receipts, bank statements, and CSVs are now kept as their original files in private, encrypted storage hosted in South Africa — and you can download them whenever you need them.",
+    "category": "Trust and Boundaries",
+    "audience": "All FIN users",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/document-vault.gif",
+    "read_time": "4 min read",
+    "source_label": "FIN value proposition",
+    "source_href": "/blog/what-fin-automates-and-what-remains-manual",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Until recently, FIN read your uploaded files — invoice scans, receipts, bank statements, transaction CSVs — extracted the data, and then discarded the original. The records lived on, but the source file did not. That has changed: FIN now retains the original of every supported upload."
+      },
+      {
+        "type": "heading",
+        "text": "Where your documents live"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Originals are stored in a private, encrypted, versioned document vault.",
+          "The storage is hosted in the South African (Cape Town) region, which supports data-residency expectations for local businesses.",
+          "Files are reached only through short-lived, access-checked links — there are no public document URLs."
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "You can download them back"
+      },
+      {
+        "type": "paragraph",
+        "text": "Authorised users can download the original file from the imported-documents list and from the transactions view, so the source record sits alongside the transactions and reports it produced. That makes review, reconciliation, and audit easier — the paper trail is one click away."
+      },
+      {
+        "type": "heading",
+        "text": "An honest boundary"
+      },
+      {
+        "type": "paragraph",
+        "text": "Keeping documents private, encrypted, and in-region is about good custody of your records and data residency. It is not a legal or regulatory compliance guarantee, and it does not replace your own backups or responsible review. As always, FIN supports your work and keeps it visible — it does not replace it."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-06-21",
+    "reviewed_at": "2026-07-04"
+  },
+  {
+    "slug": "statements-of-account",
+    "title": "Statements of Account: Every Payment Against an Invoice, in One Document",
+    "excerpt": "An invoice settled in instalments across a year is now a statement you can print or email — opening balance, each payment on its own date, a running balance, and an age analysis.",
+    "category": "Product Guides",
+    "audience": "Owners and finance teams",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/billing.gif",
+    "read_time": "5 min read",
+    "source_label": "Business-owner manual",
+    "source_href": "/blog/why-i-built-fin",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "A customer queries their balance. They owe R30 000 from an invoice raised in January and they have been paying it down through the year. Until recently FIN could tell you the amount still outstanding, but it could not show you how you got there — the payments existed as a single figure, not as dated events."
+      },
+      {
+        "type": "heading",
+        "text": "What a statement now shows"
+      },
+      {
+        "type": "paragraph",
+        "text": "Each payment is recorded as its own row against the invoice it settles. A statement lists the balance brought forward, then every invoice and every payment in date order with a running balance, and closes on the amount due."
+      },
+      {
+        "type": "list",
+        "items": [
+          "Choose a customer or a supplier — the same document serves receivables and payables.",
+          "Choose the period. Anything before it collapses into the opening balance rather than being dropped, so the statement still adds up.",
+          "Review the running balance line by line.",
+          "Read the age analysis: current, 30, 60, and 90+ days.",
+          "Print the statement, or email it to the customer or supplier."
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Details that matter when someone disputes a balance"
+      },
+      {
+        "type": "paragraph",
+        "text": "An invoice and a payment dated the same day list the invoice first, because you cannot settle what has not been raised. Fully settled invoices are excluded from the age analysis. A statement whose closing balance did not equal opening plus charges less payments would be worse than no statement at all, so that arithmetic is asserted directly rather than assumed."
+      },
+      {
+        "type": "heading",
+        "text": "An honest boundary"
+      },
+      {
+        "type": "paragraph",
+        "text": "A statement reports what has been captured and posted in FIN. It is a record for discussion with a customer or supplier, not a demand, and it does not replace your own review of whether the underlying invoices and payments were captured correctly."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-08-24",
+    "reviewed_at": "2026-08-24"
+  },
+  {
+    "slug": "recurring-expenses-and-source-documents",
+    "title": "Recurring Expenses, and Why Customer and Supplier Documents Changed Their Name",
+    "excerpt": "Fixed monthly costs can now post themselves on a schedule you set, and the documents module now says what it actually holds — both sides of the ledger, not only sales.",
+    "category": "Product Guides",
+    "audience": "Bookkeepers",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/pipeline.gif",
+    "read_time": "5 min read",
+    "source_label": "Bookkeeper manual",
+    "source_href": "/blog/practical-fin-workflow-for-bookkeepers",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Rent, insurance, a monthly retainer, a software subscription. The amount does not change and the date does not move, yet somebody re-keys each one every month — and the month it gets forgotten is the month the accounts are quietly wrong."
+      },
+      {
+        "type": "heading",
+        "text": "Schedule it once"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Set the supplier, expense account, amount, and frequency — monthly, quarterly, or annually.",
+          "Set the day it should run, and an end date if the commitment has one.",
+          "The schedule posts the expense on that day, through the same supplier-invoice workflow you would have used by hand.",
+          "Every run is visible: the schedule records when it last ran and how many times."
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "What happens when a run fails"
+      },
+      {
+        "type": "paragraph",
+        "text": "It stays due. A schedule that failed to post does not advance past the month it missed, so the next run retries it rather than silently skipping. A fixed cost that vanishes from the books for one month is worse than one that posts late, and a failure never switches the schedule off on its own."
+      },
+      {
+        "type": "heading",
+        "text": "Customer and Supplier Documents"
+      },
+      {
+        "type": "paragraph",
+        "text": "What was labelled Sales Documents never held only sales. It carried quotes, invoices, credit notes, supplier invoices, and purchase orders — both sides of the ledger. It is now called Customer & Supplier Documents and sits in Accounting Workbench alongside the other source documents, next to recurring expenses, because that is where the capture work actually happens."
+      },
+      {
+        "type": "paragraph",
+        "text": "The underlying records are unchanged. What changed is that the label now describes the contents, and the module sits where the workflow does."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-08-24",
+    "reviewed_at": "2026-08-24"
+  },
+  {
+    "slug": "where-fin-comes-from",
+    "title": "Where FIN Comes From, and Where It Is Going",
+    "excerpt": "FIN is headquartered in South Africa, where it was conceived and built. Its accounting core is jurisdiction-neutral; its statutory reporting is South African today.",
+    "category": "Founder Notes",
+    "audience": "Business owners",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/overview.gif",
+    "read_time": "4 min read",
+    "source_label": "FIN value proposition",
+    "source_href": "/blog/why-i-built-fin",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "FIN is headquartered in South Africa, where the platform was conceived and built. That is not incidental detail — it is where the problem was understood, where the first books were kept in it, and where the regulatory work was learned properly rather than approximated."
+      },
+      {
+        "type": "heading",
+        "text": "Two layers, and the difference matters"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN has an accounting core and a statutory layer, and they are not the same thing. The core — double-entry posting, source documents, classification, statements, inventory, point of sale — is jurisdiction-neutral. Debits and credits do not change at a border."
+      },
+      {
+        "type": "paragraph",
+        "text": "The statutory layer is South African: VAT 201, EMP 201 and EMP 501, IRP 5 outputs, PAYE, UIF and SDL, and the small business corporation income tax computation. That coverage extends as the team grows."
+      },
+      {
+        "type": "heading",
+        "text": "What that means today, stated plainly"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN operates against South African statutory requirements. Support for any other jurisdiction is not in the product and is not offered. We would rather say that clearly than let a reader assume otherwise and discover it during their first filing period."
+      },
+      {
+        "type": "heading",
+        "text": "The platform is in active development"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN is built and in production use, and it is still moving. What we publish describes capability that exists and has been verified — not what is planned. If something is not described here or in the handbook, it is best to assume it is not there yet, and to ask."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-08-24",
+    "reviewed_at": "2026-08-24"
+  },
+  {
+    "slug": "preparing-sars-returns-in-fin",
+    "title": "Preparing SARS Returns in FIN: VAT, Payroll Taxes, and the Small Business Computation",
+    "excerpt": "What FIN prepares for SARS — VAT 201, EMP 201 and the EMP 501 reconciliation, IRP 5 outputs, and the s12E small business corporation computation — and the boundary it does not cross.",
+    "category": "Accounting Workflows",
+    "audience": "Accountants",
+    "author": "Immaculate Nyoni",
+    "featured_image": "/images/tax-compliance.gif",
+    "read_time": "6 min read",
+    "source_label": "Regulatory reporting boundary",
+    "source_href": "/blog/what-fin-automates-and-what-remains-manual",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "text": "Compliance holds the preparation work for SARS, CIPC and Labour: VAT, payroll taxes, and the income tax computation. Every figure traces back through journals to the operational records that produced it, which is the part that matters when a number has to be explained rather than merely reported."
+      },
+      {
+        "type": "heading",
+        "text": "VAT"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN maintains VAT records from classified transactions and prepares VAT 201 figures with a supporting register, so an output or input total can be opened and read line by line rather than taken on trust."
+      },
+      {
+        "type": "heading",
+        "text": "Payroll taxes, and the reconciliation that usually hurts"
+      },
+      {
+        "type": "paragraph",
+        "text": "Beyond EMP 201 preparation and IRP 5 outputs, FIN reconciles across three layers that normally live in three different places: what was declared on EMP 201, what payroll actually processed, and what was paid to SARS. Differences surface as readiness checks against the period rather than as a discovery during filing season."
+      },
+      {
+        "type": "heading",
+        "text": "Income tax for small business corporations"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN computes the section 12E small business corporation position using the SBC brackets, drawing on the ledger and the capital allowances already recorded against fixed assets."
+      },
+      {
+        "type": "heading",
+        "text": "The boundary"
+      },
+      {
+        "type": "paragraph",
+        "text": "FIN is not connected to SARS or to eFiling, and it does not file anything on your behalf. It prepares reviewable figures and reports which you export or print and submit through the appropriate external process. FIN does not guarantee compliance and does not replace review by a qualified professional — the calculations support your judgement, they do not stand in for it."
+      }
+    ],
+    "status": "published",
+    "published_at": "2026-08-24",
+    "reviewed_at": "2026-08-24"
+  }
+]

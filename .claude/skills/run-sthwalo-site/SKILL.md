@@ -5,7 +5,7 @@ description: Build, run, screenshot and drive the Sthwalo Holdings marketing sit
 
 # Run the Sthwalo Holdings site
 
-Vite 7 + React 18 + TypeScript SPA, Tailwind, `react-router-dom` v7. 14 client-side
+Vite 7 + React 18 + TypeScript SPA, Tailwind, `react-router-dom` v7. 13 client-side
 routes, no backend needed to run it.
 
 **Drive it with `driver.mjs`** — a zero-dependency Chrome DevTools Protocol driver
@@ -51,7 +51,7 @@ The driver starts and stops Vite itself. One command, no server to babysit:
 node .claude/skills/run-sthwalo-site/driver.mjs smoke
 ```
 
-Visits all 14 routes plus a real blog post, screenshots each to `.artifacts/`
+Visits all 13 routes plus a real blog post, screenshots each to `.artifacts/`
 (gitignored), and reports console errors, failed requests, empty pages, and
 unrevealed sections. Exits non-zero on failure. Takes ~90s. Verified output:
 
@@ -61,7 +61,7 @@ unrevealed sections. Exits non-zero on failure. Takes ~90s. Verified output:
 PASS  /                          3382 chars  1440x6118  "FIN - Financial Operations Platform for SMEs | S"
 PASS  /about                     3351 chars  1440x4436  "Sthwalo Holdings | Building Foundations with Cod"
 ...
-All 14 routes OK.
+All 13 routes OK.
 ```
 
 ### Commands
@@ -150,9 +150,9 @@ Useful only if you can see a browser. Prefer the driver.
   opacity on elements with real size and text (what `hiddenCount()` does), and
   note Home has a deliberate `opacity-[0.03]` background texture.
 
-- **`/demo` is a redirect.** [src/pages/Demo.tsx](src/pages/Demo.tsx) is just
-  `<Navigate to="/resources" replace />`, so `/demo` and `/resources` screenshot
-  identically. Not a bug.
+- **`/admin` is the blog editor.** With no API reachable it renders its sign-in
+  form, which is a real page with real text — that is a pass, not an empty route.
+  `/demo` and `/resources` no longer exist.
 
 - **There is no 404 route.** Any unmatched path (including `/fin/`, which the
   "Access FIN" button links to) renders the navbar and footer with an **empty

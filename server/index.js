@@ -1,23 +1,17 @@
 const express = require('express');
 const cors = require('cors');
-const mysql = require('mysql2/promise');
 const nodemailer = require('nodemailer');
+
+const { login, clearSessionCookie } = require('./auth');
+const posts = require('./posts');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors({ origin: process.env.FRONTEND_URL }));
+app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 app.use(express.json());
 
-const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT || 3306,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  waitForConnections: true,
-  connectionLimit: 10,
-});
+const { pool } = require('./db');
 
 const transporter = nodemailer.createTransport({
   sendmail: true,
@@ -74,5 +68,12 @@ app.post(['/contact', '/api/contact'], async (req, res) => {
 
   res.status(201).json({ success: true });
 });
+
+app.post(['/admin/login', '/api/admin/login'], (req, res) => login(req, res).catch((e) => {
+  console.error('Login failed:', e.message);
+  res.status(500).json({ error: 'Could not sign in' });
+}));
+app.post(['/admin/logout', '/api/admin/logout'], (req, res) => { clearSessionCookie(res); res.status(204).end(); });
+posts.register(app);
 
 app.listen(PORT, () => console.log(`API running on port ${PORT}`));

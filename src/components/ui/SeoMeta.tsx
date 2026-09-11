@@ -11,6 +11,8 @@ interface SeoMetaProps {
   author?: string;
   section?: string;
   tags?: string[];
+  /** Keeps a page out of search results. The admin is the reason this exists. */
+  noindex?: boolean;
 }
 
 export default function SeoMeta({
@@ -24,6 +26,7 @@ export default function SeoMeta({
   author,
   section,
   tags,
+  noindex = false,
 }: SeoMetaProps) {
   useEffect(() => {
     // Update document title
@@ -43,6 +46,11 @@ export default function SeoMeta({
 
     // Basic meta
     updateMeta('description', description);
+
+    // A page marked noindex must not be listed, and must not be followed into.
+    // Set on every render rather than only when true, so navigating from /admin
+    // to a public page clears it instead of leaving the whole session noindexed.
+    updateMeta('robots', noindex ? 'noindex, nofollow' : 'index, follow');
 
     // Open Graph
     updateMeta('og:title', title, true);
@@ -83,7 +91,7 @@ export default function SeoMeta({
     }
     canonical.href = url ? `https://sthwalo.com${url}` : 'https://sthwalo.com';
 
-  }, [title, description, image, url, type, publishedTime, modifiedTime, author, section, tags]);
+  }, [title, description, image, url, type, publishedTime, modifiedTime, author, section, tags, noindex]);
 
   return null;
 }

@@ -87,18 +87,6 @@ export default function Hero() {
             ))}
           </div>
 
-          {/* Walkthrough of the live FIN workspace */}
-          <div className="animate-fade-in-up animate-delay-300">
-            <div className="relative rounded-2xl overflow-hidden bg-deep-space-900/80 border border-white/10">
-              <img
-                src="/images/grand-tour.gif"
-                alt="FIN walkthrough touring every module — overview, setup, workbench, inventory, tax, assets, payroll, budgets, and reports"
-                className="w-full h-auto block"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
           <div className="mt-16 pt-10 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-400">
             {proofPoints.map((point) => (
               <div key={point.label}>

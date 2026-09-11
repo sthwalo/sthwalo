@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
+import BlockContent from '../components/ui/BlockContent';
 import Button from '../components/ui/Button';
 import SeoMeta from '../components/ui/SeoMeta';
-import { getBlogPostBySlug } from '../data/blogPosts';
+import { useBlogPost } from '../hooks/useBlogPosts';
 import { trackBlogView, trackCTAClick } from '../utils/analytics';
 
 export default function BlogPost() {
   const { slug = '' } = useParams();
-  const post = getBlogPostBySlug(slug);
+  const post = useBlogPost(slug);
 
   useEffect(() => {
     if (post) trackBlogView(post.slug, post.category);
@@ -30,13 +31,7 @@ export default function BlogPost() {
       <section className="section-padding bg-warm-sand-50">
         <article className="section-container max-w-[68ch]">
           <p className="text-xl text-deep-space-600 leading-relaxed mb-10">{post.excerpt}</p>
-          <div className="space-y-6">
-            {post.blocks.map((block, index) => {
-              if (block.type === 'heading') return <h2 key={index} className="text-2xl font-bold text-deep-space-800 pt-5">{block.text}</h2>;
-              if (block.type === 'list') return <ul key={index} className="list-disc pl-6 space-y-2 text-deep-space-600">{block.items.map(item => <li key={item}>{item}</li>)}</ul>;
-              return <p key={index} className="text-deep-space-600 leading-relaxed">{block.text}</p>;
-            })}
-          </div>
+          <BlockContent blocks={post.blocks} />
           <aside className="mt-12 p-6 rounded-xl bg-white border border-warm-sand-300/40">
             <p className="text-xs uppercase tracking-widest text-harvest-gold-600 font-bold">Documentation source</p>
             <p className="text-deep-space-600 mt-2 mb-4">This article is based on the {post.sourceLabel}. Request the full document and we'll send it through.</p>
@@ -44,8 +39,8 @@ export default function BlogPost() {
           </aside>
           <div className="mt-12 p-8 rounded-2xl bg-deep-space-800 text-center">
             <h2 className="text-2xl font-bold text-warm-sand-100">Explore FIN with the boundaries visible</h2>
-            <p className="text-warm-sand-400 mt-3 mb-6">Read the manuals, review current capabilities, then decide whether FIN fits your workflow.</p>
-            <div className="flex flex-wrap justify-center gap-3"><Button to="/resources" variant="primary">Explore resources</Button><Button href="https://sthwalo.com/fin" variant="outline" className="border-warm-sand-300 text-warm-sand-100" onClick={() => trackCTAClick('trial_signup', `blog-${post.slug}`)}>Access FIN</Button></div>
+            <p className="text-warm-sand-400 mt-3 mb-6">Read how it works, see where it stops, then decide whether FIN fits your workflow.</p>
+            <div className="flex flex-wrap justify-center gap-3"><Button to="/blog" variant="primary">More from the blog</Button><Button href="https://sthwalo.com/fin" variant="outline" className="border-warm-sand-300 text-warm-sand-100" onClick={() => trackCTAClick('trial_signup', `blog-${post.slug}`)}>Access FIN</Button></div>
           </div>
         </article>
       </section>

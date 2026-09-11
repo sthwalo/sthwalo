@@ -20,8 +20,6 @@ export const trackConversion = (conversionType: string, value?: number) => {
   });
 };
 
-export const trackResourceView = (resource: string) => trackEvent('resource_view', { resource });
-export const trackSocialDemoClick = (channel: string) => trackEvent('social_demo_click', { channel });
 export const trackTrustMetricsLoad = (source: string) => trackEvent('trust_metrics_load', { source });
 
 export const trackCTAClick = (ctaType: string, location: string) => {
