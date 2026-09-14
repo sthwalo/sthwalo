@@ -123,7 +123,9 @@ Remove the IP from Remote MySQL afterwards.
 The site now fetches posts from the API, so it needs redeploying too:
 
 ```bash
-npm run build          # .env already has VITE_API_URL=https://sthwalo.com/api
+npm run build          # VITE_API_URL is /api — relative, so one bundle works
+                       # both here and in the Docker harness. dist/ also carries
+                       # its own .htaccess now, so upload it with the rest.
 ```
 
 Upload the contents of `dist/` to `public_html/`.

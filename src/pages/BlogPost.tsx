@@ -40,7 +40,7 @@ export default function BlogPost() {
           <div className="mt-12 p-8 rounded-2xl bg-deep-space-800 text-center">
             <h2 className="text-2xl font-bold text-warm-sand-100">Explore FIN with the boundaries visible</h2>
             <p className="text-warm-sand-400 mt-3 mb-6">Read how it works, see where it stops, then decide whether FIN fits your workflow.</p>
-            <div className="flex flex-wrap justify-center gap-3"><Button to="/blog" variant="primary">More from the blog</Button><Button href="https://sthwalo.com/fin" variant="outline" className="border-warm-sand-300 text-warm-sand-100" onClick={() => trackCTAClick('trial_signup', `blog-${post.slug}`)}>Access FIN</Button></div>
+            <div className="flex flex-wrap justify-center gap-3"><Button to="/blog" variant="primary">More from the blog</Button><Button href="https://sthwalo.com/fin" variant="outline" className="border-warm-sand-300 text-warm-sand-100" onClick={() => trackCTAClick('free_signup', `blog-${post.slug}`)}>Create a free account</Button></div>
           </div>
         </article>
       </section>

@@ -71,6 +71,9 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:block">
+          {/* The navbar CTA is a way in, not a pitch. It sits on every page for people who already
+              have an account, so it names the destination rather than selling the free tier — the
+              page CTAs do the selling, and still say "Create a free account". */}
           <Button href="/fin/" variant="primary" size="sm">
             Access FIN
           </Button>

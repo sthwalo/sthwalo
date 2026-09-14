@@ -155,7 +155,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 7,
-    title: 'Recent FIN Improvements: UI Refresh, Inventory, Budgets, and Handbook Updates',
+    title: 'Recent FIN Improvements: UI Refresh, Inventory, Budgets, and In-App Onboarding',
     excerpt: 'A round-up of recent platform updates — refreshed navigation, Accounting Workbench, Inventory Management, Budgets & Forecasts, Compliance, Management Accounts, Financial Statements, and in-app onboarding.',
     category: 'Product Guides',
     audience: 'Owners and finance teams',
@@ -168,7 +168,7 @@ export const blogPosts: BlogPost[] = [
     sourceLabel: 'FIN user manuals',
     sourceHref: '/blog/why-i-built-fin',
     blocks: [
-      { type: 'paragraph', text: 'FIN continues to mature as a controlled, reviewable financial workflow for South African businesses. The July public handbook refresh aligns the manuals and marketing resources with the current UI, so users see the same language in the product and in the guides. FIN supports the work and keeps it visible; it does not replace responsible review and is not connected to SARS APIs or eFiling.' },
+      { type: 'paragraph', text: 'FIN continues to mature as a controlled, reviewable financial workflow for South African businesses. Onboarding now lives inside the product, so the guidance you read is the guidance for the screen you are on, and it cannot fall out of step with the UI the way a separate document does. FIN supports the work and keeps it visible; it does not replace responsible review and is not connected to SARS APIs or eFiling.' },
       { type: 'heading', text: 'The sidebar now reflects how people work' },
       { type: 'paragraph', text: 'The current sidebar groups work into Command, Accounting Flow, and People. Current labels include Getting started, Business Overview, Entity & Period Setup, Inventory Management, Accounting Workbench, Management Accounts, Financial Statements, Compliance, Fixed Assets, Payroll, Budgets & Forecasts, and Account, Billing & Access.' },
       { type: 'heading', text: 'Accounting Workbench is source-to-ledger' },
@@ -177,8 +177,8 @@ export const blogPosts: BlogPost[] = [
       { type: 'paragraph', text: 'Sales documents, supplier documents, customers, suppliers, AR/AP ledgers, item master, stock control, purchasing, adjustments, costing/WIP, and inventory reports now sit under Inventory Management. Companies can enable inventory when they are ready to track stock and valuation workflows.' },
       { type: 'heading', text: 'Reports, tax, assets, and budgets have clearer homes' },
       { type: 'list', items: ['Management Accounts contains the General Ledger, Cashbook, Monthly accounts, Trial Balance, and the management report.', 'Financial Statements contains the Income Statement, Balance Sheet, Cash Flow Statement, and the Annual Financial Statements.', 'Compliance contains the SARS, CIPC and Labour preparation work.', 'Fixed Assets contains asset position, depreciation, and disposal workflows.', 'Budgets & Forecasts contains budget overview, line items, projections, assumptions, initiatives and milestones, monthly activities, strategic plan, and Strategic Plan PDF export.'] },
-      { type: 'heading', text: 'The public handbook is current again' },
-      { type: 'paragraph', text: 'The downloadable FIN Public Handbook now includes the general-user manual and reflects the July 2026 UI labels. It remains deliberately scoped to product use, role guidance, trust boundaries, and manual/reporting workflows — not internal architecture notes.' },
+      { type: 'heading', text: 'Guidance moved into the product' },
+      { type: 'paragraph', text: 'The separate downloadable handbook has been retired. It described module names FIN no longer uses, and a PDF that has to be regenerated every time a label changes is a document that is wrong more often than it is right. Getting started now walks you through setup inside the app, and the scope is unchanged: product use, role guidance, trust boundaries, and manual reporting workflows — not internal architecture notes.' },
     ],
   },
   {

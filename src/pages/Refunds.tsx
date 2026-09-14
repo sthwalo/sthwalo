@@ -17,8 +17,8 @@ const sections: LegalSection[] = [
     heading: 'Try Before You Pay',
     body: (
       <p>
-        FIN offers a free 14-day Trial plan. We would rather you find out FIN is not right for you during the trial
-        than argue about a refund afterwards — please use it.
+        FIN offers a permanent free plan — no card, no countdown. We would rather you find out FIN is not right for
+        you on the free plan than argue about a refund afterwards — please use it.
       </p>
     ),
   },
@@ -84,7 +84,7 @@ export default function Refunds() {
   return (
     <LegalPageLayout
       title="Refund and Cancellation Policy"
-      seoDescription="Refunds and cancellation for FIN by Sthwalo Holdings — 14-day trial, 14-day first-payment refund, cancellation and turnaround times."
+      seoDescription="Refunds and cancellation for FIN by Sthwalo Holdings — free plan, 14-day first-payment refund, cancellation and turnaround times."
       url="/refunds"
       intro="What happens when you cancel your FIN subscription or ask for your money back."
       sections={sections}

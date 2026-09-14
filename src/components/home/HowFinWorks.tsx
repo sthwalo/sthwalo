@@ -61,7 +61,7 @@ export default function HowFinWorks() {
             href="https://sthwalo.com/fin"
             className="inline-flex items-center gap-2 px-6 py-3 bg-harvest-gold-200 text-deep-space-800 font-semibold rounded-lg hover:bg-harvest-gold-300 transition-colors"
           >
-            Start Free Trial
+            Create a free account
             <ArrowRight className="w-4 h-4" />
           </a>
         </AnimatedSection>

@@ -1,6 +1,7 @@
 import Hero from '../components/home/Hero';
 import HowFinWorks from '../components/home/HowFinWorks';
 import FeaturedWork from '../components/home/FeaturedWork';
+import FreePlan from '../components/home/FreePlan';
 import AudienceSplit from '../components/home/AudienceSplit';
 import TrustSignals from '../components/home/TrustSignals';
 import TrustMetrics from '../components/home/TrustMetrics';
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <TrustMetrics />
       <HowFinWorks />
+      <FreePlan />
       <FeaturedWork />
       <AudienceSplit />
       <TrustSignals />

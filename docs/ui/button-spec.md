@@ -24,8 +24,8 @@ identity:
 
 ### 1.2 Use cases
 
-- Primary page calls to action (`Start Free 14-Day Trial`, `Get in Touch`)
-- Secondary navigation actions (`Explore FIN Resources`, `View Our Work`)
+- Primary page calls to action (`Create a free account`, `Get in Touch`)
+- Secondary navigation actions (`Read how FIN works`, `View Our Work`)
 - Form submission (`Send Message` on `/contact`)
 - Audience routing anchors in the home hero
 
@@ -152,7 +152,7 @@ boxShadow: {
 | Text transform | none — **never uppercase** |
 | Wrapping | single line; `whitespace-nowrap`. Shorten the label rather than wrapping. |
 
-Labels are sentence case, verb-first, 1–4 words: `Start Free Trial`, `Get in Touch`.
+Labels are sentence case, verb-first, 1–4 words: `Start free`, `Get in Touch`.
 No terminal punctuation.
 
 ### 2.4 Iconography

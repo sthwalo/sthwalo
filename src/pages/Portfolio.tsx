@@ -142,7 +142,7 @@ export default function Portfolio() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button href="/fin/" variant="primary" size="md">
                     <Lock className="w-4 h-4" />
-                    Sign In to FIN
+                    Create a free account
                   </Button>
                   <Button to="/blog" variant="outline" size="md">
                     <Eye className="w-4 h-4" />

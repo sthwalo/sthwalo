@@ -297,22 +297,25 @@ export default function Contact() {
 
                   <div className="p-6 rounded-2xl bg-deep-space-800">
                     <h3 className="text-lg font-semibold text-warm-sand-100 mb-3">
-                      Looking for FIN Access?
+                      Want to try FIN?
                     </h3>
                     <p className="text-sm text-warm-sand-400 leading-relaxed mb-4">
-                      Existing FIN users can sign in directly. New users can
-                      watch our product demo to see FIN in action.
+                      You do not need to talk to us first. Create a free account
+                      and you are in the app in a couple of minutes.
                     </p>
                     <div className="flex flex-col gap-3">
+                      <Button href="https://sthwalo.com/fin" variant="primary" size="sm">
+                        Create a free account
+                      </Button>
                       <Button to="/blog" variant="outline" size="sm" className="border-warm-sand-400/30 text-warm-sand-200 hover:bg-white/5 hover:text-warm-sand-100 hover:border-warm-sand-300/50">
                         Read how FIN works
                       </Button>
                       <div className="flex gap-3">
                         <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 text-warm-sand-300 border border-white/10">
-                          SSO Enabled
+                          No card required
                         </span>
                         <span className="px-3 py-1.5 text-xs font-medium rounded-full bg-white/5 text-warm-sand-300 border border-white/10">
-                          Demo Available
+                          No time limit
                         </span>
                       </div>
                     </div>
