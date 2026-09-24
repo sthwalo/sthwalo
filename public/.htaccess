@@ -1,12 +1,22 @@
-# Never expose directory listings (e.g. /downloads/)
+# Never expose directory listings
 Options -Indexes
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Don't rewrite requests to the /fin/ subdirectory (FIN dashboard)
-  RewriteRule ^fin(/|$) - [L]
+  # /fin/* -> aosfin.com. FIN used to be a guest in this site's /fin/ subdirectory; it has its own
+  # domain now, with the app at the apex. $1 carries the rest of the path, so a bookmark or an
+  # emailed deep link lands on the page it named rather than the front door:
+  #
+  #   sthwalo.com/fin/subscription/success  ->  aosfin.com/subscription/success
+  #
+  # Done here rather than in public_html/fin/.htaccess so it ships with the build and cannot drift
+  # from a file nobody in this repo can see. 301 because this move is permanent.
+  #
+  # NOTE FOR DEPLOY: delete public_html/fin/ on cPanel. While that directory has its own
+  # .htaccess, the per-directory rules can take precedence over this one.
+  RewriteRule ^fin/?(.*)$ https://aosfin.com/$1 [R=301,L]
 
   # Don't rewrite requests to the /api/ (Node.js contact API)
   RewriteRule ^api(/|$) - [L]

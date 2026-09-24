@@ -13,12 +13,12 @@ export default function Blog() {
 
   return (
     <>
-      <SeoMeta title="FIN Guides and Financial Operations Insights | Sthwalo Holdings" description="Documentation-backed FIN guides for South African business owners, bookkeepers, accountants, and finance teams." url="/blog" />
+      <SeoMeta title="Engineering journal | Immaculate Nyoni" description="Notes from building and running production systems — architecture decisions, multi-tenancy, PostgreSQL, deployment, and what the FIN platform taught along the way." url="/blog" />
       <section className="relative pt-32 pb-20 bg-deep-space-800">
         <div className="section-container">
-          <span className="text-sm font-semibold tracking-widest uppercase text-harvest-gold-200">FIN Knowledge Hub</span>
-          <h1 className="text-4xl md:text-6xl font-bold text-warm-sand-100 mt-4 mb-6">Practical guidance.<br /><span className="text-harvest-gold-200">Documented boundaries.</span></h1>
-          <p className="text-lg text-warm-sand-400 max-w-2xl">Relatable guidance grounded in FIN's maintained manuals and current production capabilities.</p>
+          <span className="text-sm font-semibold tracking-widest uppercase text-harvest-gold-200">Engineering journal</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-warm-sand-100 mt-4 mb-6">What building it<br /><span className="text-harvest-gold-200">actually taught me.</span></h1>
+          <p className="text-lg text-warm-sand-400 max-w-2xl">Notes from designing and running production systems — the decisions, the things that broke, and what I would do differently. Written while the work was still fresh, not reconstructed afterwards.</p>
         </div>
       </section>
       <section className="section-padding bg-warm-sand-50">

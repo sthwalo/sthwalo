@@ -60,7 +60,7 @@ export default function About() {
         <div className="section-container relative z-10">
           <div className="max-w-3xl">
             <span className="inline-block text-sm font-semibold tracking-widest uppercase text-harvest-gold-200 mb-4 animate-fade-in">
-              About Us
+              About me
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-warm-sand-100 leading-tight tracking-tight mb-6 animate-fade-in-up">
               From finance ledgers
@@ -68,9 +68,11 @@ export default function About() {
               <span className="text-harvest-gold-200">to production code.</span>
             </h1>
             <p className="text-lg text-warm-sand-400 leading-relaxed max-w-2xl animate-fade-in-up animate-delay-200">
-              Sthwalo Holdings blends a decade of accounting discipline with
-              hands-on software engineering. We build systems the way we audit
-              books -- with precision, visible controls, and responsible review.
+              I am Immaculate Nyoni. I spent a decade in accounting before I wrote software for a
+              living, and I build systems the way I used to audit books &mdash; with precision,
+              visible controls, and the assumption that someone will need to check the work. FIN is
+              where those two halves meet: a financial platform I designed, built and now run in
+              production, from the schema to the nginx config.
             </p>
           </div>
         </div>
@@ -141,8 +143,8 @@ export default function About() {
         <div className="section-container">
           <AnimatedSection>
             <SectionHeading
-              label="Our Values"
-              title="What Guides Us"
+              label="How I work"
+              title="What I optimise for"
               description="These core principles shape every decision we make and every solution we build."
             />
           </AnimatedSection>
@@ -171,8 +173,8 @@ export default function About() {
         <div className="section-container">
           <AnimatedSection>
             <SectionHeading
-              label="Our Journey"
-              title="Milestones Along the Way"
+              label="Track record"
+              title="How I got here"
             />
           </AnimatedSection>
 

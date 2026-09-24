@@ -1,202 +1,35 @@
-# FIN Integration
+# FIN
 
-The FIN frontend (React 19 + TypeScript 5.9 + Vite 6) is a **separate build** from this marketing site. Both share the same core technologies (React, TypeScript, Vite, Tailwind) which makes integration straightforward.
+FIN is no longer hosted by this site. It has its own domain — **[aosfin.com](https://aosfin.com)**
+— with the application at the apex and its API on the same origin at `/api`.
 
-## Option A: Same Domain (Subdirectory) -- Recommended
+## What this site does with FIN
 
-Host the FIN dashboard at `yourdomain.com/app/` alongside the marketing site at `yourdomain.com/`.
+Links to it. Nothing else. There is no FIN build, no shared bundle, no reverse proxy and no
+runtime dependency on any FIN hostname.
 
-### Directory Structure on cPanel
+- FIN CTAs point at `https://aosfin.com`.
+- `/fin/*` 301s to `https://aosfin.com/$1`, path preserved — see `public/.htaccess`.
+- Signup, if ever linked directly, is `https://aosfin.com/register`. That is a **path**;
+  `?view=register` lands on the login screen instead.
 
-```
-public_html/
-├── index.html              ← Marketing site (this repo's dist/)
-├── assets/
-│   ├── index-xxx.css
-│   └── index-xxx.js
-├── .htaccess               ← SPA routing for marketing site
-│
-└── app/                    ← FIN dashboard (FIN repo's dist/)
-    ├── index.html
-    ├── assets/
-    │   ├── index-yyy.css
-    │   └── index-yyy.js
-    └── .htaccess           ← SPA routing for FIN dashboard
-```
+## What this document used to say
 
-### FIN Vite Configuration
+It described hosting the FIN dashboard as a subdirectory of this site — `public_html/fin/`, with a
+second `.htaccess` and a shared `public_html`. That arrangement is retired. FIN was a guest on a
+domain whose apex belonged to something else, which is why its bundle was built with a `/fin/`
+base path and why its old URLs all carry that prefix.
 
-In the FIN project's `vite.config.ts`, set the base path:
+Two consequences worth remembering while old links are still in circulation:
 
-```typescript
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+- Bookmarks and emailed links of the form `sthwalo.com/fin/<path>` reach the right page through
+  the redirect above, and `app.sthwalo.com/fin/<path>` is handled on the FIN side.
+- `public_html/fin/` should be **deleted** on cPanel. While it exists with its own `.htaccess`,
+  those per-directory rules can take precedence over the redirect this repo ships.
 
-export default defineConfig({
-  plugins: [react()],
-  base: '/app/',
-});
-```
+## Historical note on usage metrics
 
-### FIN .htaccess (inside `/app/`)
-
-```apache
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /app/
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /app/index.html [L]
-</IfModule>
-```
-
-### Marketing Site .htaccess (root -- updated)
-
-```apache
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-
-  # Don't rewrite requests to the /app/ subdirectory
-  RewriteRule ^app(/|$) - [L]
-
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
-</IfModule>
-```
-
-### Linking from the Marketing Site
-
-The "Access FIN" button in the Navbar (`src/components/layout/Navbar.tsx`) links to `/app/`:
-
-```tsx
-// In Navbar.tsx:
-<Button href="/app/" variant="primary" size="sm">
-  Access FIN
-</Button>
-```
-
-### Deployment Script
-
-```bash
-#!/bin/bash
-
-# Build marketing site
-cd /path/to/sthwalo-holdings
-npm run build
-
-# Build FIN dashboard
-cd /path/to/fin-frontend
-npm run build
-
-# Upload to cPanel (via rsync, FTP, or cPanel File Manager)
-# Marketing site → public_html/
-rsync -avz --delete dist/ user@server:public_html/ --exclude='app/'
-
-# FIN dashboard → public_html/app/
-rsync -avz --delete dist/ user@server:public_html/app/
-```
-
-## Option B: Subdomain
-
-Host the FIN dashboard at `fin.yourdomain.com`.
-
-1. Create a subdomain in cPanel pointing to a separate directory (e.g., `fin.yourdomain.com/`)
-2. Build FIN with `base: '/'` in Vite config
-3. Upload FIN's `dist/` to the subdomain's document root
-4. No `.htaccess` conflicts since they're separate document roots
-
-### Pros
-- Clean separation of concerns
-- Independent deployments
-- No `.htaccess` routing conflicts
-
-### Cons
-- Requires subdomain DNS setup
-- Cross-origin considerations for shared auth cookies
-
-## Option C: Separate Domain with Cross-Links
-
-If FIN stays on a different domain entirely, just update the "Access FIN" CTA in Navbar to use an external URL:
-
-```tsx
-<Button href="https://fin.yourdomain.com" variant="primary" size="sm">
-  Access FIN
-</Button>
-```
-
-## Shared Dependencies
-
-Both projects use overlapping technology. Here's a compatibility matrix:
-
-| Dependency     | Marketing Site  | FIN Dashboard   | Compatible? |
-|:---------------|:----------------|:----------------|:------------|
-| React          | 18.3.1          | 19              | Yes (separate builds) |
-| TypeScript     | 5.5             | 5.9             | Yes (separate builds) |
-| Vite           | 7.3.1           | 6               | Yes (separate builds) |
-| Tailwind CSS   | 3.4.1           | Check FIN       | Share color tokens |
-| Axios          | Not used        | Used            | N/A         |
-| React Router   | 7.13            | Check FIN       | Yes         |
-
-Since both are **separate Vite builds**, version differences don't matter at runtime. They produce independent bundles.
-
-## Authentication Handoff
-
-When a user clicks "Access FIN" from the marketing site and arrives at the FIN dashboard:
-
-1. **FIN handles its own auth** -- The Spring Boot backend manages JWT sessions
-2. **No shared auth with the marketing site** -- The marketing site is public/static; the Express backend only handles contact form submissions
-3. **Same-domain cookies** -- If using Option A (subdirectory), cookies set on `yourdomain.com` by the FIN backend are accessible at both `/` and `/app/`, making session persistence seamless
-
-### Recommended Flow
-
-```
-Marketing Site (/portfolio)
-     │
-     │  User clicks "Access FIN" or "Sign In"
-     ▼
-FIN Dashboard (/app/)
-     │
-     │  FIN checks for existing session (JWT in localStorage or cookie)
-     │
-     ├─ Session valid → Dashboard loads
-     │
-     └─ No session → FIN login page
-          │
-          │  User enters credentials
-          ▼
-     Spring Boot backend (AWS EC2)
-          │
-          │  Validates credentials against PostgreSQL (AWS RDS)
-          │  Returns JWT token
-          ▼
-     FIN Dashboard stores token → Dashboard loads
-```
-
-## CORS Configuration
-
-If the FIN frontend is hosted on the same domain as the marketing site (Option A), CORS is not an issue for requests to the Spring Boot backend on AWS -- the browser sees a different origin (your domain vs. the EC2 IP/domain), so CORS must still be configured on the backend.
-
-In your Spring Boot application, ensure CORS allows your cPanel domain:
-
-```java
-@Configuration
-public class CorsConfig implements WebMvcConfigurer {
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**")
-            .allowedOrigins(
-                "https://yourdomain.com",
-                "https://www.yourdomain.com",
-                "http://localhost:5173"  // local dev
-            )
-            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-            .allowedHeaders("*")
-            .allowCredentials(true);
-    }
-}
-```
+This site used to render live FIN usage counts on the home page, fetched from
+`api.sthwalo.com/api/v1/public/trust-metrics`. That section is gone: product telemetry is not
+portfolio evidence, and removing it dropped this site's last runtime dependency on a hostname
+that is being retired.

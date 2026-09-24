@@ -297,15 +297,15 @@ export default function Contact() {
 
                   <div className="p-6 rounded-2xl bg-deep-space-800">
                     <h3 className="text-lg font-semibold text-warm-sand-100 mb-3">
-                      Want to try FIN?
+                      Here to see FIN?
                     </h3>
                     <p className="text-sm text-warm-sand-400 leading-relaxed mb-4">
-                      You do not need to talk to us first. Create a free account
-                      and you are in the app in a couple of minutes.
+                      It has its own site, with the product, the pricing and the signup.
+                      You do not need to go through me to look at it.
                     </p>
                     <div className="flex flex-col gap-3">
-                      <Button href="https://sthwalo.com/fin" variant="primary" size="sm">
-                        Create a free account
+                      <Button href="https://aosfin.com" variant="primary" size="sm">
+                        Open aosfin.com
                       </Button>
                       <Button to="/blog" variant="outline" size="sm" className="border-warm-sand-400/30 text-warm-sand-200 hover:bg-white/5 hover:text-warm-sand-100 hover:border-warm-sand-300/50">
                         Read how FIN works

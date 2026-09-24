@@ -6,7 +6,7 @@ const API = import.meta.env.VITE_API_URL ?? '';
 /**
  * The published posts, from the API, falling back to the bundled copy.
  *
- * <p>The same shape as `useTrustMetrics`: the site must render its writing even
+ * <p>The site must render its writing even
  * when the API is unreachable. `blogPosts.ts` is still the seed source and the
  * typed contract, so the fallback is the content as at the last deploy — stale
  * by a post or two at worst, rather than an empty page.

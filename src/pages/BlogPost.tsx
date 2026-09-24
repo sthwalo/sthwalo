@@ -19,7 +19,7 @@ export default function BlogPost() {
 
   return (
     <>
-      <SeoMeta title={`${post.title} | FIN`} description={post.excerpt} url={`/blog/${post.slug}`} type="article" publishedTime={post.date} modifiedTime={post.reviewedDate} author={post.author} section={post.category} />
+      <SeoMeta title={`${post.title} | Immaculate Nyoni`} description={post.excerpt} url={`/blog/${post.slug}`} type="article" publishedTime={post.date} modifiedTime={post.reviewedDate} author={post.author} section={post.category} />
       <section className="relative pt-32 pb-20 bg-deep-space-800">
         <div className="section-container max-w-5xl">
           <Link to="/blog" className="inline-flex items-center gap-2 text-warm-sand-400 mb-8"><ArrowLeft className="w-4 h-4" />Back to knowledge hub</Link>
@@ -40,7 +40,7 @@ export default function BlogPost() {
           <div className="mt-12 p-8 rounded-2xl bg-deep-space-800 text-center">
             <h2 className="text-2xl font-bold text-warm-sand-100">Explore FIN with the boundaries visible</h2>
             <p className="text-warm-sand-400 mt-3 mb-6">Read how it works, see where it stops, then decide whether FIN fits your workflow.</p>
-            <div className="flex flex-wrap justify-center gap-3"><Button to="/blog" variant="primary">More from the blog</Button><Button href="https://sthwalo.com/fin" variant="outline" className="border-warm-sand-300 text-warm-sand-100" onClick={() => trackCTAClick('free_signup', `blog-${post.slug}`)}>Create a free account</Button></div>
+            <div className="flex flex-wrap justify-center gap-3"><Button to="/blog" variant="primary">More from the blog</Button><Button href="https://aosfin.com" variant="outline" className="border-warm-sand-300 text-warm-sand-100" onClick={() => trackCTAClick('fin_live', `blog-${post.slug}`)}>See FIN live</Button></div>
           </div>
         </article>
       </section>

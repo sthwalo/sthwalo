@@ -57,7 +57,6 @@ sthwalo-holdings/
 │   ├── hooks/
 │   │   ├── useScrollAnimation.ts       # Intersection Observer for scroll FX
 │   │   ├── useBlogPosts.ts             # Fetches posts from the API, static fallback
-│   │   └── useTrustMetrics.ts          # Fetches live FIN trust-metrics, snapshot fallback
 │   │
 │   ├── data/
 │   │   ├── blogPosts.ts                # Typed post contract + seed source (pages read the API)
@@ -71,10 +70,7 @@ sthwalo-holdings/
 │   │   ├── home/
 │   │   │   ├── Hero.tsx                # SaaS hero with FIN messaging and CTAs
 │   │   │   ├── FeaturedWork.tsx        # FIN spotlight with tech badges
-│   │   │   ├── HowFinWorks.tsx         # FIN workflow explainer section
-│   │   │   ├── FreePlan.tsx            # What the free account includes, and what it does not
-│   │   │   ├── AudienceSplit.tsx       # Owners / bookkeepers / accountants entry points
-│   │   │   ├── TrustMetrics.tsx        # Live/snapshot FIN usage metrics
+│   │   │   ├── SkillsBand.tsx          # Stack summary for a thirty-second skim
 │   │   │   └── TrustSignals.tsx        # Delivered projects + CTA banner
 │   │   │
 │   │   ├── admin/
@@ -93,7 +89,7 @@ sthwalo-holdings/
 │   │       └── SeoMeta.tsx             # Dynamic SEO metadata component
 │   │
 │   ├── pages/
-│   │   ├── Home.tsx                    # Hero + FeaturedWork + HowFinWorks + FreePlan + Trust
+│   │   ├── Home.tsx                    # Hero + SkillsBand + FeaturedWork + TrustSignals
 │   │   ├── About.tsx                   # Founder story, values, timeline
 │   │   ├── Services.tsx                # 4 service categories + process section
 │   │   ├── Portfolio.tsx               # FIN deep dive + delivered sites grid

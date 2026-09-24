@@ -5,7 +5,7 @@ import {
   Zap,
   FileText,
   Eye,
-  Lock,
+  ExternalLink,
   Globe,
   CheckCircle2,
   Layers,
@@ -22,11 +22,16 @@ const finFeatures = [
   { icon: FileText, title: 'Financial Reporting', text: 'Ledger-backed financial, management, VAT, payroll, reconciliation, and audit-trail outputs.' },
 ];
 
+// Countable, not adjectival. These were "Production / Reviewable / Company / Manual" — true, but
+// unverifiable, and a recruiter cannot check a word. Every figure below can be counted in the
+// repository, which is the only reason it is worth printing. The last one stays qualitative on
+// purpose: it is the operating boundary, and overstating it would be a false claim about a
+// regulated activity.
 const finMetrics = [
-  { value: 'Production', label: 'Deployed workflow' },
-  { value: 'Reviewable', label: 'Automation model' },
-  { value: 'Company', label: 'Scoped access' },
-  { value: 'Manual', label: 'SARS submission' },
+  { value: '200', label: 'Flyway migrations' },
+  { value: '2,000+', label: 'Automated tests' },
+  { value: '355', label: 'Backend test classes' },
+  { value: 'Manual', label: 'SARS submission, by design' },
 ];
 
 const techStack = ['Spring Boot 3', 'Java 17', 'React 19', 'TypeScript', 'PostgreSQL 17', 'Docker', 'AWS'];
@@ -140,9 +145,9 @@ export default function Portfolio() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button href="/fin/" variant="primary" size="md">
-                    <Lock className="w-4 h-4" />
-                    Create a free account
+                  <Button href="https://aosfin.com" variant="primary" size="md">
+                    <ExternalLink className="w-4 h-4" />
+                    View it live
                   </Button>
                   <Button to="/blog" variant="outline" size="md">
                     <Eye className="w-4 h-4" />
@@ -161,7 +166,7 @@ export default function Portfolio() {
             <SectionHeading
               label="Deep Dive"
               title="Inside FIN"
-              description="A closer look at the current production capabilities, controls, and clearly documented operating boundaries."
+              description="What the system does, and what it deliberately does not. The boundaries are documented because a platform that overstates its regulatory reach is worse than one that admits where it stops."
             />
           </AnimatedSection>
 
@@ -193,8 +198,8 @@ export default function Portfolio() {
           <AnimatedSection>
             <SectionHeading
               label="Case Study"
-              title="The FIN Story"
-              description="How accounting discipline and production engineering came together to build an enterprise financial management system."
+              title="What building FIN demonstrates"
+              description="Designing a multi-tenant financial system solo — schema, domain, API, frontend and infrastructure — and keeping it honest under the constraints of statutory reporting."
               light
             />
           </AnimatedSection>
@@ -243,8 +248,8 @@ export default function Portfolio() {
           <AnimatedSection>
             <SectionHeading
               label="Delivered"
-              title="Client Websites & Systems"
-              description="Selected production websites and backend systems, delivered across healthcare, automotive, and education."
+              title="Client websites & systems"
+              description="Delivered across healthcare, training, hospitality and vehicle rental. Each one is live — the links open in a new tab so you can check."
             />
           </AnimatedSection>
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Button from '../ui/Button';
+import { trackCTAClick } from '../../utils/analytics';
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -71,11 +72,17 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:block">
-          {/* The navbar CTA is a way in, not a pitch. It sits on every page for people who already
-              have an account, so it names the destination rather than selling the free tier — the
-              page CTAs do the selling, and still say "Create a free account". */}
-          <Button href="/fin/" variant="primary" size="sm">
-            Access FIN
+          {/* Outbound, to FIN's own domain. This used to be "Access FIN" pointing at /fin/ on this
+              host, from when the app was a guest here. The app has its own home now, so the navbar
+              CTA is a link to the work rather than a door into it — nobody signs in on a
+              portfolio. Signup and login live on aosfin.com and belong there. */}
+          <Button
+            href="https://aosfin.com"
+            variant="primary"
+            size="sm"
+            onClick={() => trackCTAClick('fin_live', 'navbar')}
+          >
+            View FIN
           </Button>
         </div>
 
@@ -108,8 +115,14 @@ export default function Navbar() {
               );
             })}
             <div className="mt-3 pt-3 border-t border-white/10">
-              <Button href="/fin/" variant="primary" size="md" className="w-full">
-                Access FIN
+              <Button
+                href="https://aosfin.com"
+                variant="primary"
+                size="md"
+                className="w-full"
+                onClick={() => trackCTAClick('fin_live', 'navbar-mobile')}
+              >
+                View FIN
               </Button>
             </div>
           </div>

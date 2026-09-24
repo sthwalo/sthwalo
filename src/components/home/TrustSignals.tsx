@@ -16,9 +16,9 @@ export default function TrustSignals() {
       <div className="section-container">
         <AnimatedSection>
           <SectionHeading
-            label="Delivered"
-            title="Live in Production"
-            description="A selection of websites and backend systems we've launched and maintain for clients across industries."
+            label="Client work"
+            title="Shipped for other people, and still running"
+            description="Sites and backend systems built for clients across healthcare, training, hospitality and vehicle rental — each live, maintained, and open in a new tab for you to check."
           />
         </AnimatedSection>
 

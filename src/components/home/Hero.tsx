@@ -1,33 +1,24 @@
-import { ArrowRight, Sparkles, Briefcase, ClipboardCheck } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { trackCTAClick } from '../../utils/analytics';
 
-const proofPoints = [
-  { value: 'Nothing to chase', label: 'Source documents stay attached to their transaction' },
-  { value: 'Reviewed, not retyped', label: 'Confirm and correct classifications instead of capturing them' },
-  { value: 'Traceable to the entry', label: 'Every reported figure opens back to the records behind it' },
-];
+/**
+ * The opening of a portfolio, not a product pitch.
+ *
+ * This page used to sell FIN: the headline was "Close the books without chasing a single
+ * document", and the two buttons asked whether you ran a business or reviewed its books. Both
+ * questions belong to FIN's users, and FIN now has its own domain to ask them on — aosfin.com,
+ * with a full public site at the apex.
+ *
+ * So the subject is the engineer, and FIN is the evidence. The audience is a recruiter or a
+ * prospective client deciding in about thirty seconds whether to keep reading, which is why the
+ * proof points below are things they can verify rather than adjectives about craft.
+ */
 
-const doors = [
-  {
-    href: '#for-business',
-    icon: Briefcase,
-    title: 'I run a business',
-    subtitle: 'Hand over a complete set',
-    cta: 'audience_business',
-    className:
-      'bg-harvest-gold-200 text-deep-space-800 hover:bg-harvest-gold-300 shadow-md hover:shadow-lg',
-    subtitleClass: 'text-deep-space-800/70',
-  },
-  {
-    href: '#for-reviewers',
-    icon: ClipboardCheck,
-    title: 'I review the books',
-    subtitle: 'Verify faster, sign off sooner',
-    cta: 'audience_reviewer',
-    className:
-      'bg-white/5 border border-white/15 text-warm-sand-100 hover:bg-white/10 hover:border-white/25',
-    subtitleClass: 'text-warm-sand-400',
-  },
+const proofPoints = [
+  { value: '200', label: 'Flyway migrations in production, on PostgreSQL 17' },
+  { value: '2,000+', label: 'Automated tests, backend and frontend' },
+  { value: 'Multi-tenant', label: 'Company-scoped RBAC with row-level security' },
 ];
 
 export default function Hero() {
@@ -50,53 +41,52 @@ export default function Hero() {
       <div className="section-container relative z-10 pt-28 pb-20">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-harvest-gold-200" />
             <span className="text-sm font-medium text-warm-sand-300">
-              For South African businesses and the people who review their books
+              Immaculate Nyoni &middot; Full-stack engineer &middot; South Africa
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-warm-sand-100 leading-[1.08] tracking-tight mb-8 animate-fade-in-up">
-            Close the books without{' '}
-            <span className="text-harvest-gold-200">chasing a single document</span>
+            I build systems that hold up to{' '}
+            <span className="text-harvest-gold-200">an audit</span>
           </h1>
 
           <p className="text-lg md:text-xl text-warm-sand-400 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-in-up animate-delay-200">
-            FIN keeps every invoice, bank statement, payslip and stock movement filed against the
-            transaction it belongs to. So the review before sign-off starts with the evidence
-            already in place — not with a list of things to go and find.
+            Accounting discipline and full-stack engineering, in the same head. I designed and
+            shipped FIN &mdash; a multi-tenant financial platform running double-entry books,
+            payroll, VAT and statutory reporting in production &mdash; from the schema to the
+            nginx config.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-14 animate-fade-in-up animate-delay-300">
-            {doors.map((door) => (
-              <a
-                key={door.href}
-                href={door.href}
-                onClick={() => trackCTAClick(door.cta, 'hero')}
-                className={`group inline-flex items-center gap-3 px-7 py-4 rounded-lg font-semibold btn-transition active:scale-[0.96] ${door.className}`}
-              >
-                <door.icon className="w-5 h-5 flex-shrink-0" />
-                <span className="text-left">
-                  <span className="block text-base leading-tight">{door.title}</span>
-                  <span className={`block text-xs font-normal mt-0.5 ${door.subtitleClass}`}>
-                    {door.subtitle}
-                  </span>
-                </span>
-                <ArrowRight className="w-4 h-4 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
-              </a>
-            ))}
+            <a
+              href="https://aosfin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackCTAClick('fin_live', 'hero')}
+              className="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-lg font-semibold btn-transition active:scale-[0.96] bg-harvest-gold-200 text-deep-space-800 hover:bg-harvest-gold-300 shadow-md hover:shadow-lg"
+            >
+              View FIN live
+              <ExternalLink className="w-4 h-4 flex-shrink-0" />
+            </a>
+            <Link
+              to="/portfolio"
+              onClick={() => trackCTAClick('case_study', 'hero')}
+              className="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-lg font-semibold btn-transition active:scale-[0.96] bg-white/5 border border-white/15 text-warm-sand-100 hover:bg-white/10 hover:border-white/25"
+            >
+              Read the case study
+              <ArrowRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
 
-          <div className="mt-16 pt-10 border-t border-white/5 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-400">
+          <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in-up animate-delay-500">
             {proofPoints.map((point) => (
-              <div key={point.label}>
-                <div className="text-lg md:text-xl font-bold text-harvest-gold-200 mb-1">
-                  {point.value}
-                </div>
-                <div className="text-sm text-warm-sand-500">{point.label}</div>
+              <div key={point.label} className="text-center">
+                <dt className="text-2xl font-bold text-harvest-gold-200 mb-1">{point.value}</dt>
+                <dd className="text-sm text-warm-sand-400 leading-snug">{point.label}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
     </section>

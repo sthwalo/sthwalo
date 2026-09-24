@@ -1,69 +1,82 @@
-# Sthwalo Holdings
+# sthwalo.com
 
-**Building foundations with code.**
+**Immaculate Nyoni — full-stack engineer.** Portfolio, services, client work, and an
+engineering journal.
 
-The marketing site for Sthwalo Holdings — a South African software company founded by
-[Immaculate Nyoni](https://www.linkedin.com/in/inyoni/) that blends accounting discipline with
-full-stack engineering. The site is both the company presence and the entry point to **FIN**, our
-financial management platform.
+This site is written for two readers: a **recruiter** deciding whether the stack matches, and a
+**prospective client** deciding whether to hire. It is not written for FIN's users — they have
+their own site.
 
-## FIN — Financial Management Platform
+## The two properties
 
-FIN is a company-scoped (multi-tenant) financial management platform for South African businesses
-and finance teams. It runs the full accounting operating flow in one React + Spring Boot
-application. The workspace is organised into a grouped command sidebar:
+FIN used to be the subject of this site. It has its own domain now, so the split is clean:
 
-- **Command** — *Business Overview* (portfolio metrics) and *Entity & Period Setup* (companies,
-  fiscal periods, access).
-- **Accounting Flow**
-  - *Accounting Workbench* — the source-to-ledger pipeline: bank-statement / document import,
-    automatic transaction classification, cashbook, bank reconciliation, general ledger, and a
-    period-scoped source-document vault.
-  - *Inventory Management* — items, multi-location stock with weighted-average / FIFO / standard
-    costing, purchase-order → goods-receipt → invoice 3-way matching, sales documents, and
-    customer / supplier ledgers (AR / AP) — wired into the same ledger and VAT engine.
-  - *Tax & Compliance* — VAT periods, review, and submission working papers.
-  - *Fixed Assets* — asset register, depreciation, and disposals.
-  - *Budgets & Forecasts* — planning, targets, and variance.
-  - *Reports & AFS* — financial statements, management packs, and SARS-facing working papers,
-    exported as PDF / CSV / XLSX.
-- **People** — *Payroll*: employees and payslips with PAYE / UIF / SDL on SARS tables, IRP5 /
-  EMP501 preparation, an effective-dated **salary-history audit**, **Time & Attendance** (clock
-  events → daily summaries → approval → payroll), and **employer-defined earnings & deductions**.
-- **System** — *Account, Billing & Access*: database-driven tenant plans, modular add-ons, metered
-  usage, users / permissions, and integration-marketplace foundations.
+| Property | Owns | Repo |
+|---|---|---|
+| **sthwalo.com** | This portfolio — profile, services, projects, blog | this repo |
+| **aosfin.com** | The FIN product site **and** the application itself | the `acc` repo |
 
-FIN performs the regulatory calculations and report generation internally. It is **not** wired to a
-SARS / eFiling / bank-feed API — users export or print reports for manual submission. SARS,
-consent-based bank feeds, CIPC and approved-partner integrations are roadmap items, not current
-capabilities.
+There is **no FIN application surface here**. Every FIN destination is an outbound link to
+`aosfin.com`, and `/fin/*` 301s there with the path preserved (see `public/.htaccess`).
 
-### Security & architecture
+> **On deploy:** delete `public_html/fin/` on cPanel. While that directory exists with its own
+> `.htaccess`, its per-directory rules can take precedence over the redirect that ships here.
 
-- **Multi-tenant isolation:** RBAC + per-company scoping + **PostgreSQL Row-Level Security
-  (enforced in production)** as a database-level backstop.
-- **Stack:** Java 17 · Spring Boot 3.5 · PostgreSQL 17 (Flyway migrations) · React 19 · TypeScript ·
-  Vite. Deployed on AWS (EC2 + RDS + nginx) with GitHub Actions CI/CD.
-- **Live:** [sthwalo.com/fin](https://sthwalo.com/fin) · API at `api.sthwalo.com`.
+## FIN — the flagship case study
+
+A multi-tenant financial operations platform, designed and shipped solo, in production.
+
+**Architecture** — Java 17 · Spring Boot 3.5 · Gradle (Kotlin DSL) behind React 19 ·
+TypeScript · Vite. PostgreSQL 17 with the schema Flyway-managed end to end. AWS EC2 + RDS in
+`af-south-1` behind Cloudflare, nginx at the origin, deploys over SSM. OpenAPI-documented API.
+
+**Isolation** — company-scoped throughout, Spring Security RBAC above and PostgreSQL row-level
+security beneath it.
+
+**Domain depth** — double-entry ledger with source-document traceability from upload to final
+report; a document pipeline with OCR fallback and per-line account suggestion; payroll, VAT,
+inventory, point of sale, assets, budgets and AFS generation.
+
+**Engineering practice** — 200 versioned migrations. 355 backend test classes (JUnit 5 +
+Mockito) against throwaway PostgreSQL Testcontainers, 2,000+ backend tests, 248 Vitest tests on
+the frontend. Checkstyle, PMD and SpotBugs gate the build. A CI-enforced design-system ratchet
+that only moves down. Build-time prerendering of the public site for crawlability.
+
+Every figure above is countable in the FIN repository. That is the point of printing them —
+re-check them before republishing rather than letting them age.
+
+**Where it stops.** FIN holds **no SARS, eFiling, or bank-feed connection**. It prepares returns
+internally; users export or print and submit manually. The accounting core is
+**jurisdiction-neutral** — the *completed* statutory layer is South African (SARS and CIPC live,
+Employment & Labour in progress). Describing it as "a South African product" understates the
+core and overstates the coverage.
 
 ## This site
 
-The marketing site is a Vite + React single-page app. Developer documentation lives in
-[`docs/`](docs/):
+Vite + React + TypeScript with Tailwind CSS, deployed to **cPanel** (not the AWS path FIN uses).
+
+```bash
+npm install
+npm run dev        # local dev server
+npm run typecheck  # tsc --noEmit
+npm run lint       # eslint
+npm run build      # production build into dist/
+```
+
+Developer documentation lives in [`docs/`](docs/):
 
 - **[Getting Started](docs/getting-started.md)** — installation and development setup
 - **[Project Structure](docs/project-structure.md)** — code organization and file layout
 - **[Architecture](docs/architecture.md)** — site design and data flow
-- **[FIN Integration](docs/fin-integration.md)** — how the marketing site links into the FIN dashboard
 - **[Tech Stack](docs/tech-stack.md)** · **[Brand Colors](docs/brand-colors.md)** ·
   **[Pages](docs/pages.md)** · **[Environment](docs/environment.md)** ·
-  **[Deployment](docs/deployment.md)**
+  **[Deployment](docs/deployment.md)** · **[FIN](docs/fin-integration.md)**
 
 ## Demo assets
 
-The hero and Blog walkthrough thumbnails are animated GIFs of the **current** FIN UI, rendered
-from a reproducible generator (Playwright + sharp) whose mockup mirrors the live navigation,
-pipeline stepper, and brand tokens. They live in [`public/images/`](public/images/):
+The project thumbnails are animated GIFs of the FIN UI, rendered from a reproducible generator
+(Playwright + sharp) whose mockup mirrors the live navigation, pipeline stepper and brand tokens.
+They live in [`public/images/`](public/images/):
 
 | GIF | Module | Walkthrough |
 |---|---|---|
@@ -76,13 +89,12 @@ pipeline stepper, and brand tokens. They live in [`public/images/`](public/image
 | `inventory.gif` | Inventory Management | Stock on hand, PO → GRN → invoice 3-way match, and reports |
 | `tax-compliance.gif` | Tax & Compliance | VAT period review (output vs input) → VAT201 working paper |
 | `fixed-assets.gif` | Fixed Assets | Asset register + depreciation schedule posting to the ledger |
-| `budgets` *(in reporting.gif)* | Budgets & Forecasts | Budget-vs-actual variance |
 | `reporting.gif` | Reports & AFS | Ledger → budgets → AFS + compliance pack |
 | `payroll.gif` | Payroll | Pay run, Time & Attendance, EMP201 |
 | `billing.gif` | Account, Billing & Access | Plans, add-ons, metered usage, and RBAC |
 
-Regenerate after a UI change (the generator lives in the FIN repo so it can read the live UI):
-`node scripts/build-fin-demo-gifs.mjs` (all) or `… <name>` (one). Keep this table and the Blog
+The generator lives in the FIN repo, so it can read the live UI:
+`node scripts/build-fin-demo-gifs.mjs` (all) or `… <name>` (one). Keep this table and the
 `featuredImage` mappings in `src/data/blogPosts.ts` in step with the generated set.
 
 ## Links
@@ -92,6 +104,7 @@ Regenerate after a UI change (the generator lives in the FIN repo so it can read
 - **X (Twitter)**: [x.com/nyoniimma](https://x.com/nyoniimma)
 - **Instagram**: [instagram.com/sthwalos](https://www.instagram.com/sthwalos/)
 - **Facebook**: [facebook.com/sthwalosenkosi](https://web.facebook.com/sthwalosenkosi/)
+- **FIN**: [aosfin.com](https://aosfin.com)
 
 ---
 

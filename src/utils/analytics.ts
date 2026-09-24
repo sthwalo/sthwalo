@@ -20,7 +20,6 @@ export const trackConversion = (conversionType: string, value?: number) => {
   });
 };
 
-export const trackTrustMetricsLoad = (source: string) => trackEvent('trust_metrics_load', { source });
 
 export const trackCTAClick = (ctaType: string, location: string) => {
   trackEvent('cta_click', {
