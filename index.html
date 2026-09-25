@@ -2,13 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/sthwalo.png" />
+    <!-- The mark Google shows beside the result, and the one in the tab. The single link here
+         used to point at the full 1254x1254 logo — 199 kB fetched for a favicon. Google wants a
+         square icon of at least 48x48 at a stable URL; these are that, and the browser picks the
+         size it needs instead of downloading the original. -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/sthwalo-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/sthwalo-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/sthwalo-180.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Immaculate Nyoni — Full-stack engineer | Sthwalo Holdings</title>
     <meta name="description" content="Full-stack engineer in South Africa. Java 17, Spring Boot, React and PostgreSQL — including FIN, a multi-tenant financial platform running in production. Portfolio, services and engineering writing." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet" />
+
+    <!--
+      Site identity, structured.
+      A portfolio's identity is the person, so the Person is the primary entity and the company is
+      what they work for — that is the relationship a search engine should be told about, and it is
+      what lets "Immaculate Nyoni" and "Sthwalo Holdings" resolve to the same thing rather than two
+      unrelated strings. `sameAs` is the evidence: the profiles that corroborate the identity.
+
+      Carried onto every prerendered page — scripts/prerender.mjs rewrites meta tags, not scripts.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://sthwalo.com/#person",
+          "name": "Immaculate Nyoni",
+          "url": "https://sthwalo.com/",
+          "image": "https://sthwalo.com/sthwalo-192.png",
+          "jobTitle": "Full-stack engineer",
+          "description": "Full-stack engineer in South Africa. A decade of accounting before writing software, and systems built the way books are audited.",
+          "knowsAbout": ["Java", "Spring Boot", "React", "TypeScript", "PostgreSQL", "AWS", "Accounting systems"],
+          "worksFor": { "@id": "https://sthwalo.com/#organization" },
+          "sameAs": [
+            "https://www.linkedin.com/in/inyoni/",
+            "https://github.com/sthwalo",
+            "https://x.com/nyoniimma",
+            "https://aosfin.com"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://sthwalo.com/#organization",
+          "name": "Sthwalo Holdings",
+          "legalName": "Sthwalo Holdings (Pty) Ltd",
+          "url": "https://sthwalo.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sthwalo.com/sthwalo.png",
+            "width": 1254,
+            "height": 1254,
+            "caption": "Sthwalo Holdings"
+          },
+          "founder": { "@id": "https://sthwalo.com/#person" },
+          "areaServed": "ZA",
+          "sameAs": ["https://aosfin.com", "https://github.com/sthwalo"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://sthwalo.com/#website",
+          "url": "https://sthwalo.com/",
+          "name": "Immaculate Nyoni — Sthwalo Holdings",
+          "publisher": { "@id": "https://sthwalo.com/#organization" },
+          "author": { "@id": "https://sthwalo.com/#person" },
+          "inLanguage": "en"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

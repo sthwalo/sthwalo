@@ -110,20 +110,30 @@ for (const route of routes) {
 // /blog is included though it is not prerendered: it is a real, linked page and Google renders
 // JavaScript — it just should not be the only way in.
 const today = new Date().toISOString().slice(0, 10);
+
+// Image sitemap extension. The logo is referenced only from a <link> and from JSON-LD, so nothing
+// discovers it by following links — this is what points Google at the image the site claims as its
+// identity. /blog is listed though it is not prerendered: it is a real, linked page and Google
+// renders JavaScript; it just should not be the only way in.
+const logo = `${SITE}/sthwalo.png`;
 const urls = [...routes.map((r) => r.path), '/blog'];
-fs.writeFileSync(
-  path.join(dist, 'sitemap.xml'),
-  `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${urls.map((u) => `  <url>
     <loc>${SITE}${u}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${u === '/' ? 'weekly' : 'monthly'}</changefreq>
     <priority>${u === '/' ? '1.0' : '0.7'}</priority>
+    <image:image>
+      <image:loc>${logo}</image:loc>
+      <image:title>Sthwalo Holdings</image:title>
+    </image:image>
   </url>`).join('\n')}
 </urlset>
-`,
-);
+`;
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap);
 
 fs.rmSync(ssrDir, { recursive: true, force: true });
 console.log(`prerender: ${written} pages + sitemap.xml written to dist/`);
