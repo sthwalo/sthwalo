@@ -32,8 +32,14 @@ export default function Footer() {
                 />
               </div>
             </Link>
-            <p className="text-sm leading-relaxed text-warm-sand-400 mb-6 max-w-xs">
-              FIN helps South African finance teams turn everyday financial records into reviewable workflows and decision-ready reports.
+            <p className="text-sm leading-relaxed text-warm-sand-400 mb-3 max-w-xs">
+              {/* Was FIN's product pitch, left over from when this site sold it. FIN has its own
+                  site now; this one is about the person who built it. */}
+              Full-stack engineering with accounting discipline. Systems built the way books are
+              audited &mdash; precise, controlled, and made to be checked.
+            </p>
+            <p className="text-sm font-semibold italic tracking-wide text-harvest-gold-200 mb-6">
+              Wisdom Above, Impact Beyond.
             </p>
             <div className="flex gap-3">
               {[
