@@ -2,13 +2,8 @@ import { Globe, ArrowUpRight } from 'lucide-react';
 import AnimatedSection from '../ui/AnimatedSection';
 import SectionHeading from '../ui/SectionHeading';
 import Button from '../ui/Button';
+import { clientProjects } from '../../data/clientProjects';
 
-const deliveredProjects = [
-  { name: 'African Health Excellence Organisation', url: 'https://heosa.africa', description: 'Public-facing website with content management' },
-  { name: 'Dr. Tracy Mmako', url: 'https://drmmako.co.za', description: 'Neurologist practice at Riverside Medical Center' },
-  { name: 'ExecuHire', url: 'https://www.execuhire.co.za', description: 'Luxury vehicle rental platform' },
-  { name: 'Leolilian Care International', url: 'https://leolilly.org', description: 'Online caregiver, hospitality and chef training with enrolment' },
-];
 
 export default function TrustSignals() {
   return (
@@ -23,7 +18,7 @@ export default function TrustSignals() {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-          {deliveredProjects.map((project, index) => (
+          {clientProjects.map((project, index) => (
             <AnimatedSection
               key={index}
               animation="fade-in-up"

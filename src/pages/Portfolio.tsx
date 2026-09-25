@@ -14,6 +14,7 @@ import {
 import AnimatedSection from '../components/ui/AnimatedSection';
 import SectionHeading from '../components/ui/SectionHeading';
 import Button from '../components/ui/Button';
+import { clientProjects } from '../data/clientProjects';
 
 const finFeatures = [
   { icon: BarChart3, title: 'Transaction Processing', text: 'Supported statement imports, reviewable classifications, reusable rules, reconciliation, and double-entry journal workflows.' },
@@ -36,28 +37,6 @@ const finMetrics = [
 
 const techStack = ['Spring Boot 3', 'Java 17', 'React 19', 'TypeScript', 'PostgreSQL 17', 'Docker', 'AWS'];
 
-const deliveredSites = [
-  {
-    title: 'African Health Excellence Organisation',
-    url: 'https://heosa.africa',
-    description: 'Public-facing website with CMS and content management.',
-  },
-  {
-    title: 'Dr. Tracy Mmako',
-    url: 'https://drmmako.co.za',
-    description: 'Neurologist practice site at Riverside Medical Center -- professional medical presence.',
-  },
-  {
-    title: 'ExecuHire',
-    url: 'https://www.execuhire.co.za',
-    description: 'Luxury vehicle rental platform with booking system and fleet showcase.',
-  },
-  {
-    title: 'Leolilian Care International',
-    url: 'https://leolilly.org',
-    description: 'Caregiver, cruise-ship hospitality, and professional chef training provider -- programme catalogues with online enrolment and automated email confirmation.',
-  },
-];
 
 export default function Portfolio() {
   return (
@@ -254,9 +233,9 @@ export default function Portfolio() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {deliveredSites.map(({ title, url, description }, index) => (
+            {clientProjects.map(({ name, url, description }, index) => (
               <AnimatedSection
-                key={title}
+                key={name}
                 animation="fade-in-up"
                 delay={`animate-delay-${(index + 1) * 100}`}
               >
@@ -275,7 +254,7 @@ export default function Portfolio() {
                         <ArrowUpRight className="w-4 h-4 text-deep-space-300 group-hover:text-harvest-gold-500 transition-colors flex-shrink-0 mt-1" />
                       )}
                     </div>
-                    <h3 className="text-lg font-semibold text-deep-space-800 mb-2 group-hover:text-harvest-gold-600 transition-colors">{title}</h3>
+                    <h3 className="text-lg font-semibold text-deep-space-800 mb-2 group-hover:text-harvest-gold-600 transition-colors">{name}</h3>
                     <p className="text-sm text-deep-space-500 leading-relaxed flex-1">{description}</p>
                     <div className="mt-4 pt-4 border-t border-warm-sand-300/30">
                       <span className="inline-flex items-center gap-1.5 text-xs font-medium text-green-600">

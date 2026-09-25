@@ -8,7 +8,6 @@ The official marketing website for Sthwalo Holdings -- a software company founde
 
 - **[Getting Started](getting-started.md)** - Installation and development setup
 - **[Project Structure](project-structure.md)** - Code organization and file layout
-- **[Build & Deploy](build-deploy.md)** - Production builds and deployment
 
 ## Architecture & Integration
 
@@ -26,8 +25,6 @@ The official marketing website for Sthwalo Holdings -- a software company founde
 
 ## Additional Resources
 
-- **[Links](links.md)** - External resources and profiles
-- **[FIN Tech Stack](fin-tech-stack.md)** - Reference for the FIN application
 
 ---
 

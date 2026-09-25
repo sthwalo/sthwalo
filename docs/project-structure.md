@@ -10,7 +10,6 @@ sthwalo-holdings/
 ├── postcss.config.js                   # PostCSS + Autoprefixer
 ├── public/.htaccess                    # SPA routing for cPanel; Vite copies it
 │                                       #   into dist/, so the build ships it
-├── app.htaccess                        # SPA routing for FIN subdirectory
 ├── ANALYTICS_README.md                 # Google Analytics 4 setup guide
 │
 ├── docs/                               # Documentation (organized)
@@ -23,11 +22,8 @@ sthwalo-holdings/
 │   ├── environment.md                  # Configuration and environment variables
 │   ├── database.md                     # Data storage and schemas
 │   ├── getting-started.md              # Installation and development setup
-│   ├── build-deploy.md                 # Production builds and deployment
 │   ├── fin-integration.md              # Connecting marketing site to FIN dashboard
-│   ├── fin-tech-stack.md               # Reference for the FIN application
 │   ├── deployment.md                   # Hosting and infrastructure setup
-│   ├── links.md                        # External resources and profiles
 │   └── ui/
 │       └── button-spec.md              # Button variants, sizes and label rules
 │
@@ -59,8 +55,8 @@ sthwalo-holdings/
 │   │   ├── useBlogPosts.ts             # Fetches posts from the API, static fallback
 │   │
 │   ├── data/
+│   │   ├── clientProjects.ts           # Client work — the single source for both surfaces
 │   │   ├── blogPosts.ts                # Typed post contract + seed source (pages read the API)
-│   │   └── publicMetricsSnapshot.ts    # Reviewed trust-metrics fallback values
 │   │
 │   ├── components/
 │   │   ├── layout/

@@ -1,4 +1,8 @@
-// Analytics utility functions for Google Analytics 4
+// Google Analytics 4 helpers.
+//
+// Only the events the site actually fires. `trackConversion` and `trackVideoPlay` were defined
+// and never called from anywhere — a conversion event aimed at a signup this site no longer owns,
+// and a video tracker for a player that does not exist here.
 declare global {
   interface Window {
     gtag: (...args: unknown[]) => void;
@@ -11,27 +15,10 @@ export const trackEvent = (eventName: string, parameters: Record<string, unknown
   }
 };
 
-export const trackConversion = (conversionType: string, value?: number) => {
-  trackEvent('conversion', {
-    send_to: import.meta.env.VITE_GA_MEASUREMENT_ID,
-    value: value,
-    currency: 'ZAR',
-    conversion_type: conversionType,
-  });
-};
-
-
 export const trackCTAClick = (ctaType: string, location: string) => {
   trackEvent('cta_click', {
     cta_type: ctaType,
     page_location: location,
-  });
-};
-
-export const trackVideoPlay = (videoId: string, videoTitle: string) => {
-  trackEvent('video_play', {
-    video_id: videoId,
-    video_title: videoTitle,
   });
 };
 
