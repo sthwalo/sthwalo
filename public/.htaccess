@@ -1,6 +1,9 @@
 # Never expose directory listings
 Options -Indexes
 
+# Prerendered pages are served at their own path; see the rules below.
+DirectorySlash Off
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
@@ -20,6 +23,25 @@ Options -Indexes
 
   # Don't rewrite requests to the /api/ (Node.js contact API)
   RewriteRule ^api(/|$) - [L]
+
+  # ── Prerendered pages ──────────────────────────────────────────────────────────────────
+  #
+  # Serve /about from /about/index.html WITHOUT redirecting. mod_dir would otherwise 301
+  # /about -> /about/, which adds a hop to every internal link and leaves the canonical URL
+  # disagreeing with the address bar. DirectorySlash Off stops that redirect; the rule below
+  # does the mapping.
+  #
+  # The home page is home.html, not index.html: index.html is the SPA fallback for /blog and
+  # every client route, so the home page's markup cannot live there without appearing under
+  # every unprerendered URL too.
+  #
+  # Both degrade on purpose — a build made before the prerender step existed simply falls
+  # through to the SPA below rather than 404-ing.
+  RewriteCond %{DOCUMENT_ROOT}/home.html -f
+  RewriteRule ^$ /home.html [L]
+
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^([a-z0-9-]+)/?$ /$1/index.html [L]
 
   # Don't rewrite actual files or directories
   RewriteRule ^index\.html$ - [L]

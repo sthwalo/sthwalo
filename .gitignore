@@ -8,3 +8,6 @@ docs/marketing.md
 working.md
 .artifacts
 docker/certs
+
+# SSR bundle for scripts/prerender.mjs — built and deleted within a single build
+.prerender-ssr/

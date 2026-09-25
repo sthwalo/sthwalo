@@ -1,0 +1,11 @@
+# sthwalo.com — Immaculate Nyoni
+#
+# The admin screen is the only thing here that needs a session; everything else is meant to be
+# read. /api is the contact and blog backend, not content.
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+Sitemap: https://sthwalo.com/sitemap.xml
