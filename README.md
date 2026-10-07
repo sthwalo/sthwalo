@@ -37,7 +37,7 @@ security beneath it.
 report; a document pipeline with OCR fallback and per-line account suggestion; payroll, VAT,
 inventory, point of sale, assets, budgets and AFS generation.
 
-**Engineering practice** — 200 versioned migrations. 355 backend test classes (JUnit 5 +
+**Engineering practice** — 236 versioned migrations. 426 backend test classes (JUnit 5 +
 Mockito) against throwaway PostgreSQL Testcontainers, 2,000+ backend tests, 248 Vitest tests on
 the frontend. Checkstyle, PMD and SpotBugs gate the build. A CI-enforced design-system ratchet
 that only moves down. Build-time prerendering of the public site for crawlability.

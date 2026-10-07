@@ -15,6 +15,7 @@ import AnimatedSection from '../components/ui/AnimatedSection';
 import SectionHeading from '../components/ui/SectionHeading';
 import Button from '../components/ui/Button';
 import { clientProjects } from '../data/clientProjects';
+import { caseStudies } from '../data/caseStudies';
 
 const finFeatures = [
   { icon: BarChart3, title: 'Transaction Processing', text: 'Supported statement imports, reviewable classifications, reusable rules, reconciliation, and double-entry journal workflows.' },
@@ -29,9 +30,9 @@ const finFeatures = [
 // purpose: it is the operating boundary, and overstating it would be a false claim about a
 // regulated activity.
 const finMetrics = [
-  { value: '200', label: 'Flyway migrations' },
+  { value: '236', label: 'Flyway migrations' },
   { value: '2,000+', label: 'Automated tests' },
-  { value: '355', label: 'Backend test classes' },
+  { value: '426', label: 'Backend test classes' },
   { value: 'Manual', label: 'SARS submission, by design' },
 ];
 
@@ -219,6 +220,56 @@ export default function Portfolio() {
               </div>
             </div>
           </AnimatedSection>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <AnimatedSection>
+            <SectionHeading
+              label="Engineering"
+              title="Problems solved"
+              description="Selected problems from building and running FIN in production."
+            />
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {caseStudies.map(({ title, problem, solution, result, tags }, index) => (
+              <AnimatedSection
+                key={title}
+                animation="fade-in-up"
+                delay={`animate-delay-${((index % 3) + 1) * 100}`}
+              >
+                <article className="p-6 rounded-2xl bg-warm-sand-50 border border-warm-sand-300/30 h-full flex flex-col">
+                  <h3 className="text-lg font-semibold text-deep-space-800 mb-4">{title}</h3>
+                  <dl className="space-y-3 text-sm leading-relaxed flex-1">
+                    <div>
+                      <dt className="font-semibold text-deep-space-700">Problem</dt>
+                      <dd className="text-deep-space-500">{problem}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-semibold text-deep-space-700">Solution</dt>
+                      <dd className="text-deep-space-500">{solution}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-semibold text-deep-space-700">Result</dt>
+                      <dd className="text-deep-space-500">{result}</dd>
+                    </div>
+                  </dl>
+                  <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-warm-sand-300/30">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 text-xs font-medium rounded-full bg-white text-deep-space-600 border border-warm-sand-300/40"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </section>
 
