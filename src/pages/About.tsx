@@ -45,8 +45,8 @@ const milestones = [
   { year: '2013', title: 'Professional Development', description: 'Began continuing professional development in bookkeeping, tax and compliance through South African Accounting Academy webinars.' },
   { year: '2016', title: 'Tax Practice', description: 'Launched an independent practice as a SARS-registered tax practitioner, managing e-filing, payroll and financial reporting for 10+ organisations.' },
   { year: '2021', title: 'Sthwalo Holdings Founded', description: 'Registered Sthwalo Holdings with CIPC, transitioning from finance into full-stack software engineering.' },
-  { year: '2023', title: 'Production Engineering', description: 'Began delivering production websites and backend systems in Java and React/TypeScript, and later plain-PHP REST APIs for client sites. Built FIN financial management platform.' },
-  { year: '2025', title: 'Cybersecurity & Scale', description: 'Completed Google Cybersecurity Specialization. Continued scaling production systems on AWS with Docker and security hardening.' },
+  { year: '2023', title: 'Production Engineering', description: 'Began delivering production websites and backend systems in Java and React/TypeScript. Built FIN financial management platform.' },
+  { year: '2025', title: 'Cybersecurity & Scale', description: 'Completed Google Cybersecurity Specialization. Built a Laravel 12 business-directory platform with PayFast payments, and continued scaling production systems on AWS with Docker and security hardening.' },
 ];
 
 export default function About() {
