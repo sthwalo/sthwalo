@@ -42,8 +42,8 @@ const values = [
 
 const milestones = [
   { year: '2011', title: 'Financial Foundations', description: 'Started as a bookkeeper at Jelous Down Financial, managing 15+ client portfolios and processing 1,000+ monthly transactions.' },
-  { year: '2013', title: 'Professional Development', description: 'Enrolled at the South African Accounting Academy for bookkeeping, tax, and compliance certifications.' },
-  { year: '2016', title: 'Tax Practice', description: 'Launched independent accounting practice -- managing SARS e-filing, payroll, and financial reporting for 10+ organisations.' },
+  { year: '2013', title: 'Professional Development', description: 'Began continuing professional development in bookkeeping, tax and compliance through South African Accounting Academy webinars.' },
+  { year: '2016', title: 'Tax Practice', description: 'Launched an independent practice as a SARS-registered tax practitioner, managing e-filing, payroll and financial reporting for 10+ organisations.' },
   { year: '2021', title: 'Sthwalo Holdings Founded', description: 'Registered Sthwalo Holdings with CIPC, transitioning from finance into full-stack software engineering.' },
   { year: '2023', title: 'Production Engineering', description: 'Began delivering production websites and backend systems in Java, Laravel, and React/TypeScript. Built FIN financial management platform.' },
   { year: '2025', title: 'Cybersecurity & Scale', description: 'Completed Google Cybersecurity Specialization. Continued scaling production systems on AWS with Docker and security hardening.' },
@@ -89,8 +89,8 @@ export default function About() {
                   className="rounded-2xl w-full object-cover aspect-[4/5] shadow-xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-deep-space-800 rounded-xl p-5 shadow-xl">
-                  <div className="text-2xl font-bold text-harvest-gold-200">10+ Years</div>
-                  <div className="text-sm text-warm-sand-400">Finance, Engineering & Security</div>
+                  <div className="text-2xl font-bold text-harvest-gold-200">15 Years</div>
+                  <div className="text-sm text-warm-sand-400">Finance since 2011 · Engineering since 2023</div>
                 </div>
               </div>
             </AnimatedSection>

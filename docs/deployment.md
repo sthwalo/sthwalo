@@ -1,98 +1,40 @@
-# Deployment Architecture
+# Deployment
+
+Everything for this site runs on one cPanel shared host. FIN (aosfin.com) is deployed separately
+from its own repository and is not part of this process.
 
 ```
-                    ┌─────────────────────┐
-                    │     Your Domain      │
-                    │   (cPanel Hosting)   │
-                    └────────┬────────────┘
-                             │
-                    ┌────────▼────────────┐
-                    │    public_html/      │
-                    │                      │
-                    │  /  → Marketing Site │
-                    │        (this repo)   │
-                    │                      │
-                    │  /app/ → FIN         │
-                    │     Dashboard        │
-                    │     (FIN frontend)   │
-                    └────────┬────────────┘
-                             │
-                             │ HTTPS API calls
-                             │
-                    ┌────────▼────────────┐
-                    │      AWS EC2         │
-                    │                      │
-                    │  Docker Compose      │
-                    │  ├── Spring Boot     │
-                    │  │   (port 8080)     │
-                    │  └── Nginx/Caddy     │
-                    │      (reverse proxy) │
-                    └────────┬────────────┘
-                             │
-                    ┌────────▼────────────┐
-                    │      AWS RDS         │
-                    │   PostgreSQL 17      │
-                    │   30+ tables         │
-                    │   Daily backups      │
-                    └─────────────────────┘
+ cPanel (sthwalo.com, proxied by Cloudflare)
+ ├── public_html/          ← contents of dist/ (static SPA, prerendered pages, .htaccess)
+ └── Node.js app at /api   ← server/ (contact form, blog, admin)  →  MySQL
 ```
 
-This architecture keeps frontend hosting costs low (cPanel) while maintaining the backend and database on AWS where they need to be for performance and reliability.
+## API (cPanel Node.js app)
 
-## API Deployment (cPanel Node.js)
+The contact form and the blog run in one Node app at `sthwalo.com/api`, managed through
+cPanel → Setup Node.js App. Step-by-step runbook, including the environment-variable trap that
+silently breaks admin login: **[server/DEPLOY.md](../server/DEPLOY.md)**.
 
-The contact form and the blog run in one Node app at `sthwalo.com/api`
-(`/home1/sthwaloc/nodeapi`, managed by cPanel → Setup Node.js App).
-
-Step-by-step runbook, including the environment-variable trap that silently
-breaks admin login: **[server/DEPLOY.md](../server/DEPLOY.md)**.
-
-## Marketing Site Deployment
-
-### Build Process
+## Static site
 
 ```bash
-# Build the marketing site
-npm run build
-
-# The build output will be in the dist/ directory
-# Upload the contents of dist/ to your cPanel public_html/ directory
+npm run build      # vite build + prerender into dist/
 ```
 
-### Pre-deployment Checklist
+Upload the contents of `dist/` to `public_html/`. `public/.htaccess` is copied into `dist/` by
+the build, so SPA routing and the `/api` pass-through ship with it.
 
-- [ ] Update Google Analytics Measurement ID in `src/utils/analytics.ts`
-- [ ] Add blog content to `public/blog/posts/` and `public/blog/categories.json`
-- [ ] Upload demo videos to `public/videos/` and thumbnails to `public/images/demo-thumbnails/`
-- [ ] Update social media links in `src/components/layout/Footer.tsx`
-- [ ] Configure contact form database and email settings in `server/`
-- [ ] Test all routes: `/`, `/demo`, `/blog`, `/about`, `/contact`, `/portfolio`, `/services`
-- [ ] Verify SEO metadata and Open Graph tags
-- [ ] Test analytics tracking events
-- [ ] Validate RSS feed generation
-- [ ] Check responsive design across devices
+### Pre-deployment checklist
 
-### Environment Variables
+- [ ] `npm run lint`, `npm run typecheck` and `npm run build` pass
+- [ ] Routes load: `/`, `/about`, `/services`, `/portfolio`, `/blog`, a post, `/contact`, legal pages
+- [ ] Contact form submits and the notification email arrives
+- [ ] Blog posts load from the API (the static fallback hides an API outage — check the network tab)
+- [ ] SEO metadata, Open Graph tags and `sitemap.xml` present in the built pages
+- [ ] Outbound FIN links point at `https://aosfin.com`
 
-Create environment files for different stages:
+### Environment
 
-- `.env.local` - Local development
-- `.env.production` - Production deployment
-
-Required variables:
-- `VITE_GA_MEASUREMENT_ID` - Google Analytics 4 Measurement ID
-- Database credentials for contact form backend
-
-### CDN and Performance
-
-- Host videos on a CDN (Cloudflare, AWS CloudFront) for better performance
-- Optimize images and implement lazy loading
-- Enable gzip compression on your hosting provider
-- Set up proper caching headers for static assets
-
-### Monitoring
-
-- Google Analytics 4 for user behavior and conversion tracking
-- Set up alerts for contact form submissions
-- Monitor server logs for API errors
-- Track Core Web Vitals in Google Search Console
+- `VITE_API_URL=/api` at build time (relative — see [environment.md](environment.md))
+- `VITE_GA_MEASUREMENT_ID` only once a cookie-consent banner exists
+- API secrets are set on the cPanel Node app, not in files (see `server/DEPLOY.md`)

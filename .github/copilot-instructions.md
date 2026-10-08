@@ -1,10 +1,10 @@
 # AI Coding Agent Instructions for Sthwalo Holdings Marketing Site
 
 ## Architecture Overview
-This is a **static-first marketing website** for Sthwalo Holdings, serving as a portal to the FIN Financial Management System. It consists of:
+This is the **portfolio and company site** of Sthwalo Holdings. It consists of:
 - **Frontend**: React 18 + Vite + TypeScript + Tailwind CSS (custom color palette)
-- **Backend**: Express.js + MySQL for contact form submissions (stored in `contact_submissions` table)
-- **Integration**: FIN dashboard hosted at `/app/` subdirectory (separate React 19 build)
+- **Backend**: Express.js + MySQL at `/api` — contact form, blog posts and the `/admin` editor
+- **FIN**: a separate product at https://aosfin.com. This site only links to it; there is no FIN build, route or proxy here.
 
 Key files: `docs/architecture.md`, `src/App.tsx`, `server/index.js`
 
@@ -27,7 +27,7 @@ className="bg-deep-space-800 text-harvest-gold-200"
 Leverage custom scroll animations with `useScrollAnimation` hook (IntersectionObserver-based). Add `animate-fade-in-up` classes for entrance effects.
 
 ### Analytics
-Track events via `src/utils/analytics.ts` functions like `trackCTAClick('trial_signup', 'hero')` for GA4 integration.
+Track events via `src/utils/analytics.ts` (e.g. `trackCTAClick('fin_live', 'navbar')`). GA4 stays off until `VITE_GA_MEASUREMENT_ID` is set, which needs a consent banner first.
 
 ### Components
 - Use `Button` component from `src/components/ui/Button.tsx` for CTAs
@@ -37,7 +37,7 @@ Track events via `src/utils/analytics.ts` functions like `trackCTAClick('trial_s
 ### Contact Form
 POST to `/api/contact` with `{name, email, company?, service?, message}`. Backend saves to MySQL and sends email via sendmail.
 
-### Integration
-FIN app links: Use `/app/` URLs. Update `.htaccess` to exclude `/app/` from marketing site routing.
+### FIN links
+Link to `https://aosfin.com` (signup: `https://aosfin.com/register`). Never add FIN routes or rewrites to this site.
 
 Reference: `docs/fin-integration.md`, `docs/getting-started.md`

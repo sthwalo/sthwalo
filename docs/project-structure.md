@@ -22,7 +22,7 @@ sthwalo-holdings/
 │   ├── environment.md                  # Configuration and environment variables
 │   ├── database.md                     # Data storage and schemas
 │   ├── getting-started.md              # Installation and development setup
-│   ├── fin-integration.md              # Connecting marketing site to FIN dashboard
+│   ├── fin-integration.md              # FIN is a separate product; this site only links to it
 │   ├── deployment.md                   # Hosting and infrastructure setup
 │   └── ui/
 │       └── button-spec.md              # Button variants, sizes and label rules
@@ -56,11 +56,12 @@ sthwalo-holdings/
 │   │
 │   ├── data/
 │   │   ├── clientProjects.ts           # Client work — the single source for both surfaces
+│   │   ├── caseStudies.ts              # "Problems solved" entries on the Portfolio page
 │   │   ├── blogPosts.ts                # Typed post contract + seed source (pages read the API)
 │   │
 │   ├── components/
 │   │   ├── layout/
-│   │   │   ├── Navbar.tsx              # Sticky nav, mobile hamburger, "Start free" CTA
+│   │   │   ├── Navbar.tsx              # Sticky nav, mobile menu, outbound CTA to aosfin.com
 │   │   │   └── Footer.tsx              # Links, social (LinkedIn, GitHub, X, YouTube, Instagram, Facebook)
 │   │   │
 │   │   ├── home/
@@ -88,7 +89,7 @@ sthwalo-holdings/
 │   │   ├── Home.tsx                    # Hero + SkillsBand + FeaturedWork + TrustSignals
 │   │   ├── About.tsx                   # Founder story, values, timeline
 │   │   ├── Services.tsx                # 4 service categories + process section
-│   │   ├── Portfolio.tsx               # FIN deep dive + delivered sites grid
+│   │   ├── Portfolio.tsx               # FIN summary, problems solved, delivered sites
 │   │   ├── Contact.tsx                 # Form (Express API) + sidebar contact info
 │   │   ├── Blog.tsx                    # Content hub with posts, categories, and social sharing
 │   │   ├── BlogPost.tsx                # Individual blog post with SEO metadata and sharing
