@@ -1,7 +1,24 @@
-# sthwalo.com
+# Immaculate Nyoni
 
-**Immaculate Nyoni — backend engineer (Java, Spring Boot, PostgreSQL, AWS) and founder of
-Sthwalo Holdings.** Portfolio, services, client work, and an engineering journal.
+Backend engineer — Java, Spring Boot, PostgreSQL, AWS — and founder of Sthwalo Holdings
+(Johannesburg). Software engineering since 2023, after twelve years in bookkeeping and tax as a
+SARS-registered tax practitioner.
+
+| Work | What it is | Stack |
+|---|---|---|
+| **[FIN](https://aosfin.com)** | Multi-tenant financial operations platform, in production | Java 17, Spring Boot 3.5, PostgreSQL 17 (row-level security), React 19, AWS, Terraform |
+| **Career Lab** (private, in development) | Resume builder with interview practice, CV-claim drills and progress tracking | Java 17, Spring Boot |
+| **Client work** | Sites and systems for clients in healthcare, training, hospitality, construction and vehicle rental | React + TypeScript; Laravel 12; PHP; Node.js/Express |
+
+[sthwalo.com](https://sthwalo.com) · [LinkedIn](https://www.linkedin.com/in/inyoni/) · [aosfin.com](https://aosfin.com)
+
+Most of my code lives in private repositories; this one is public.
+
+---
+
+# sthwalo.com — this repository
+
+Portfolio, services, client work, and an engineering journal.
 
 This site is written for two readers: a **recruiter** deciding whether the stack matches, and a
 **prospective client** deciding whether to hire. It is not written for FIN's users — they have
