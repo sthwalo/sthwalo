@@ -63,7 +63,7 @@ const services = [
       'Authentication design (JWT, Sanctum, session patterns)',
       'Encryption-at-rest and transport (HTTPS/TLS)',
       'Secret scanning and static analysis (CodeQL) in CI',
-      'sysctl/AppArmor hardening and firewall configuration',
+      'Firewall and origin lockdown behind a CDN (AWS security groups, Cloudflare)',
       'Security audit documentation and authentication matrices',
     ],
     technologies: [
