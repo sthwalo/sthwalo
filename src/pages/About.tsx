@@ -36,7 +36,7 @@ const values = [
   {
     icon: Shield,
     title: 'Security & Compliance',
-    description: 'Pragmatic security controls, SIEM integration, and governance are embedded from the start -- not bolted on later.',
+    description: 'Pragmatic security controls, secret scanning, static analysis and governance are embedded from the start -- not bolted on later.',
   },
 ];
 
@@ -117,7 +117,7 @@ export default function About() {
                 </p>
               </div>
               <div className="mt-6 flex flex-wrap gap-2">
-                {['Java', 'Spring Boot', 'React', 'TypeScript', 'PHP', 'PostgreSQL', 'Docker', 'AWS', 'SIEM'].map((skill) => (
+                {['Java', 'Spring Boot', 'React', 'TypeScript', 'PHP', 'PostgreSQL', 'Docker', 'AWS', 'Terraform'].map((skill) => (
                   <span key={skill} className="px-3 py-1.5 text-xs font-medium rounded-full bg-warm-sand-200/60 text-deep-space-700 border border-warm-sand-300/30">
                     {skill}
                   </span>

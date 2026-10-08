@@ -58,7 +58,7 @@ const services = [
     icon: Shield,
     title: 'Security & Compliance',
     description:
-      'Pragmatic security controls that lower risk without slowing down development. From SIEM-driven threat detection to operational hardening, we embed security into every layer of your stack.',
+      'Pragmatic security controls that lower risk without slowing down development. From access control and tenant isolation to operational hardening, we embed security into every layer of your stack.',
     features: [
       'Authentication design (JWT, Sanctum, session patterns)',
       'Encryption-at-rest and transport (HTTPS/TLS)',
@@ -68,7 +68,7 @@ const services = [
     ],
     technologies: [
       { icon: Lock, name: 'Encryption' },
-      { icon: Cpu, name: 'SIEM' },
+      { icon: Cpu, name: 'CodeQL' },
       { icon: Workflow, name: 'Hardening' },
     ],
   },
