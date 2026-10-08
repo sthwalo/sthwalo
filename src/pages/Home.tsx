@@ -16,7 +16,7 @@ import SeoMeta from '../components/ui/SeoMeta';
  *                  whom is the audience here.
  *   TrustMetrics — live FIN usage counts, fetched from api.sthwalo.com. Product telemetry is not
  *                  portfolio evidence, and removing it drops this site's last runtime dependency
- *                  on a hostname that is being retired.
+ *                  on a hostname that has since been removed.
  *
  * They are deleted rather than left unused: dead components with stale links rot, and git history
  * keeps the copy perfectly well if any of it is wanted on aosfin.com.

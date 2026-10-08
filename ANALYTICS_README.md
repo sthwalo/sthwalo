@@ -30,11 +30,11 @@ This project includes Google Analytics 4 integration for tracking marketing perf
 
 ## UTM Tracking
 
-All external links to the FIN app should include UTM parameters:
+Links to FIN from social posts should carry UTM parameters, so aosfin.com can attribute them:
 
 ```javascript
 // Example link structure
-https://sthwalo.com/app?utm_source=linkedin&utm_medium=social&utm_campaign=fin_launch
+https://aosfin.com/?utm_source=linkedin&utm_medium=social&utm_campaign=fin_launch
 ```
 
 ### Supported UTM Sources

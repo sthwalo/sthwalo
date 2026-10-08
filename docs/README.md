@@ -2,7 +2,7 @@
 
 **Building foundations with code.**
 
-The official marketing website for Sthwalo Holdings -- a software company founded by [Immaculate Nyoni](https://www.linkedin.com/in/inyoni/) that blends accounting discipline with full-stack engineering. This site serves as both a company presence and a portal to the FIN Financial Management System.
+The portfolio and company site of Sthwalo Holdings, founded by [Immaculate Nyoni](https://www.linkedin.com/in/inyoni/). FIN, the company's financial operations platform, is a separate product at [aosfin.com](https://aosfin.com).
 
 ## Quick Start
 
@@ -12,7 +12,7 @@ The official marketing website for Sthwalo Holdings -- a software company founde
 ## Architecture & Integration
 
 - **[Architecture Overview](architecture.md)** - System design and data flow
-- **[FIN Integration](fin-integration.md)** - Connecting the marketing site to FIN dashboard
+- **[FIN](fin-integration.md)** - How this site relates to FIN (it links to it; nothing more)
 - **[Deployment](deployment.md)** - Hosting and infrastructure setup
 
 ## Development Reference
@@ -22,9 +22,6 @@ The official marketing website for Sthwalo Holdings -- a software company founde
 - **[Pages](pages.md)** - Route structure and page descriptions
 - **[Environment](environment.md)** - Configuration and environment variables
 - **[Database](database.md)** - Data storage and schemas
-
-## Additional Resources
-
 
 ---
 

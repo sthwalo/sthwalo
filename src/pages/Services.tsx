@@ -27,7 +27,7 @@ const services = [
       'React 19 + TypeScript frontends with Vite',
       'PHP/Laravel with Sanctum authentication',
       'PostgreSQL database architecture and Flyway migrations',
-      'RESTful API design with 24+ controllers',
+      'RESTful API design, OpenAPI-documented (770+ operations in FIN)',
     ],
     technologies: [
       { icon: Cpu, name: 'Java' },
@@ -43,6 +43,7 @@ const services = [
     features: [
       'AWS EC2 and RDS deployment and management',
       'Docker Compose orchestration',
+      'Infrastructure as code with Terraform',
       'Automated daily backups with point-in-time recovery',
       'Cron job scheduling and health monitoring',
       'Cost optimization strategies across hosting providers',
@@ -57,17 +58,17 @@ const services = [
     icon: Shield,
     title: 'Security & Compliance',
     description:
-      'Pragmatic security controls that lower risk without slowing down development. From SIEM-driven threat detection to operational hardening, we embed security into every layer of your stack.',
+      'Pragmatic security controls that lower risk without slowing down development. From access control and tenant isolation to operational hardening, we embed security into every layer of your stack.',
     features: [
       'Authentication design (JWT, Sanctum, session patterns)',
       'Encryption-at-rest and transport (HTTPS/TLS)',
-      'SIEM tools for threat detection and incident response',
-      'sysctl/AppArmor hardening and firewall configuration',
+      'Secret scanning and static analysis (CodeQL) in CI',
+      'Firewall and origin lockdown behind a CDN (AWS security groups, Cloudflare)',
       'Security audit documentation and authentication matrices',
     ],
     technologies: [
       { icon: Lock, name: 'Encryption' },
-      { icon: Cpu, name: 'SIEM' },
+      { icon: Cpu, name: 'CodeQL' },
       { icon: Workflow, name: 'Hardening' },
     ],
   },

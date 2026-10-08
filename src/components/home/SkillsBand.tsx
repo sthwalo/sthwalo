@@ -10,7 +10,7 @@
 const groups = [
   {
     heading: 'Languages & frameworks',
-    items: ['Java 17', 'Spring Boot 3.5', 'TypeScript', 'React 19', 'Node'],
+    items: ['Java 17', 'Spring Boot 3.5', 'TypeScript', 'React 19', 'PHP / Laravel 12', 'Node'],
   },
   {
     heading: 'Data',
@@ -18,11 +18,11 @@ const groups = [
   },
   {
     heading: 'Infrastructure',
-    items: ['AWS (EC2, RDS, S3, SSM, SES)', 'Docker', 'nginx', 'Cloudflare', 'GitHub Actions'],
+    items: ['AWS (EC2, RDS, S3, SSM, SES)', 'Terraform', 'Docker', 'nginx', 'Cloudflare', 'GitHub Actions'],
   },
   {
     heading: 'Practice',
-    items: ['TDD', 'Testcontainers', 'Static analysis in CI', 'OpenAPI', 'Gradle'],
+    items: ['Automated testing', 'Testcontainers', 'Static analysis in CI', 'OpenAPI', 'Gradle'],
   },
 ];
 
