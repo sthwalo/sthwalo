@@ -1,7 +1,7 @@
 # sthwalo.com
 
-**Immaculate Nyoni — full-stack engineer.** Portfolio, services, client work, and an
-engineering journal.
+**Immaculate Nyoni — backend engineer (Java, Spring Boot, PostgreSQL, AWS) and founder of
+Sthwalo Holdings.** Portfolio, services, client work, and an engineering journal.
 
 This site is written for two readers: a **recruiter** deciding whether the stack matches, and a
 **prospective client** deciding whether to hire. It is not written for FIN's users — they have
@@ -38,7 +38,7 @@ report; a document pipeline with OCR fallback and per-line account suggestion; p
 inventory, point of sale, assets, budgets and AFS generation.
 
 **Engineering practice** — 236 versioned migrations. 426 backend test classes (JUnit 5 +
-Mockito) against throwaway PostgreSQL Testcontainers, 2,000+ backend tests, 248 Vitest tests on
+Mockito) against throwaway PostgreSQL Testcontainers, 2,200+ backend tests, 400+ Vitest tests on
 the frontend. Checkstyle, PMD and SpotBugs gate the build. A CI-enforced design-system ratchet
 that only moves down. Build-time prerendering of the public site for crawlability.
 
@@ -47,7 +47,7 @@ re-check them before republishing rather than letting them age.
 
 **Where it stops.** FIN holds **no SARS, eFiling, or bank-feed connection**. It prepares returns
 internally; users export or print and submit manually. The accounting core is
-**jurisdiction-neutral** — the *completed* statutory layer is South African (SARS and CIPC live,
+**jurisdiction-neutral** — the *completed* statutory layer is South African (SARS and CIPC report preparation,
 Employment & Labour in progress). Describing it as "a South African product" understates the
 core and overstates the coverage.
 
