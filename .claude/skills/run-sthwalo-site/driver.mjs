@@ -465,8 +465,7 @@ async function cmdSmoke(page, base, opts) {
     const shot = await page.screenshot(join(opts.outDir, `${slug(route)}.png`));
     const hidden = await page.hiddenCount();
 
-    // Requests to third-party hosts (api.sthwalo.com trust metrics, Google
-    // Fonts, GA) fail by design when offline / CORS-blocked; the app degrades
+    // Requests to third-party hosts (Google Fonts, GA) fail by design when offline / CORS-blocked; the app degrades
     // gracefully. Report them, don't fail on them.
     const isExternal = (f) => /https?:\/\/(?!localhost|127\.0\.0\.1)/.test(f);
     // /admin is signed out during a smoke run, so a 401 from the admin API is

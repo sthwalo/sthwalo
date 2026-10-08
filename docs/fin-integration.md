@@ -20,16 +20,5 @@ second `.htaccess` and a shared `public_html`. That arrangement is retired. FIN 
 domain whose apex belonged to something else, which is why its bundle was built with a `/fin/`
 base path and why its old URLs all carry that prefix.
 
-Two consequences worth remembering while old links are still in circulation:
-
-- Bookmarks and emailed links of the form `sthwalo.com/fin/<path>` reach the right page through
-  the redirect above, and `app.sthwalo.com/fin/<path>` is handled on the FIN side.
-- `public_html/fin/` should be **deleted** on cPanel. While it exists with its own `.htaccess`,
-  those per-directory rules can take precedence over the redirect this repo ships.
-
-## Historical note on usage metrics
-
-This site used to render live FIN usage counts on the home page, fetched from
-`api.sthwalo.com/api/v1/public/trust-metrics`. That section is gone: product telemetry is not
-portfolio evidence, and removing it dropped this site's last runtime dependency on a hostname
-that is being retired.
+Bookmarks and emailed links of the form `sthwalo.com/fin/<path>` still reach the right page
+through the redirect above.
