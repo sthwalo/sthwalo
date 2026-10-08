@@ -138,12 +138,6 @@ Useful only if you can see a browser. Prefer the driver.
   form silently lands in its error state and looks like a broken click. Fulfil
   `OPTIONS` with 204 + `Access-Control-Allow-*`.
 
-- **Home always logs a failed request.** `useTrustMetrics` fetches
-  `https://api.sthwalo.com/api/v1/public/trust-metrics`; it's CORS-blocked from
-  localhost, is caught, and falls back to `publicMetricsSnapshot`. It appears
-  **twice** because `StrictMode` double-invokes effects in dev. Expected — the
-  driver reports external-host failures as notes, not failures.
-
 - **Don't count `.opacity-0` to detect unrevealed sections.** The footer uses that
   class on 7 tiny hover-reveal arrows (`group-hover:opacity-100`) on *every*
   page, so a class count reports 7 false positives everywhere. Measure computed
@@ -154,10 +148,9 @@ Useful only if you can see a browser. Prefer the driver.
   form, which is a real page with real text — that is a pass, not an empty route.
   `/demo` and `/resources` no longer exist.
 
-- **There is no 404 route.** Any unmatched path (including `/fin/`, which the
-  "Access FIN" button links to) renders the navbar and footer with an **empty
-  `<main>`**. In production nginx serves the separate FIN app at `/fin/`; locally
-  it's a blank page. Don't read that as a broken build.
+- **There is no 404 route.** Any unmatched path renders the navbar and footer
+  with an **empty `<main>`**. Locally that includes `/fin/`, which only redirects
+  to aosfin.com in production via `.htaccess`. Don't read that as a broken build.
 
 - **Port 5173 is often already taken** by a stale Vite from another project. The
   driver uses **5273** with `--strictPort` and parses Vite's actual URL from its

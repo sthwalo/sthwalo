@@ -19,9 +19,6 @@ FIN used to be the subject of this site. It has its own domain now, so the split
 There is **no FIN application surface here**. Every FIN destination is an outbound link to
 `aosfin.com`, and `/fin/*` 301s there with the path preserved (see `public/.htaccess`).
 
-> **On deploy:** delete `public_html/fin/` on cPanel. While that directory exists with its own
-> `.htaccess`, its per-directory rules can take precedence over the redirect that ships here.
-
 ## FIN — the flagship case study
 
 A multi-tenant financial operations platform, designed and shipped solo, in production.
@@ -71,31 +68,6 @@ Developer documentation lives in [`docs/`](docs/):
 - **[Tech Stack](docs/tech-stack.md)** · **[Brand Colors](docs/brand-colors.md)** ·
   **[Pages](docs/pages.md)** · **[Environment](docs/environment.md)** ·
   **[Deployment](docs/deployment.md)** · **[FIN](docs/fin-integration.md)**
-
-## Demo assets
-
-The project thumbnails are animated GIFs of the FIN UI, rendered from a reproducible generator
-(Playwright + sharp) whose mockup mirrors the live navigation, pipeline stepper and brand tokens.
-They live in [`public/images/`](public/images/):
-
-| GIF | Module | Walkthrough |
-|---|---|---|
-| `grand-tour.gif` | *all modules* | Full FIN demo touring every module end to end |
-| `pipeline.gif` | Accounting Workbench | The core flow: import → classify → ledger → inventory → Reports & AFS |
-| `overview.gif` | Business Overview | Portfolio KPIs, companies, and payroll readiness |
-| `setup.gif` | Entity & Period Setup | Companies, fiscal periods, RBAC, and Row-Level Security |
-| `bank-to-ledger.gif` | Accounting Workbench | import → classify → cashbook → reconcile → ledger |
-| `document-vault.gif` | Accounting Workbench | Document capture → OCR extraction → retained source-document vault |
-| `inventory.gif` | Inventory Management | Stock on hand, PO → GRN → invoice 3-way match, and reports |
-| `tax-compliance.gif` | Tax & Compliance | VAT period review (output vs input) → VAT201 working paper |
-| `fixed-assets.gif` | Fixed Assets | Asset register + depreciation schedule posting to the ledger |
-| `reporting.gif` | Reports & AFS | Ledger → budgets → AFS + compliance pack |
-| `payroll.gif` | Payroll | Pay run, Time & Attendance, EMP201 |
-| `billing.gif` | Account, Billing & Access | Plans, add-ons, metered usage, and RBAC |
-
-The generator lives in the FIN repo, so it can read the live UI:
-`node scripts/build-fin-demo-gifs.mjs` (all) or `… <name>` (one). Keep this table and the
-`featuredImage` mappings in `src/data/blogPosts.ts` in step with the generated set.
 
 ## Links
 
