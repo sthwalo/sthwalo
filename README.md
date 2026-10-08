@@ -8,7 +8,7 @@ SARS-registered tax practitioner.
 |---|---|---|
 | **[FIN](https://aosfin.com)** | Multi-tenant financial operations platform, in production | Java 17, Spring Boot 3.5, PostgreSQL 17 (row-level security), React 19, AWS, Terraform |
 | **Career Lab** (private, in development) | Resume builder with interview practice, CV-claim drills and progress tracking | Java 17, Spring Boot |
-| **Client work** | Sites and systems for clients in healthcare, training, hospitality, construction and vehicle rental | React + TypeScript; Laravel 12; PHP; Node.js/Express |
+| **Client work** | Live sites and systems for clients in healthcare, training and vehicle rental; a Laravel business directory and a construction-company site in progress | React + TypeScript; Laravel 12; PHP; Node.js/Express |
 
 [sthwalo.com](https://sthwalo.com) · [LinkedIn](https://www.linkedin.com/in/inyoni/) · [aosfin.com](https://aosfin.com)
 

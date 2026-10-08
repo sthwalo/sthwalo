@@ -277,6 +277,27 @@ export default function Portfolio() {
         <div className="section-container">
           <AnimatedSection>
             <SectionHeading
+              label="In development"
+              title="Career Lab"
+              description="A resume builder with interview practice. Lessons, a timed interview simulator, drills that test every claim on a saved CV, and spaced-repetition progress tracking."
+            />
+          </AnimatedSection>
+          <AnimatedSection>
+            <div className="max-w-3xl mx-auto flex flex-wrap justify-center gap-2">
+              {['Java 17', 'Spring Boot', 'JPA', 'PDF and DOCX export'].map((tech) => (
+                <span key={tech} className="px-3 py-1 text-xs font-medium rounded-full bg-white text-deep-space-600 border border-warm-sand-300/40">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="section-container">
+          <AnimatedSection>
+            <SectionHeading
               label="Delivered"
               title="Client websites & systems"
               description="Delivered across healthcare, training, hospitality and vehicle rental. Each one is live — the links open in a new tab so you can check."
