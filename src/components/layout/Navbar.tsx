@@ -72,10 +72,8 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:block">
-          {/* Outbound, to FIN's own domain. This used to be "Access FIN" pointing at /fin/ on this
-              host, from when the app was a guest here. The app has its own home now, so the navbar
-              CTA is a link to the work rather than a door into it — nobody signs in on a
-              portfolio. Signup and login live on aosfin.com and belong there. */}
+          {/* Outbound, to FIN's own domain. The navbar CTA is a link to the work rather than a
+              door into it — nobody signs in on a portfolio. Signup and login live on aosfin.com. */}
           <Button
             href="https://aosfin.com"
             variant="primary"

@@ -17,7 +17,7 @@ FIN used to be the subject of this site. It has its own domain now, so the split
 | **aosfin.com** | The FIN product site **and** the application itself | the `acc` repo |
 
 There is **no FIN application surface here**. Every FIN destination is an outbound link to
-`aosfin.com`, and `/fin/*` 301s there with the path preserved (see `public/.htaccess`).
+`aosfin.com`.
 
 ## FIN — the flagship case study
 
