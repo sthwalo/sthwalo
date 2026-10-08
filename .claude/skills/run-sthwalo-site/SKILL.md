@@ -149,8 +149,7 @@ Useful only if you can see a browser. Prefer the driver.
   `/demo` and `/resources` no longer exist.
 
 - **There is no 404 route.** Any unmatched path renders the navbar and footer
-  with an **empty `<main>`**. Locally that includes `/fin/`, which only redirects
-  to aosfin.com in production via `.htaccess`. Don't read that as a broken build.
+  with an **empty `<main>`**. Don't read that as a broken build.
 
 - **Port 5173 is often already taken** by a stale Vite from another project. The
   driver uses **5273** with `--strictPort` and parses Vite's actual URL from its
